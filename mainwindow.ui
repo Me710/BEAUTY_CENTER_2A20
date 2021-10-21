@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>765</height>
+    <height>633</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -254,10 +254,10 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>600</y>
+      <x>660</x>
+      <y>510</y>
       <width>311</width>
-      <height>131</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="layoutDirection">
