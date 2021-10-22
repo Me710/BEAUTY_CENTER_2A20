@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>765</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -340,7 +340,7 @@ color: rgb(247, 65, 173);</string>
       </rect>
      </property>
      <property name="text">
-      <string>NUMERO</string>
+      <string>TEL</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_10">
@@ -392,14 +392,14 @@ color: rgb(247, 65, 173);</string>
       </rect>
      </property>
      <property name="text">
-      <string>CHIFFRE D'AFFAIRE</string>
+      <string>REVENUE</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_14">
      <property name="geometry">
       <rect>
        <x>550</x>
-       <y>360</y>
+       <y>330</y>
        <width>51</width>
        <height>21</height>
       </rect>
@@ -412,7 +412,7 @@ color: rgb(247, 65, 173);</string>
      <property name="geometry">
       <rect>
        <x>550</x>
-       <y>420</y>
+       <y>400</y>
        <width>51</width>
        <height>21</height>
       </rect>
@@ -466,7 +466,7 @@ color: rgb(247, 65, 173);</string>
       <rect>
        <x>360</x>
        <y>450</y>
-       <width>111</width>
+       <width>121</width>
        <height>20</height>
       </rect>
      </property>
@@ -476,7 +476,7 @@ color: rgb(247, 65, 173);</string>
       <rect>
        <x>360</x>
        <y>480</y>
-       <width>161</width>
+       <width>121</width>
        <height>20</height>
       </rect>
      </property>
@@ -484,7 +484,7 @@ color: rgb(247, 65, 173);</string>
     <widget class="QLineEdit" name="lineEdit_10">
      <property name="geometry">
       <rect>
-       <x>390</x>
+       <x>360</x>
        <y>510</y>
        <width>121</width>
        <height>20</height>
@@ -494,8 +494,8 @@ color: rgb(247, 65, 173);</string>
     <widget class="QLineEdit" name="lineEdit_11">
      <property name="geometry">
       <rect>
-       <x>540</x>
-       <y>450</y>
+       <x>550</x>
+       <y>430</y>
        <width>131</width>
        <height>20</height>
       </rect>
@@ -514,8 +514,8 @@ color: rgb(247, 65, 173);</string>
     <widget class="QRadioButton" name="radioButton">
      <property name="geometry">
       <rect>
-       <x>590</x>
-       <y>370</y>
+       <x>560</x>
+       <y>350</y>
        <width>41</width>
        <height>18</height>
       </rect>
@@ -527,8 +527,8 @@ color: rgb(247, 65, 173);</string>
     <widget class="QRadioButton" name="radioButton_2">
      <property name="geometry">
       <rect>
-       <x>640</x>
-       <y>370</y>
+       <x>630</x>
+       <y>350</y>
        <width>41</width>
        <height>18</height>
       </rect>
@@ -548,6 +548,25 @@ color: rgb(247, 65, 173);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 0, 127);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>480</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(107, 35, 131);</string>
+     </property>
+     <property name="text">
+      <string>VALIDER</string>
      </property>
     </widget>
     <zorder>label</zorder>
@@ -587,6 +606,7 @@ color: rgb(247, 65, 173);</string>
     <zorder>radioButton</zorder>
     <zorder>radioButton_2</zorder>
     <zorder>openGLWidget</zorder>
+    <zorder>pushButton_7</zorder>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
