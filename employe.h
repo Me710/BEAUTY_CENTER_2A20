@@ -8,7 +8,7 @@ using namespace std;
 class Employe
 {
 public:
-    QString cin;
+    int cin;
     QString prenom;
     QString nom;
     QString courrier;
@@ -21,15 +21,19 @@ public:
     int anneeNais;
 
 private:
-     Employe(){}
-    ~Employe(){}
-    void setcin(QString n){cin=n;}
-    void setprenom(QString n){prenom=n;}
-    void setnom(QString n){nom=n;}
+     Employe();//Constructeur par defaut
+    ~Employe();//Destructeur
 
-    QString get_cin(){return cin;}
-    QString get_prenom(){return prenom;}
-    QString get_nom(){return nom;}
+     //Mutateurs
+    void set_cin(int cin);
+    void set_prenom(QString prenom);
+    void set_nom(QString nom);
+    void set_courrier(QString courrier);
+
+    //Acesseurs
+    int get_cin();
+    QString get_prenom();
+    QString get_nom();
 };
 
 
