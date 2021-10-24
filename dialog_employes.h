@@ -15,6 +15,9 @@ public:
     explicit Dialog_Employes(QWidget *parent = nullptr);
     ~Dialog_Employes();
 
+private slots:
+    void on_pushButton_valider_clicked();
+
 private:
     Ui::Dialog_Employes *ui;
 };

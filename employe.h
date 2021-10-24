@@ -2,38 +2,62 @@
 #define EMPLOYE_H
 #include <QString>
 #include <iostream>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QtDebug>
 
 using namespace std;
 
 class Employe
 {
-public:
+private:
     int cin;
     QString prenom;
     QString nom;
-    QString courrier;
-    int tel;
-    double revenue;
-    char sex;
+    QString mail;
+    long tel;
+    QString fonction;
+    char sexe;
     QString adresse;
+    double salaire;
     int jourNais;
     int moisNais;
     int anneeNais;
+    //double revenue;
 
-private:
+public:
      Employe();//Constructeur par defaut
+     Employe(int,QString,QString);
+     Employe(int,QString,QString,QString,long,QString,char,QString,double);
     ~Employe();//Destructeur
 
      //Mutateurs
-    void set_cin(int cin);
-    void set_prenom(QString prenom);
-    void set_nom(QString nom);
-    void set_courrier(QString courrier);
+    void set_cin(int);
+    void set_prenom(QString);
+    void set_nom(QString);
+    void set_mail(QString);
+    void set_tel(long);
+    void set_fonction(QString);
+    void set_sexe(char);
+    void set_adresse(QString);
+    void set_salaire(double);
+
 
     //Acesseurs
     int get_cin();
     QString get_prenom();
     QString get_nom();
+    QString get_mail();
+    long get_tel();
+    QString get_fonction();
+    char get_sexe();
+    QString get_adresse();
+    double get_salaire();
+
+    //CRUDs
+    bool ajouter();
+    QSqlQueryModel * afficher();
+    bool supprimer(int);
 };
 
 
