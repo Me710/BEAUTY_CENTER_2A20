@@ -4,7 +4,7 @@ connection::connection(){}
 
 bool connection::createconnection()
 {
-    db = QSqlDatabase::addDatabase("QODC");
+    db = QSqlDatabase::addDatabase("QODBC");
     bool test=false;
     db.setDatabaseName("test-bd");
     db.setUserName("Christian");
