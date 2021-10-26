@@ -97,7 +97,7 @@ font: 25 14pt &quot;Noto Sans Light&quot;;</string>
       <string>MOT DE PASSE  :</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEdit_login">
      <property name="geometry">
       <rect>
        <x>230</x>
@@ -110,7 +110,7 @@ font: 25 14pt &quot;Noto Sans Light&quot;;</string>
       <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="lineEdit_motdepasse">
      <property name="geometry">
       <rect>
        <x>230</x>
@@ -119,8 +119,17 @@ font: 25 14pt &quot;Noto Sans Light&quot;;</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="whatsThis">
+      <string notr="true"/>
+     </property>
      <property name="styleSheet">
       <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton">
