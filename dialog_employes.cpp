@@ -29,6 +29,7 @@ void Dialog_Employes::on_pushButton_valider_clicked()
 
     if(test)//si requete executer ==>QMessageBox::information
     {
+        ui->tableView->setModel(Empl.afficher());
         QMessageBox::information(nullptr, QObject::tr("OK"),
                  QObject::tr("Ajout effectué\n""Click Cancel to exit."),QMessageBox::Cancel);
 
@@ -49,6 +50,8 @@ void Dialog_Employes::on_pushButton_ajouter_clicked()
 void Dialog_Employes::on_pushButton_afficher_clicked()
 {
     ui->label_menu_active->setText("AFFICHER LES EMPLOYES");
+    ui->tableView->setModel(Empl.afficher());
+
 }
 
 void Dialog_Employes::on_pushButton_modifier_clicked()
@@ -58,7 +61,32 @@ void Dialog_Employes::on_pushButton_modifier_clicked()
 
 void Dialog_Employes::on_pushButton_supprimer_clicked()
 {
-    ui->label_menu_active->setText("SUPRESSION D'UN EMPLOYE");
+    //ui->label_menu_active->setText("SUPRESSION D'UN EMPLOYE");
+    int cin=ui->lineEdit_id_supprimer->text().toInt();
+    QMessageBox::StandardButton reply = QMessageBox::question(this,"Suppression","Voulez-vous vraiment supprimer cet employe definitivement de la base de donnée?", QMessageBox::Yes | QMessageBox::No);
+
+    if(reply==QMessageBox::Yes)
+    {
+        bool test=Empl.supprimer(cin);
+        if(test)//si requete executer ==>QMessageBox::information
+        {
+            QMessageBox::information(nullptr, QObject::tr("OK"),
+                     QObject::tr("Suppression effectué\n""Click Cancel to exit."),QMessageBox::Cancel);
+
+        }
+        else//si la requete non executer ==>QMessageBox::critical
+        {
+            QMessageBox::critical(nullptr,QObject::tr("Not OK"),
+                                   QObject::tr("Suppression non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+        }
+    }
+    else
+    {
+       qDebug()<<"Suppresion annulée!!";
+    }
+
+    //ui->tableView->show();
+
 }
 
 void Dialog_Employes::on_pushButton_clicked()

@@ -54,12 +54,12 @@ double Employe::get_salaire(){return salaire;}
 bool Employe::ajouter()
 {
     QSqlQuery query;
-    QString res = QString::number(cin);
+    //QString res = QString::number(cin);
 
     query.prepare("insert into employe (cin, nom, prenom)" "values(:cin, :nom, :prenom)");
 
     //Création des variables liées
-    query.bindValue(":cin",res);
+    query.bindValue(":cin",cin);
     query.bindValue(":nom",nom);
     query.bindValue(":prenom",prenom);
 
@@ -67,11 +67,25 @@ bool Employe::ajouter()
 
 }
 
-/*QSqlQueryModel * Employe::afficher()
+QSqlQueryModel * Employe::afficher()
 {
+    QSqlQueryModel *model =new QSqlQueryModel();
+
+    model->setQuery("select *from etudiant");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));
+
+    return model;
+}
+
+bool Employe::supprimer(int cin)
+{
+    QSqlQuery query;
+    //QString res=QString::number(cin);
+    query.prepare("Delete from employe where ID=:cin");
+    query.bindValue(":cin",cin);
+
+    return query.exec();
 
 }
-bool Employe::supprimer(int)
-{
-
-}*/

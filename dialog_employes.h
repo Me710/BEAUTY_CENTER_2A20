@@ -2,6 +2,7 @@
 #define DIALOG_EMPLOYES_H
 
 #include <QDialog>
+#include "employe.h"
 
 namespace Ui {
 class Dialog_Employes;
@@ -30,6 +31,7 @@ private slots:
 
 private:
     Ui::Dialog_Employes *ui;
+    Employe Empl;
 };
 
 #endif // DIALOG_EMPLOYES_H
