@@ -2,6 +2,7 @@
 #include "ui_dialog_employes.h"
 #include "employe.h"
 #include <QMessageBox>
+#include <QDebug>
 
 Dialog_Employes::Dialog_Employes(QWidget *parent) :
     QDialog(parent),
@@ -58,4 +59,18 @@ void Dialog_Employes::on_pushButton_modifier_clicked()
 void Dialog_Employes::on_pushButton_supprimer_clicked()
 {
     ui->label_menu_active->setText("SUPRESSION D'UN EMPLOYE");
+}
+
+void Dialog_Employes::on_pushButton_clicked()
+{
+    QMessageBox::StandardButton reply = QMessageBox::question(this,"Deconnection","Voulez-vous vraiment vous deconnecter?", QMessageBox::Yes | QMessageBox::No);
+
+    if(reply==QMessageBox::Yes)
+    {
+        QDialog::close();
+    }
+    else
+    {
+       qDebug()<<"Connexion restauré!!";
+    }
 }

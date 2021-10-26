@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButton_supprimer_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Dialog_Employes *ui;
 };
