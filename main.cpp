@@ -13,9 +13,10 @@ int main(int argc, char *argv[])
     test = c.createconnection();
 
     MainWindow w;
+     w.show();
     if(test)
     {
-        w.show();
+
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                 QObject::tr("conncetion sucessful.""Click Cancel to exit."),QMessageBox::Cancel);
     }
@@ -25,6 +26,6 @@ int main(int argc, char *argv[])
                 QObject::tr("conncetion failed.\n""Click Cancel to exit."),QMessageBox::Cancel);
     }
 
-    return 0;
+    return a.exec();
 
 }

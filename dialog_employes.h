@@ -18,6 +18,14 @@ public:
 private slots:
     void on_pushButton_valider_clicked();
 
+    void on_pushButton_ajouter_clicked();
+
+    void on_pushButton_afficher_clicked();
+
+    void on_pushButton_modifier_clicked();
+
+    void on_pushButton_supprimer_clicked();
+
 private:
     Ui::Dialog_Employes *ui;
 };

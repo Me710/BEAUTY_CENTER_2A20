@@ -38,7 +38,24 @@ void Dialog_Employes::on_pushButton_valider_clicked()
                                QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
     }
 
+}
 
+void Dialog_Employes::on_pushButton_ajouter_clicked()
+{
+    ui->label_menu_active->setText("AJOUT D'UN EMPLOYE");
+}
 
+void Dialog_Employes::on_pushButton_afficher_clicked()
+{
+    ui->label_menu_active->setText("AFFICHER LES EMPLOYES");
+}
 
+void Dialog_Employes::on_pushButton_modifier_clicked()
+{
+    ui->label_menu_active->setText("MODIFIER UN EMPLOYE");
+}
+
+void Dialog_Employes::on_pushButton_supprimer_clicked()
+{
+    ui->label_menu_active->setText("SUPRESSION D'UN EMPLOYE");
 }
