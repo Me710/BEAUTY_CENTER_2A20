@@ -69,9 +69,9 @@ bool Employe::ajouter()
 
 QSqlQueryModel * Employe::afficher()
 {
-    QSqlQueryModel *model =new QSqlQueryModel();
+    QSqlQueryModel * model =new QSqlQueryModel();
 
-    model->setQuery("select *from etudiant");
+    model->setQuery("select *from employe");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));
@@ -83,7 +83,7 @@ bool Employe::supprimer(int cin)
 {
     QSqlQuery query;
     //QString res=QString::number(cin);
-    query.prepare("Delete from employe where ID=:cin");
+    query.prepare("Delete from employe where cin=:cin");
     query.bindValue(":cin",cin);
 
     return query.exec();

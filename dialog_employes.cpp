@@ -9,6 +9,7 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui(new Ui::Dialog_Employes)
 {
     ui->setupUi(this);
+    ui->tableView->setModel(Empl.afficher());
 }
 
 Dialog_Employes::~Dialog_Employes()
@@ -49,7 +50,7 @@ void Dialog_Employes::on_pushButton_ajouter_clicked()
 
 void Dialog_Employes::on_pushButton_afficher_clicked()
 {
-    ui->label_menu_active->setText("AFFICHER LES EMPLOYES");
+    //ui->label_menu_active->setText("AFFICHER LES EMPLOYES");
     ui->tableView->setModel(Empl.afficher());
 
 }
@@ -61,13 +62,13 @@ void Dialog_Employes::on_pushButton_modifier_clicked()
 
 void Dialog_Employes::on_pushButton_supprimer_clicked()
 {
-    //ui->label_menu_active->setText("SUPRESSION D'UN EMPLOYE");
     int cin=ui->lineEdit_id_supprimer->text().toInt();
     QMessageBox::StandardButton reply = QMessageBox::question(this,"Suppression","Voulez-vous vraiment supprimer cet employe definitivement de la base de donnée?", QMessageBox::Yes | QMessageBox::No);
 
     if(reply==QMessageBox::Yes)
     {
         bool test=Empl.supprimer(cin);
+        ui->tableView->setModel(Empl.afficher());
         if(test)//si requete executer ==>QMessageBox::information
         {
             QMessageBox::information(nullptr, QObject::tr("OK"),
