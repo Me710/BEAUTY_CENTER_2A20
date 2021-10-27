@@ -36,7 +36,7 @@ public:
     void set_prenom(QString);
     void set_nom(QString);
     void set_mail(QString);
-    void set_tel(long);
+    void set_tel(int);
     void set_fonction(QString);
     void set_sexe(char);
     void set_adresse(QString);
@@ -48,7 +48,7 @@ public:
     QString get_prenom();
     QString get_nom();
     QString get_mail();
-    long get_tel();
+    int get_tel();
     QString get_fonction();
     char get_sexe();
     QString get_adresse();
@@ -58,6 +58,8 @@ public:
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);
+    QSqlQueryModel * rechercher(int);
+    bool modifier(int);
 };
 
 

@@ -17,7 +17,7 @@ Dialog_Employes::~Dialog_Employes()
     delete ui;
 }
 
-void Dialog_Employes::on_pushButton_valider_clicked()
+void Dialog_Employes::on_pushButton_valider_ajout_clicked()
 {
     //Recuperation des informations saisies dans les 3 champs
     int cin=ui->lineEdit_cin->text().toInt();
@@ -45,22 +45,42 @@ void Dialog_Employes::on_pushButton_valider_clicked()
 
 void Dialog_Employes::on_pushButton_ajouter_clicked()
 {
-    ui->label_menu_active->setText("AJOUT D'UN EMPLOYE");
 }
 
 void Dialog_Employes::on_pushButton_afficher_clicked()
 {
-    //ui->label_menu_active->setText("AFFICHER LES EMPLOYES");
-    ui->tableView->setModel(Empl.afficher());
-
+    //ui->tableView->setModel(Empl.afficher());
 }
 
 void Dialog_Employes::on_pushButton_modifier_clicked()
 {
-    ui->label_menu_active->setText("MODIFIER UN EMPLOYE");
 }
 
 void Dialog_Employes::on_pushButton_supprimer_clicked()
+{
+    //ui->tabWidget->show();//addTab(new QWidget(), "Suppresion");
+}
+
+void Dialog_Employes::on_pushButton_deconnection_clicked()
+{
+    QMessageBox::StandardButton reply = QMessageBox::question(this,"Deconnection","Voulez-vous vraiment vous deconnecter?", QMessageBox::Yes | QMessageBox::No);
+
+    if(reply==QMessageBox::Yes)
+    {
+        QDialog::close();
+    }
+    else
+    {
+       qDebug()<<"Connexion restauré!!";
+    }
+}
+
+void Dialog_Employes::on_pushButton_valider_modification_clicked()
+{
+
+}
+
+void Dialog_Employes::on_pushButton_valider_suppression_clicked()
 {
     int cin=ui->lineEdit_id_supprimer->text().toInt();
     QMessageBox::StandardButton reply = QMessageBox::question(this,"Suppression","Voulez-vous vraiment supprimer cet employe definitivement de la base de donnée?", QMessageBox::Yes | QMessageBox::No);
@@ -87,19 +107,11 @@ void Dialog_Employes::on_pushButton_supprimer_clicked()
     }
 
     //ui->tableView->show();
-
 }
 
-void Dialog_Employes::on_pushButton_clicked()
-{
-    QMessageBox::StandardButton reply = QMessageBox::question(this,"Deconnection","Voulez-vous vraiment vous deconnecter?", QMessageBox::Yes | QMessageBox::No);
 
-    if(reply==QMessageBox::Yes)
-    {
-        QDialog::close();
-    }
-    else
-    {
-       qDebug()<<"Connexion restauré!!";
-    }
+void Dialog_Employes::on_pushButton_verifier_supprimer_clicked()
+{
+    int cin=ui->lineEdit_id_supprimer->text().toInt();
+    ui->tableView_supprimer->setModel(Empl.rechercher(cin));
 }

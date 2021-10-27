@@ -17,7 +17,6 @@ public:
     ~Dialog_Employes();
 
 private slots:
-    void on_pushButton_valider_clicked();
 
     void on_pushButton_ajouter_clicked();
 
@@ -27,7 +26,15 @@ private slots:
 
     void on_pushButton_supprimer_clicked();
 
-    void on_pushButton_clicked();
+    void on_pushButton_deconnection_clicked();
+
+    void on_pushButton_valider_modification_clicked();
+
+    void on_pushButton_valider_suppression_clicked();
+
+    void on_pushButton_valider_ajout_clicked();
+
+    void on_pushButton_verifier_supprimer_clicked();
 
 private:
     Ui::Dialog_Employes *ui;

@@ -61,7 +61,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="pushButton_deconnection">
      <property name="geometry">
       <rect>
        <x>809</x>
@@ -113,12 +113,12 @@ color: rgb(255, 255, 255);</string>
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>3</number>
      </property>
      <property name="tabsClosable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="tab_ajouter">
       <attribute name="title">
        <string>AJOUTER</string>
       </attribute>
@@ -275,7 +275,7 @@ color: rgb(255, 255, 255);</string>
         </item>
        </layout>
       </widget>
-      <widget class="QPushButton" name="pushButton_valider">
+      <widget class="QPushButton" name="pushButton_valider_ajout">
        <property name="geometry">
         <rect>
          <x>290</x>
@@ -342,10 +342,10 @@ color: rgb(247, 65, 173);</string>
       </widget>
       <zorder>label_3</zorder>
       <zorder>layoutWidget</zorder>
-      <zorder>pushButton_valider</zorder>
+      <zorder>pushButton_valider_ajout</zorder>
       <zorder>label_menu_active</zorder>
      </widget>
-     <widget class="QWidget" name="tab_3">
+     <widget class="QWidget" name="tab_afficher">
       <attribute name="title">
        <string>AFFICHER</string>
       </attribute>
@@ -393,8 +393,8 @@ color: rgb(247, 65, 173);</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>311</width>
-          <height>35</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="label">
@@ -525,7 +525,7 @@ background-color: rgb(255, 255, 255);</string>
       <zorder>tableView</zorder>
       <zorder>pushButton_pdf</zorder>
      </widget>
-     <widget class="QWidget" name="tab_4">
+     <widget class="QWidget" name="tab_modifier">
       <attribute name="title">
        <string>MODIFIER</string>
       </attribute>
@@ -571,7 +571,7 @@ color: rgb(247, 65, 173);</string>
          <x>70</x>
          <y>160</y>
          <width>341</width>
-         <height>271</height>
+         <height>300</height>
         </rect>
        </property>
        <layout class="QFormLayout" name="formLayout_2">
@@ -740,21 +740,24 @@ color: rgb(247, 65, 173);</string>
         </item>
        </layout>
       </widget>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="pushButton_valider_modification">
        <property name="geometry">
         <rect>
          <x>330</x>
-         <y>460</y>
+         <y>470</y>
          <width>80</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="text">
         <string>VALIDER</string>
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="tab_5">
+     <widget class="QWidget" name="tab_supprimer">
       <attribute name="title">
        <string>SUPPRIMER</string>
       </attribute>
@@ -794,7 +797,7 @@ color: rgb(247, 65, 173);</string>
         <string>SUPPRIMER UN EMPLOYE</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="pushButton_verifier_supprimer">
        <property name="geometry">
         <rect>
          <x>340</x>
@@ -803,11 +806,14 @@ color: rgb(247, 65, 173);</string>
          <height>22</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Vérifier</string>
        </property>
       </widget>
-      <widget class="QTableView" name="tableView_3">
+      <widget class="QTableView" name="tableView_supprimer">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -817,7 +823,7 @@ color: rgb(247, 65, 173);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="pushButton_valider_suppression">
        <property name="geometry">
         <rect>
          <x>340</x>
@@ -826,11 +832,14 @@ color: rgb(247, 65, 173);</string>
          <height>22</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>VALIDER</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -853,7 +862,7 @@ color: rgb(247, 65, 173);</string>
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="tab_6">
+     <widget class="QWidget" name="tab_mailing">
       <attribute name="title">
        <string>MAILING</string>
       </attribute>
@@ -902,11 +911,14 @@ color: rgb(247, 65, 173);</string>
          <height>22</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>ENVOYER</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -938,6 +950,9 @@ color: rgb(247, 65, 173);</string>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_3">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="text">
            <string>Joindre un fichier</string>
           </property>
@@ -1051,7 +1066,7 @@ background-color: rgb(170, 0, 0);</string>
     </widget>
     <zorder>label</zorder>
     <zorder>lineEdit</zorder>
-    <zorder>pushButton</zorder>
+    <zorder>pushButton_deconnection</zorder>
     <zorder>tabWidget</zorder>
     <zorder>label_16</zorder>
     <zorder>splitter</zorder>
