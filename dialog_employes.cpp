@@ -17,15 +17,24 @@ Dialog_Employes::~Dialog_Employes()
     delete ui;
 }
 
+
 void Dialog_Employes::on_pushButton_valider_ajout_clicked()
 {
     //Recuperation des informations saisies dans les 3 champs
     int cin=ui->lineEdit_cin->text().toInt();
     QString nom=ui->lineEdit_nom->text();
     QString prenom=ui->lineEdit_prenom->text();
+    QString mail=ui->lineEdit_mail->text();
+    QString adresse=ui->lineEdit_adresse->text();
+    int tel=ui->lineEdit_tel->text().toInt();
+    int age=ui->lineEdit_age->text().toInt();
+    QString sexe="Homme";
+    if(ui->radioButton_femme->isCheckable()){sexe= "Femme";}
+    else if(ui->radioButton_homme->isCheckable()){sexe= "Homme";}
+    int salaire=ui->lineEdit_salaire->text().toInt();
+    QString fonction=ui->comboBox_fonction->currentText();
 
-
-    Employe E(cin,nom,prenom);
+    Employe E(cin,nom,prenom,mail,tel,fonction,sexe,adresse,salaire,age);
     bool test=E.ajouter();
 
     if(test)//si requete executer ==>QMessageBox::information

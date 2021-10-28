@@ -15,20 +15,18 @@ private:
     QString prenom;
     QString nom;
     QString mail;
-    long tel;
+    int tel;
     QString fonction;
-    char sexe;
+    QString sexe;
     QString adresse;
-    double salaire;
-    int jourNais;
-    int moisNais;
-    int anneeNais;
+    int salaire;
+    int age;
+
     //double revenue;
 
 public:
      Employe();//Constructeur par defaut
-     Employe(int,QString,QString);
-     Employe(int,QString,QString,QString,long,QString,char,QString,double);
+     Employe(int,QString,QString,QString,int,QString,QString,QString,int,int);
     ~Employe();//Destructeur
 
      //Mutateurs
@@ -38,9 +36,9 @@ public:
     void set_mail(QString);
     void set_tel(int);
     void set_fonction(QString);
-    void set_sexe(char);
+    void set_sexe(QString);
     void set_adresse(QString);
-    void set_salaire(double);
+    void set_salaire(int);
 
 
     //Acesseurs
@@ -50,9 +48,9 @@ public:
     QString get_mail();
     int get_tel();
     QString get_fonction();
-    char get_sexe();
+    QString get_sexe();
     QString get_adresse();
-    double get_salaire();
+    int get_salaire();
 
     //CRUDs
     bool ajouter();

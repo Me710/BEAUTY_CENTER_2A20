@@ -81,39 +81,20 @@ color: rgb(255, 255, 255);</string>
       <string>Deconnection</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>0</y>
-       <width>931</width>
-       <height>681</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../../Downloads/Pink and Purple Beauty and Fashion Instagram Post(2).png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QTabWidget" name="tabWidget">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>130</y>
-       <width>511</width>
-       <height>541</height>
+       <x>230</x>
+       <y>150</y>
+       <width>541</width>
+       <height>521</height>
       </rect>
      </property>
      <property name="tabPosition">
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <property name="tabsClosable">
       <bool>true</bool>
@@ -127,8 +108,8 @@ color: rgb(255, 255, 255);</string>
         <rect>
          <x>70</x>
          <y>100</y>
-         <width>341</width>
-         <height>371</height>
+         <width>371</width>
+         <height>361</height>
         </rect>
        </property>
        <layout class="QFormLayout" name="formLayout">
@@ -177,12 +158,12 @@ color: rgb(255, 255, 255);</string>
            <string>SEXE</string>
           </property>
           <property name="buddy">
-           <cstring>radioButton</cstring>
+           <cstring>radioButton_homme</cstring>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QRadioButton" name="radioButton">
+         <widget class="QRadioButton" name="radioButton_homme">
           <property name="text">
            <string>HOMME</string>
           </property>
@@ -191,15 +172,9 @@ color: rgb(255, 255, 255);</string>
         <item row="5" column="0">
          <widget class="QLabel" name="label_8">
           <property name="text">
-           <string>DATE NAIS</string>
-          </property>
-          <property name="buddy">
-           <cstring>dateEdit_nais</cstring>
+           <string>AGE</string>
           </property>
          </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QDateEdit" name="dateEdit_nais"/>
         </item>
         <item row="6" column="0">
          <widget class="QLabel" name="label_9">
@@ -258,19 +233,40 @@ color: rgb(255, 255, 255);</string>
           <property name="text">
            <string>FONCTION</string>
           </property>
-          <property name="buddy">
-           <cstring>lineEdit_revenue</cstring>
-          </property>
          </widget>
         </item>
-        <item row="10" column="1">
-         <widget class="QLineEdit" name="lineEdit_revenue"/>
-        </item>
         <item row="4" column="1">
-         <widget class="QRadioButton" name="radioButton_2">
+         <widget class="QRadioButton" name="radioButton_femme">
           <property name="text">
            <string>FEMME</string>
           </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="lineEdit_age"/>
+        </item>
+        <item row="10" column="1">
+         <widget class="QComboBox" name="comboBox_fonction">
+          <item>
+           <property name="text">
+            <string>coiffure</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pedicure/manicure</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>soins visage</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>massage</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>
@@ -278,8 +274,8 @@ color: rgb(255, 255, 255);</string>
       <widget class="QPushButton" name="pushButton_valider_ajout">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>480</y>
+         <x>320</x>
+         <y>460</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -304,25 +300,6 @@ background-color: rgb(85, 170, 0);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="label_3">
-       <property name="geometry">
-        <rect>
-         <x>-80</x>
-         <y>0</y>
-         <width>611</width>
-         <height>531</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../../Downloads/cadre.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_menu_active">
        <property name="geometry">
         <rect>
@@ -340,7 +317,26 @@ color: rgb(247, 65, 173);</string>
         <string>AJOUT D'UN EMPLOYE</string>
        </property>
       </widget>
-      <zorder>label_3</zorder>
+      <widget class="QLabel" name="label_cadre_5">
+       <property name="geometry">
+        <rect>
+         <x>-100</x>
+         <y>0</y>
+         <width>681</width>
+         <height>511</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>C:/Users/PMS-BLA-5-Chloe/Downloads/cadre.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>label_cadre_5</zorder>
       <zorder>layoutWidget</zorder>
       <zorder>pushButton_valider_ajout</zorder>
       <zorder>label_menu_active</zorder>
@@ -354,8 +350,8 @@ color: rgb(247, 65, 173);</string>
         <rect>
          <x>60</x>
          <y>180</y>
-         <width>341</width>
-         <height>301</height>
+         <width>401</width>
+         <height>281</height>
         </rect>
        </property>
       </widget>
@@ -400,7 +396,7 @@ color: rgb(247, 65, 173);</string>
         <attribute name="label">
          <string>RECHERCHER UN EMPLOYE</string>
         </attribute>
-        <widget class="QWidget" name="layoutWidget">
+        <widget class="QWidget" name="layoutWidget_1">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -484,8 +480,8 @@ background-color: rgb(255, 255, 255);</string>
       <widget class="QPushButton" name="pushButton_pdf">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>490</y>
+         <x>350</x>
+         <y>470</y>
          <width>111</width>
          <height>21</height>
         </rect>
@@ -500,26 +496,26 @@ background-color: rgb(255, 255, 255);</string>
         <string>GENERER UN PDF</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="label_cadre_4">
        <property name="geometry">
         <rect>
-         <x>-80</x>
+         <x>-100</x>
          <y>0</y>
-         <width>611</width>
-         <height>531</height>
+         <width>681</width>
+         <height>511</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Downloads/cadre.png</pixmap>
+        <pixmap>C:/Users/PMS-BLA-5-Chloe/Downloads/cadre.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
       </widget>
-      <zorder>label_4</zorder>
+      <zorder>label_cadre_4</zorder>
       <zorder>label_menu_active_2</zorder>
       <zorder>toolBox</zorder>
       <zorder>tableView</zorder>
@@ -529,25 +525,6 @@ background-color: rgb(255, 255, 255);</string>
       <attribute name="title">
        <string>MODIFIER</string>
       </attribute>
-      <widget class="QLabel" name="label_12">
-       <property name="geometry">
-        <rect>
-         <x>-80</x>
-         <y>0</y>
-         <width>611</width>
-         <height>531</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../../Downloads/cadre.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_menu_active_3">
        <property name="geometry">
         <rect>
@@ -586,7 +563,7 @@ color: rgb(247, 65, 173);</string>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_nom_2"/>
+         <widget class="QLineEdit" name="lineEdit_nom_modif"/>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_22">
@@ -599,7 +576,7 @@ color: rgb(247, 65, 173);</string>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_prenom_2"/>
+         <widget class="QLineEdit" name="lineEdit_prenom_modif"/>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_23">
@@ -612,7 +589,7 @@ color: rgb(247, 65, 173);</string>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_cin_2"/>
+         <widget class="QLineEdit" name="lineEdit_cin_modif"/>
         </item>
         <item row="3" column="0">
          <widget class="QLabel" name="label_24">
@@ -620,7 +597,7 @@ color: rgb(247, 65, 173);</string>
            <string>SEXE</string>
           </property>
           <property name="buddy">
-           <cstring>radioButton</cstring>
+           <cstring>radioButton_homme</cstring>
           </property>
          </widget>
         </item>
@@ -634,15 +611,9 @@ color: rgb(247, 65, 173);</string>
         <item row="5" column="0">
          <widget class="QLabel" name="label_25">
           <property name="text">
-           <string>DATE NAIS</string>
-          </property>
-          <property name="buddy">
-           <cstring>dateEdit_nais</cstring>
+           <string>AGE</string>
           </property>
          </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QDateEdit" name="dateEdit_nais_2"/>
         </item>
         <item row="6" column="0">
          <widget class="QLabel" name="label_26">
@@ -655,7 +626,7 @@ color: rgb(247, 65, 173);</string>
          </widget>
         </item>
         <item row="6" column="1">
-         <widget class="QLineEdit" name="lineEdit_tel_2"/>
+         <widget class="QLineEdit" name="lineEdit_tel_modif"/>
         </item>
         <item row="7" column="0">
          <widget class="QLabel" name="label_27">
@@ -668,7 +639,7 @@ color: rgb(247, 65, 173);</string>
          </widget>
         </item>
         <item row="7" column="1">
-         <widget class="QLineEdit" name="lineEdit_adresse_2"/>
+         <widget class="QLineEdit" name="lineEdit_adresse_modif"/>
         </item>
         <item row="8" column="0">
          <widget class="QLabel" name="label_28">
@@ -681,7 +652,7 @@ color: rgb(247, 65, 173);</string>
          </widget>
         </item>
         <item row="8" column="1">
-         <widget class="QLineEdit" name="lineEdit_mail_2"/>
+         <widget class="QLineEdit" name="lineEdit_mail_modif"/>
         </item>
         <item row="9" column="0">
          <widget class="QLabel" name="label_29">
@@ -694,20 +665,14 @@ color: rgb(247, 65, 173);</string>
          </widget>
         </item>
         <item row="9" column="1">
-         <widget class="QLineEdit" name="lineEdit_salaire_2"/>
+         <widget class="QLineEdit" name="lineEdit_salaire_modif"/>
         </item>
         <item row="10" column="0">
          <widget class="QLabel" name="label_fonction_2">
           <property name="text">
            <string>FONCTION</string>
           </property>
-          <property name="buddy">
-           <cstring>lineEdit_revenue</cstring>
-          </property>
          </widget>
-        </item>
-        <item row="10" column="1">
-         <widget class="QLineEdit" name="lineEdit_revenue_2"/>
         </item>
         <item row="4" column="1">
          <widget class="QRadioButton" name="radioButton_4">
@@ -715,6 +680,12 @@ color: rgb(247, 65, 173);</string>
            <string>FEMME</string>
           </property>
          </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="lineEdit_age_modif"/>
+        </item>
+        <item row="10" column="1">
+         <widget class="QComboBox" name="comboBox_fonction_modif"/>
         </item>
        </layout>
       </widget>
@@ -756,30 +727,35 @@ color: rgb(247, 65, 173);</string>
         <string>VALIDER</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="tab_supprimer">
-      <attribute name="title">
-       <string>SUPPRIMER</string>
-      </attribute>
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="label_cadre_3">
        <property name="geometry">
         <rect>
-         <x>-80</x>
+         <x>-100</x>
          <y>0</y>
-         <width>611</width>
-         <height>531</height>
+         <width>681</width>
+         <height>511</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Downloads/cadre.png</pixmap>
+        <pixmap>C:/Users/PMS-BLA-5-Chloe/Downloads/cadre.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
       </widget>
+      <zorder>label_cadre_3</zorder>
+      <zorder>label_menu_active_3</zorder>
+      <zorder>layoutWidget_2</zorder>
+      <zorder>layoutWidget_3</zorder>
+      <zorder>pushButton_valider_modification</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_supprimer">
+      <attribute name="title">
+       <string>SUPPRIMER</string>
+      </attribute>
       <widget class="QLabel" name="label_menu_active_4">
        <property name="geometry">
         <rect>
@@ -800,8 +776,8 @@ color: rgb(247, 65, 173);</string>
       <widget class="QPushButton" name="pushButton_verifier_supprimer">
        <property name="geometry">
         <rect>
-         <x>340</x>
-         <y>170</y>
+         <x>380</x>
+         <y>180</y>
          <width>80</width>
          <height>22</height>
         </rect>
@@ -816,9 +792,9 @@ color: rgb(247, 65, 173);</string>
       <widget class="QTableView" name="tableView_supprimer">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>220</y>
-         <width>361</width>
+         <x>50</x>
+         <y>240</y>
+         <width>411</width>
          <height>81</height>
         </rect>
        </property>
@@ -826,7 +802,7 @@ color: rgb(247, 65, 173);</string>
       <widget class="QPushButton" name="pushButton_valider_suppression">
        <property name="geometry">
         <rect>
-         <x>340</x>
+         <x>380</x>
          <y>370</y>
          <width>80</width>
          <height>22</height>
@@ -839,13 +815,13 @@ color: rgb(247, 65, 173);</string>
         <string>VALIDER</string>
        </property>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="layoutWidget_4">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>130</y>
-         <width>361</width>
-         <height>24</height>
+         <x>50</x>
+         <y>120</y>
+         <width>411</width>
+         <height>51</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -861,30 +837,36 @@ color: rgb(247, 65, 173);</string>
         </item>
        </layout>
       </widget>
-     </widget>
-     <widget class="QWidget" name="tab_mailing">
-      <attribute name="title">
-       <string>MAILING</string>
-      </attribute>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_cadre_2">
        <property name="geometry">
         <rect>
-         <x>-80</x>
+         <x>-100</x>
          <y>0</y>
-         <width>611</width>
-         <height>531</height>
+         <width>681</width>
+         <height>511</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Downloads/cadre.png</pixmap>
+        <pixmap>C:/Users/PMS-BLA-5-Chloe/Downloads/cadre.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
       </widget>
+      <zorder>label_cadre_2</zorder>
+      <zorder>label_menu_active_4</zorder>
+      <zorder>pushButton_verifier_supprimer</zorder>
+      <zorder>tableView_supprimer</zorder>
+      <zorder>pushButton_valider_suppression</zorder>
+      <zorder>layoutWidget_4</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_mailing">
+      <attribute name="title">
+       <string>MAILING</string>
+      </attribute>
       <widget class="QLabel" name="label_menu_active_5">
        <property name="geometry">
         <rect>
@@ -918,7 +900,7 @@ color: rgb(247, 65, 173);</string>
         <string>ENVOYER</string>
        </property>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="layoutWidget_5">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -960,6 +942,29 @@ color: rgb(247, 65, 173);</string>
         </item>
        </layout>
       </widget>
+      <widget class="QLabel" name="label_cadre_1">
+       <property name="geometry">
+        <rect>
+         <x>-100</x>
+         <y>0</y>
+         <width>681</width>
+         <height>511</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>C:/Users/PMS-BLA-5-Chloe/Downloads/cadre.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>label_cadre_1</zorder>
+      <zorder>label_menu_active_5</zorder>
+      <zorder>pushButton_4</zorder>
+      <zorder>layoutWidget_5</zorder>
      </widget>
     </widget>
     <widget class="QSplitter" name="splitter">
@@ -1026,51 +1031,30 @@ background-color: rgb(170, 0, 0);</string>
       </property>
      </widget>
     </widget>
-    <widget class="QLabel" name="label_16">
+    <widget class="QLabel" name="label_fond">
      <property name="geometry">
       <rect>
-       <x>780</x>
-       <y>160</y>
-       <width>231</width>
-       <height>321</height>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>711</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../Downloads/cadre2.png</pixmap>
+      <pixmap>C:/Users/PMS-BLA-5-Chloe/Downloads/Pink and Purple Beauty and Fashion Instagram Post(2).png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>790</x>
-       <y>540</y>
-       <width>211</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../../Downloads/cadre2.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <zorder>label</zorder>
+    <zorder>label_fond</zorder>
     <zorder>lineEdit</zorder>
     <zorder>pushButton_deconnection</zorder>
     <zorder>tabWidget</zorder>
-    <zorder>label_16</zorder>
     <zorder>splitter</zorder>
-    <zorder>label_17</zorder>
     <zorder>pushButton_mailing</zorder>
    </widget>
    <widget class="QWidget" name="tab_2">
