@@ -42,7 +42,14 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
         ui->tableView->setModel(Empl.afficher());
         QMessageBox::information(nullptr, QObject::tr("OK"),
                  QObject::tr("Ajout effectué\n""Click Cancel to exit."),QMessageBox::Cancel);
-
+        ui->lineEdit_cin->clear();
+        ui->lineEdit_nom->clear();
+        ui->lineEdit_prenom->clear();
+        ui->lineEdit_mail->clear();
+        ui->lineEdit_adresse->clear();
+        ui->lineEdit_tel->clear();
+        ui->lineEdit_age->clear();
+        ui->lineEdit_salaire->clear();
     }
     else//si la requete non executer ==>QMessageBox::critical
     {
