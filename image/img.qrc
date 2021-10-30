@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>bouton.png</file>
+        <file>button.png</file>
+        <file>fleche.png</file>
+        <file>gmail.png</file>
+        <file>img.qrc</file>
+        <file>loginImg1.png</file>
+        <file>modifier.png</file>
+        <file>notification.png</file>
+        <file>search.png</file>
+        <file>supp.png</file>
+        <file>valid.png</file>
+    </qresource>
+</RCC>
