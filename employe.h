@@ -11,7 +11,7 @@ using namespace std;
 class Employe
 {
 private:
-    int cin;
+    int cin_e;
     QString prenom;
     QString nom;
     QString mail;
@@ -57,7 +57,7 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     QSqlQueryModel * rechercher(int);
-    bool modifier();
+    bool modifier(int);
 };
 
 

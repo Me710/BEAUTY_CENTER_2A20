@@ -9,7 +9,7 @@ using namespace std;
 Employe::Employe(){}
 Employe::Employe(int cin,QString nom,QString prenom,QString mail,int tel,QString fonction,QString sexe,QString adresse,int salaire,int age)
 {
-    this->cin=cin;
+    this->cin_e=cin;
     this->nom=nom;
     this->prenom=prenom;
     this->mail=mail;
@@ -25,7 +25,7 @@ Employe::Employe(int cin,QString nom,QString prenom,QString mail,int tel,QString
 Employe::~Employe(){}
 
 //implementation des mutateurs
-void Employe::set_cin(int cin){this->cin=cin;}
+void Employe::set_cin(int cin_e){this->cin_e=cin_e;}
 void Employe::set_prenom(QString prenom){this->prenom=prenom;}
 void Employe::set_nom(QString nom){this->nom=nom;}
 void Employe::set_mail(QString mail){this->mail=mail;}
@@ -36,7 +36,7 @@ void Employe::set_adresse(QString adresse){this->adresse=adresse;}
 void Employe::set_salaire(int salaire){this->salaire=salaire;}
 
 //implementation des acesseurs
-int Employe::get_cin(){return cin;}
+int Employe::get_cin(){return cin_e;}
 QString Employe::get_prenom(){return prenom;}
 QString Employe::get_nom(){return nom;}
 QString Employe::get_mail(){return mail;}
@@ -52,10 +52,10 @@ bool Employe::ajouter()
     QSqlQuery query;
     //QString res_ = QString::number(cin);
 
-    query.prepare("insert into employe (cin, nom, prenom, mail, adresse, tel, fonction, sexe, salaire, age)" "values(:cin, :nom, :prenom, :mail, :adresse, :tel, :fonction, :sexe, :salaire, :age)");
+    query.prepare("insert into employe (cin_e, nom, prenom, mail, adresse, tel, fonction, sexe, salaire, age)" "values(:cin_e, :nom, :prenom, :mail, :adresse, :tel, :fonction, :sexe, :salaire, :age)");
 
     //Création des variables liées
-    query.bindValue(":cin",cin);
+    query.bindValue(":cin_e",cin_e);
     query.bindValue(":nom",nom);
     query.bindValue(":prenom",prenom);
     query.bindValue(":mail",mail);
@@ -77,7 +77,7 @@ QSqlQueryModel * Employe::afficher()
     QSqlQueryModel * model =new QSqlQueryModel();
 
     model->setQuery("select *from employe");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("cin_e"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));
 
@@ -88,8 +88,8 @@ bool Employe::supprimer(int cin)
 {
     QSqlQuery query;
     //QString res=QString::number(cin);
-    query.prepare("Delete from employe where cin=:cin");
-    query.bindValue(":cin",cin);
+    query.prepare("Delete from employe where cin=:cin_e");
+    query.bindValue(":cin_e",cin);
 
     return query.exec();
 
@@ -100,33 +100,24 @@ QSqlQueryModel * Employe::rechercher(int cin)
     QSqlQueryModel * model =new QSqlQueryModel();
     //QString res=QString::number(cin);
     QSqlQuery query;
-    query.prepare("select *from employe where cin=:cin");
-    query.bindValue(":cin",cin);
+    query.prepare("select *from employe where cin=:cin_e");
+    query.bindValue(":cin_e",cin);
     query.exec();
 
     model->setQuery(query);
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("cin_e"));
 
     return model;
 }
 
-/*bool Employe::modifier()
+/*bool Employe::modifier(int cin)
 {
+    QSqlQueryModel * model;
     QSqlQuery query;
-    query.prepare("UPDATE employe SET cin=:cin, nom=:nom, prenom=:prenom, mail=:mail, adresse=:adresse, tel=:tel, fonction=:fonction, sexe=:sexe, salaire=:salaire, age=:age");
 
-    query.bindValue(":cin",cin);
-    query.bindValue(":nom",nom);
-    query.bindValue(":prenom",prenom);
-    query.bindValue(":mail",mail);
-    query.bindValue(":adresse",adresse);
-    query.bindValue(":tel",tel);
-    query.bindValue(":sexe",sexe);
-    query.bindValue(":salaire",salaire);
-    query.bindValue(":age",age);
-    query.bindValue(":fonction",fonction);
+    model = rechercher(cin);
 
-    return query.exec();
+
 
 }*/
