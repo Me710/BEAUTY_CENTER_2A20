@@ -36,6 +36,8 @@ private slots:
 
     void on_pushButton_verifier_supprimer_clicked();
 
+    void on_pushButton_mailing_clicked();
+
 private:
     Ui::Dialog_Employes *ui;
     Employe Empl;

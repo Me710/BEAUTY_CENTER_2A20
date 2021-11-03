@@ -111,13 +111,21 @@ QSqlQueryModel * Employe::rechercher(int cin_e)
     return model;
 }
 
-/*bool Employe::modifier(int cin)
+bool Employe::modifier()
 {
-    QSqlQueryModel * model;
     QSqlQuery query;
+    query.prepare("update employe set cin_e=:cin_e, nom=:nom, prenom=:prenom, mail=:mail, adresse=:adresse, tel=:tel, fonction=:fonction, sexe=:sex, salaire=:salaire, age=:age where cin_e=:cin_e");
 
-    model = rechercher(cin);
+    query.bindValue(":cin_e",cin_e);
+    query.bindValue(":nom",nom);
+    query.bindValue(":prenom",prenom);
+    query.bindValue(":mail",mail);
+    query.bindValue(":adresse",adresse);
+    query.bindValue(":tel",tel);
+    query.bindValue(":sexe",sexe);
+    query.bindValue(":salaire",salaire);
+    query.bindValue(":age",age);
+    query.bindValue(":fonction",fonction);
 
-
-
-}*/
+    return query.exec();
+}

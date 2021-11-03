@@ -151,6 +151,10 @@ color: rgb(107, 35, 131);</string>
      <property name="text">
       <string>SE CONNECTER</string>
      </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../resources/login.png</normaloff>../resources/login.png</iconset>
+     </property>
     </widget>
    </widget>
    <widget class="QLabel" name="label_5">
