@@ -77,36 +77,36 @@ QSqlQueryModel * Employe::afficher()
     QSqlQueryModel * model =new QSqlQueryModel();
 
     model->setQuery("select *from employe");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("cin_e"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
+    /*model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));*/
 
     return model;
 }
 
-bool Employe::supprimer(int cin)
+bool Employe::supprimer(int cin_e)
 {
     QSqlQuery query;
     //QString res=QString::number(cin);
-    query.prepare("Delete from employe where cin=:cin_e");
-    query.bindValue(":cin_e",cin);
+    query.prepare("Delete from employe where cin_e=:cin_e");
+    query.bindValue(":cin_e",cin_e);
 
     return query.exec();
 
 }
 
-QSqlQueryModel * Employe::rechercher(int cin)
+QSqlQueryModel * Employe::rechercher(int cin_e)
 {
     QSqlQueryModel * model =new QSqlQueryModel();
     //QString res=QString::number(cin);
     QSqlQuery query;
-    query.prepare("select *from employe where cin=:cin_e");
-    query.bindValue(":cin_e",cin);
+    query.prepare("select *from employe where cin_e=:cin_e");
+    query.bindValue(":cin_e",cin_e);
     query.exec();
 
     model->setQuery(query);
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("cin_e"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
 
     return model;
 }

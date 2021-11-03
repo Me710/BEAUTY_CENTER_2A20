@@ -56,8 +56,8 @@ public:
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);
-    QSqlQueryModel * rechercher(int);
     bool modifier(int);
+    QSqlQueryModel * rechercher(int);
 };
 
 
