@@ -9,6 +9,14 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui(new Ui::Dialog_Employes)
 {
     ui->setupUi(this);
+    ui->lineEdit_cin->setValidator(new QIntValidator(0,99999999,this));
+    ui->lineEdit_cin_modif->setValidator(new QIntValidator(0,99999999,this));
+    ui->lineEdit_age->setValidator(new QIntValidator(0,99,this));
+    ui->lineEdit_age_modif->setValidator(new QIntValidator(0,99,this));
+    ui->lineEdit_tel_modif->setValidator(new QIntValidator(0,999999999,this));
+    ui->lineEdit_tel->setValidator(new QIntValidator(0,999999999,this));
+    ui->lineEdit_salaire_modif->setValidator(new QIntValidator(0,99999,this));
+    ui->lineEdit_salaire->setValidator(new QIntValidator(0,99999,this));
     ui->tableView->setModel(Empl.afficher());
 }
 

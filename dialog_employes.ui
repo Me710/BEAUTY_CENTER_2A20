@@ -551,8 +551,8 @@ color: rgb(247, 65, 173);</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>471</width>
-          <height>45</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="label">
