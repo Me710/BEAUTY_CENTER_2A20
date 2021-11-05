@@ -18,6 +18,10 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui->lineEdit_salaire_modif->setValidator(new QIntValidator(0,99999,this));
     ui->lineEdit_salaire->setValidator(new QIntValidator(0,99999,this));
     ui->tableView->setModel(Empl.afficher());
+    ui->listView->setModel(Empl.afficherValeur("prenom"));
+    ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
+    ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+    ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
 }
 
 Dialog_Employes::~Dialog_Employes()
@@ -46,8 +50,10 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
     if(test)//si requete executer ==>QMessageBox::information
     {
         ui->tableView->setModel(Empl.afficher());
-        ui->listView->setModel(Empl.afficherPrenom());
-        ui->comboBox_cin_modif->setModel(Empl.afficherId_ComboBox());
+        ui->listView->setModel(Empl.afficherValeur("prenom"));
+        ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
+        ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+        ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
         QMessageBox::information(nullptr, QObject::tr("OK"),
                  QObject::tr("Ajout effectué\n""Click Cancel to exit."),QMessageBox::Cancel);
 
@@ -63,8 +69,10 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
 void Dialog_Employes::on_pushButton_afficher_clicked()
 {
     ui->tableView->setModel(Empl.afficher());
-    ui->listView->setModel(Empl.afficherPrenom());
-    ui->comboBox_cin_modif->setModel(Empl.afficherId_ComboBox());
+    ui->listView->setModel(Empl.afficherValeur("prenom"));
+    ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
+    ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+    ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
     ui->stackedWidget->setCurrentIndex(1);
 }
 void Dialog_Employes::on_pushButton_ajouter_clicked(){ui->stackedWidget->setCurrentIndex(0);}
@@ -109,8 +117,10 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
     if(test)//si requete executer ==>QMessageBox::information
     {
         ui->tableView->setModel(Empl.afficher());
-        ui->listView->setModel(Empl.afficherPrenom());
-        ui->comboBox_cin_modif->setModel(Empl.afficherId_ComboBox());
+        ui->listView->setModel(Empl.afficherValeur("prenom"));
+        ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
+        ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+        ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
         QMessageBox::information(nullptr, QObject::tr("OK"),
                  QObject::tr("Modification effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
 
@@ -126,15 +136,17 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
 
 void Dialog_Employes::on_pushButton_valider_suppression_clicked()
 {
-    int cin=ui->lineEdit_id_supprimer->text().toInt();
+    int cin=ui->comboBox_cin_suppr->currentText().toInt();
     QMessageBox::StandardButton reply = QMessageBox::question(this,"Suppression","Voulez-vous vraiment supprimer cet employe definitivement de la base de donnée?", QMessageBox::Yes | QMessageBox::No);
 
     if(reply==QMessageBox::Yes)
     {
         bool test=Empl.supprimer(cin);
         ui->tableView->setModel(Empl.afficher());
-        ui->comboBox_cin_modif->setModel(Empl.afficherPrenom());
-        ui->comboBox_cin_modif->setModel(Empl.afficherId_ComboBox());
+        ui->comboBox_cin_modif->setModel(Empl.afficherValeur("prenom"));
+        ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
+        ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+        ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
         if(test)//si requete executer ==>QMessageBox::information
         {
             QMessageBox::information(nullptr, QObject::tr("OK"),
@@ -158,8 +170,8 @@ void Dialog_Employes::on_pushButton_valider_suppression_clicked()
 
 void Dialog_Employes::on_pushButton_verifier_supprimer_clicked()
 {
-    //int cin=ui->lineEdit_id_supprimer->text().toInt();
-    //ui->tableView_supprimer->setModel(Empl.rechercher(cin));
+    int cin=ui->comboBox_cin_suppr->currentText().toInt();
+    ui->tableView_supprimer->setModel(Empl.rechercher(cin));
 }
 
 

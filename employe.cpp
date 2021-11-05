@@ -131,21 +131,15 @@ bool Employe::modifier()
     return query.exec();
 }
 
-QSqlQueryModel * Employe::afficherPrenom()
+QSqlQueryModel * Employe::afficherValeur(QString valeur)
 {
     QSqlQueryModel * model =new QSqlQueryModel();
+    QString ch1="select ";
+    QString query=" from employe";
+    query=ch1+valeur+query;
 
-    model->setQuery("select prenom from employe");
-    //model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
 
-    return model;
-}
-
-QSqlQueryModel * Employe::afficherId_ComboBox()
-{
-    QSqlQueryModel * model =new QSqlQueryModel();
-
-    model->setQuery("select cin_e from employe");
+    model->setQuery(query);
 
     return model;
 }
