@@ -55,6 +55,8 @@ public:
     //CRUDs
     bool ajouter();
     QSqlQueryModel * afficher();
+    QSqlQueryModel * afficherPrenom();
+    QSqlQueryModel * afficherId_ComboBox();
     bool supprimer(int);
     bool modifier();
     QSqlQueryModel * rechercher(int);

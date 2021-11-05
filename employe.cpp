@@ -3,6 +3,7 @@
 #include <QString>
 #include "connection.h"
 #include <QSqlDatabase>
+#include "dialog_employes.h"
 
 using namespace std;
 
@@ -128,4 +129,23 @@ bool Employe::modifier()
     query.bindValue(":fonction",fonction);
 
     return query.exec();
+}
+
+QSqlQueryModel * Employe::afficherPrenom()
+{
+    QSqlQueryModel * model =new QSqlQueryModel();
+
+    model->setQuery("select prenom from employe");
+    //model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
+
+    return model;
+}
+
+QSqlQueryModel * Employe::afficherId_ComboBox()
+{
+    QSqlQueryModel * model =new QSqlQueryModel();
+
+    model->setQuery("select cin_e from employe");
+
+    return model;
 }

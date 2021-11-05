@@ -38,6 +38,10 @@ private slots:
 
     void on_pushButton_mailing_clicked();
 
+    void on_pushButton_rechercher_empl_clicked();
+
+    void on_comboBox_cin_modif_currentIndexChanged(int index);
+
 private:
     Ui::Dialog_Employes *ui;
     Employe Empl;

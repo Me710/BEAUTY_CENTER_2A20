@@ -100,7 +100,7 @@ color: rgb(255, 255, 255);</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="stackedWidgetPage1">
       <widget class="QPushButton" name="pushButton_valider_ajout">
@@ -504,9 +504,9 @@ color: rgb(247, 65, 173);</string>
       <widget class="QTableView" name="tableView">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>220</x>
          <y>200</y>
-         <width>471</width>
+         <width>311</width>
          <height>281</height>
         </rect>
        </property>
@@ -544,52 +544,56 @@ color: rgb(247, 65, 173);</string>
         <string notr="true">background-color: rgb(255, 26, 255);</string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="page">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>100</width>
-          <height>30</height>
+          <width>471</width>
+          <height>45</height>
          </rect>
         </property>
         <attribute name="label">
          <string>RECHERCHER UN EMPLOYE</string>
         </attribute>
-        <widget class="QWidget" name="layoutWidget_1">
+        <widget class="QPushButton" name="pushButton_rechercher_empl">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>281</width>
-           <height>31</height>
+           <x>194</x>
+           <y>13</y>
+           <width>96</width>
+           <height>24</height>
           </rect>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLineEdit" name="lineEdit_2">
-            <property name="toolTip">
-             <string>Entrer l'identifiant à rechercher</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 212, 243);</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_2">
-            <property name="styleSheet">
-             <string notr="true">color: rgb(107, 35, 131);
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
 background-color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Rechercher</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         </property>
+         <property name="text">
+          <string>RECHERCHER</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/recherche.png</normaloff>../resources/recherche.png</iconset>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_rechercher">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>14</y>
+           <width>171</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Entrer l'identifiant à rechercher</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 212, 243);</string>
+         </property>
         </widget>
        </widget>
        <widget class="QWidget" name="page_2">
@@ -684,11 +688,36 @@ background-color: rgb(255, 255, 255);</string>
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QListView" name="listView">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>230</y>
+         <width>151</width>
+         <height>251</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>204</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>LES PRENOMS</string>
+       </property>
+      </widget>
       <zorder>label_cadre_4</zorder>
       <zorder>label_menu_active_2</zorder>
       <zorder>toolBox</zorder>
       <zorder>tableView</zorder>
       <zorder>pushButton_pdf</zorder>
+      <zorder>listView</zorder>
+      <zorder>label_3</zorder>
      </widget>
      <widget class="QWidget" name="stackedWidgetPage3">
       <widget class="QLabel" name="label_menu_active_3">
@@ -707,32 +736,6 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
        <property name="text">
         <string>MODIFICATION D'UN EMPLOYE</string>
        </property>
-      </widget>
-      <widget class="QWidget" name="layoutWidget_3">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>120</y>
-         <width>431</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_30">
-          <property name="text">
-           <string>Entrer l'identifiant de l'employe:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_id_modif">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 212, 243);</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
       </widget>
       <widget class="QPushButton" name="pushButton_valider_modification">
        <property name="geometry">
@@ -1111,6 +1114,44 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <string notr="true">background-color: rgb(255, 212, 243);</string>
        </property>
       </widget>
+      <widget class="QComboBox" name="comboBox_cin_modif">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>120</y>
+         <width>171</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>135</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>457</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>112</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>120</y>
+         <width>191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SELECTIONNEZ PARMIS LES CINs</string>
+       </property>
+      </widget>
       <zorder>layoutWidget</zorder>
       <zorder>label_cadre_3</zorder>
       <zorder>label_menu_active_3</zorder>
@@ -1136,6 +1177,8 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
       <zorder>label_mail</zorder>
       <zorder>lineEdit_mail_modif</zorder>
       <zorder>comboBox_fonction_modif</zorder>
+      <zorder>label_30</zorder>
+      <zorder>comboBox_cin_modif</zorder>
      </widget>
      <widget class="QWidget" name="stackedWidgetPage4">
       <widget class="QLabel" name="label_menu_active_4">
@@ -1224,16 +1267,12 @@ color: rgb(247, 65, 173);</string>
         <item>
          <widget class="QLabel" name="label_20">
           <property name="text">
-           <string>ENTREZ LA CIN DE L'EMPLOYE</string>
+           <string>SELECTIONNEZ LA CIN DE L'EMPLOYE</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_id_supprimer">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 212, 243);</string>
-          </property>
-         </widget>
+         <widget class="QComboBox" name="comboBox_cin_suppr"/>
         </item>
        </layout>
       </widget>
@@ -1256,12 +1295,23 @@ color: rgb(247, 65, 173);</string>
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QLineEdit" name="lineEdit_id_supprimer">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>200</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
       <zorder>label_cadre_2</zorder>
       <zorder>label_menu_active_4</zorder>
       <zorder>pushButton_verifier_supprimer</zorder>
       <zorder>tableView_supprimer</zorder>
       <zorder>pushButton_valider_suppression</zorder>
       <zorder>layoutWidget_4</zorder>
+      <zorder>lineEdit_id_supprimer</zorder>
      </widget>
      <widget class="QWidget" name="stackedWidgetPage5">
       <widget class="QLabel" name="label_menu_active_5">
@@ -1317,16 +1367,12 @@ color: rgb(247, 65, 173);</string>
         <item>
          <widget class="QLabel" name="label_18">
           <property name="text">
-           <string>CHOISIR UN MAIL OU PLUSIEURS</string>
+           <string>CHOISIR UN MAIL</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QTableView" name="tableView_2">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 212, 243);</string>
-          </property>
-         </widget>
+         <widget class="QComboBox" name="comboBox_mails"/>
         </item>
         <item>
          <widget class="QLabel" name="label_19">
