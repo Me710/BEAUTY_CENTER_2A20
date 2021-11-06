@@ -132,7 +132,7 @@ font: 25 14pt &quot;Noto Sans Light&quot;;</string>
       <enum>QLineEdit::Password</enum>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="pushButton_seConnecter">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -156,69 +156,23 @@ color: rgb(107, 35, 131);</string>
        <normaloff>../resources/login.png</normaloff>../resources/login.png</iconset>
      </property>
     </widget>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>480</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 255);
-text-decoration: underline;
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Mot de passe oublier?</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>480</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 255);
-text-decoration: underline;
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>S'inscrire</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>480</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 255);
-text-decoration: underline;
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Besoin d'aide?</string>
-    </property>
+    <widget class="QLabel" name="label_statuts">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>310</y>
+       <width>291</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Statuts: -----------</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
@@ -267,8 +221,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>510</y>
+      <x>630</x>
+      <y>580</y>
       <width>311</width>
       <height>101</height>
      </rect>
@@ -308,16 +262,32 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_outils">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>470</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color: rgb(0, 0, 255);</string>
+    </property>
+    <property name="text">
+     <string>OUTILS / AIDES</string>
+    </property>
+   </widget>
    <zorder>label_10</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
    <zorder>groupBox</zorder>
-   <zorder>label_5</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_7</zorder>
    <zorder>label_8</zorder>
    <zorder>label_9</zorder>
    <zorder>label_11</zorder>
+   <zorder>pushButton_outils</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
