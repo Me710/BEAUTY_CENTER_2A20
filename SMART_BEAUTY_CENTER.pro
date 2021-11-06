@@ -21,19 +21,16 @@ SOURCES += \
     employe.cpp \
     main.cpp \
     mainwindow.cpp \
-    outils.cpp
 
 HEADERS += \
     connection.h \
     dialog_employes.h \
     employe.h \
     mainwindow.h \
-    outils.h
 
 FORMS += \
     dialog_employes.ui \
     mainwindow.ui \
-    outils.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
