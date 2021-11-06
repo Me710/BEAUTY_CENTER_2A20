@@ -3,13 +3,14 @@
 #include "dialog_employes.h"
 #include <QMessageBox>
 #include <QDebug>
-#include "outils.h"
+#include "employe.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0);
 
 }
 
@@ -61,6 +62,54 @@ void MainWindow::on_pushButton_seConnecter_clicked()
 
 void MainWindow::on_pushButton_outils_clicked()
 {
-    Outils O;
-    O.exec();
+    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget_2->setCurrentIndex(1);
 }
+
+void MainWindow::on_pushButton_reinitialiser_mdp_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(2);
+}
+
+void MainWindow::on_pushButton_inscription_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(0);
+    ui->comboBox_mail_inscris->setModel(Empl.afficherValeur("mail"));
+}
+
+void MainWindow::on_pushButton_valider_inscription_clicked()
+{
+    QSqlQuery query;
+    QString username=ui->lineEdit_username->text();
+    QString password=ui->lineEdit_mdp->text();
+    QString password2=ui->lineEdit_mdp2->text();
+    QString mail=ui->comboBox_mail_inscris->currentText();
+
+     query.prepare("insert into login (username, password)" "values(:username, :password)");
+
+    if(password != password2)
+    {
+        ui->label_verification_infos->setText("Mot de passe de confirmation different");
+    }
+    else
+    {
+        query.bindValue(":password",password);
+        query.bindValue(":username",username);
+
+        if(query.exec())
+        {
+            QMessageBox::information(nullptr, QObject::tr("OK"),
+                     QObject::tr("Inscription effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
+            ui->lineEdit_username->setText("");
+            ui->lineEdit_mdp->setText("");
+            ui->lineEdit_mdp2->setText("");
+        }
+        else
+        {
+            QMessageBox::critical(nullptr,QObject::tr("Not OK"),
+                     QObject::tr("Inscription non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+        }
+    }
+}
+
+void MainWindow::on_pushButton_accueil_clicked(){ui->stackedWidget->setCurrentIndex(0);}
