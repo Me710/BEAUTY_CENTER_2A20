@@ -79,8 +79,16 @@ QSqlQueryModel * Employe::afficher()
 
     model->setQuery("select *from employe");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
-    /*model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));*/
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NOM"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("PRENOM"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("FONCTION"));
+    model->setHeaderData(8,Qt::Horizontal,QObject::tr("SALAIRE"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("SEXE"));
+    model->setHeaderData(9,Qt::Horizontal,QObject::tr("AGE"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("ADRESSE"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("TEL"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("MAIL"));
+    model->setHeaderData(10,Qt::Horizontal,QObject::tr("USERNAME"));
 
     return model;
 }

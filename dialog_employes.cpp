@@ -3,18 +3,20 @@
 #include "employe.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <QPdfWriter>
+#include <QPainter>
 
 Dialog_Employes::Dialog_Employes(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog_Employes)
 {
     ui->setupUi(this);
-    ui->lineEdit_cin->setValidator(new QIntValidator(0,99999999,this));
-    ui->lineEdit_cin_modif->setValidator(new QIntValidator(0,99999999,this));
+    ui->lineEdit_cin->setValidator(new QIntValidator(0,999999,this));
+    ui->lineEdit_cin_modif->setValidator(new QIntValidator(0,999999,this));
     ui->lineEdit_age->setValidator(new QIntValidator(0,99,this));
     ui->lineEdit_age_modif->setValidator(new QIntValidator(0,99,this));
-    ui->lineEdit_tel_modif->setValidator(new QIntValidator(0,999999999,this));
-    ui->lineEdit_tel->setValidator(new QIntValidator(0,999999999,this));
+    ui->lineEdit_tel_modif->setValidator(new QIntValidator(0,99999999,this));
+    ui->lineEdit_tel->setValidator(new QIntValidator(0,99999999,this));
     ui->lineEdit_salaire_modif->setValidator(new QIntValidator(0,99999,this));
     ui->lineEdit_salaire->setValidator(new QIntValidator(0,99999,this));
     ui->tableView->setModel(Empl.afficher());
@@ -214,5 +216,21 @@ void Dialog_Employes::on_comboBox_cin_modif_currentIndexChanged(int index)
         QMessageBox::critical(nullptr,QObject::tr("Not OK"),
                                QObject::tr("Transfere de donnees Non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
     }
+
+}
+
+void Dialog_Employes::on_pushButton_pdf_clicked()
+{
+    QPdfWriter pdf("C:/Users/PMS-BLA-5-Chloe/Desktop/SMART_BEAUTY_CENTER/liste.pdf");
+
+    QPainter painter(&pdf);
+
+    painter.setPen(Qt::black);
+    painter.drawText(100,0,"SMART BEAUTY CENTER");
+    painter.drawPixmap(QRect(1000,200,300,400),QPixmap("C:/Users/PMS-BLA-5-Chloe/Desktop/resources/valider"));
+    painter.end();
+
+    QMessageBox::information(nullptr, QObject::tr("PDF"),
+             QObject::tr("PDF Créer/Modifier avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
 
 }

@@ -42,6 +42,8 @@ private slots:
 
     void on_comboBox_cin_modif_currentIndexChanged(int index);
 
+    void on_pushButton_pdf_clicked();
+
 private:
     Ui::Dialog_Employes *ui;
     Employe Empl;
