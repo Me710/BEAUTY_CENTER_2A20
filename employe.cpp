@@ -4,6 +4,7 @@
 #include "connection.h"
 #include <QSqlDatabase>
 #include "dialog_employes.h"
+#include <array>
 
 using namespace std;
 
@@ -78,17 +79,8 @@ QSqlQueryModel * Employe::afficher()
     QSqlQueryModel * model =new QSqlQueryModel();
 
     model->setQuery("select *from employe");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NOM"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("FONCTION"));
-    model->setHeaderData(8,Qt::Horizontal,QObject::tr("SALAIRE"));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr("SEXE"));
-    model->setHeaderData(9,Qt::Horizontal,QObject::tr("AGE"));
-    model->setHeaderData(7,Qt::Horizontal,QObject::tr("ADRESSE"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("TEL"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("MAIL"));
-    model->setHeaderData(10,Qt::Horizontal,QObject::tr("USERNAME"));
+   // model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
+
 
     return model;
 }
@@ -146,6 +138,43 @@ QSqlQueryModel * Employe::afficherValeur(QString valeur)
     QString query=" from employe";
     query=ch1+valeur+query;
 
+
+    model->setQuery(query);
+
+    return model;
+}
+
+QSqlQueryModel * Employe::trier(QString valeur)
+{
+    QSqlQueryModel * model =new QSqlQueryModel();
+    QString query="select *from employe ORDER by ";
+    query=query+valeur;
+
+    model->setQuery(query);
+
+    return model;
+}
+
+QSqlQueryModel * Employe::afficherFiltrer(array<int,8> tab)
+{
+    QSqlQueryModel * model =new QSqlQueryModel();
+    QString tabVal[8]={"prenom","fonction","adresse","tel","mail","salaire","age","sexe"};
+    QString ch[8]={"","","","","","","",""};
+    QString query="select ";
+    //int j=0;
+
+    if(tab.at(0)==1){query+="prenom, ";}
+    if(tab.at(1)==1){query+="fonction, ";}
+    if(tab.at(2)==1){query+="adresse, ";}
+    if(tab.at(3)==1){query+="tel, ";}
+    if(tab.at(4)==1){query+="mail, ";}
+    if(tab.at(5)==1){query+="salaire, ";}
+    if(tab.at(6)==1){query+="age, ";}
+    if(tab.at(7)==1){query+="sexe, ";}
+
+    query=query+"cin_e,nom from employe";
+
+    qDebug()<<query;
 
     model->setQuery(query);
 

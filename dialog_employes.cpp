@@ -20,7 +20,6 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui->lineEdit_salaire_modif->setValidator(new QIntValidator(0,99999,this));
     ui->lineEdit_salaire->setValidator(new QIntValidator(0,99999,this));
     ui->tableView->setModel(Empl.afficher());
-    ui->listView->setModel(Empl.afficherValeur("prenom"));
     ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
     ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
     ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
@@ -52,7 +51,6 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
     if(test)//si requete executer ==>QMessageBox::information
     {
         ui->tableView->setModel(Empl.afficher());
-        ui->listView->setModel(Empl.afficherValeur("prenom"));
         ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
         ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
         ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
@@ -123,8 +121,21 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
         ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
         ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
         ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
+
+        ui->lineEdit_rechercher->setText("");
+        ui->lineEdit_nom_modif->setText("");
+        ui->lineEdit_prenom_modif->setText("");
+        ui->lineEdit_mail_modif->setText("");
+        ui->lineEdit_adresse_modif->setText("");
+        ui->lineEdit_tel_modif->setText("");
+        ui->lineEdit_age_modif->setText("");
+        //ui->comboBox_sex_modif->setText("");
+        ui->lineEdit_salaire_modif->setText("");
+        //ui->comboBox_fonction_modif->currentText();
+
         QMessageBox::information(nullptr, QObject::tr("OK"),
                  QObject::tr("Modification effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
+
 
     }
     else//si la requete non executer ==>QMessageBox::critical
@@ -166,7 +177,6 @@ void Dialog_Employes::on_pushButton_valider_suppression_clicked()
        qDebug()<<"Suppresion annulée!!";
     }
 
-    //ui->tableView->show();
 }
 
 
@@ -208,7 +218,6 @@ void Dialog_Employes::on_comboBox_cin_modif_currentIndexChanged(int index)
             ui->lineEdit_age_modif->setText(query.value(9).toString());
             ui->lineEdit_tel_modif->setText(query.value(1).toString());
             //ui->lineEdit_sexe_modif->setText(query.value(6).toString());
-
         }
     }
     else
@@ -226,11 +235,63 @@ void Dialog_Employes::on_pushButton_pdf_clicked()
     QPainter painter(&pdf);
 
     painter.setPen(Qt::black);
-    painter.drawText(100,0,"SMART BEAUTY CENTER");
-    painter.drawPixmap(QRect(1000,200,300,400),QPixmap("C:/Users/PMS-BLA-5-Chloe/Desktop/resources/valider"));
+    QSqlQuery query;
+    query.prepare("select *from employe");
+
+   /* if(query.exec())
+    {
+
+        while(query.next())
+        {
+           painter.drawText(100,0,query.value(0).toString());
+           painter.drawText(900,800,query.value(1).toString());
+           painter.drawText(200,200,query.value(2).toString());
+           painter.drawText(300,300,query.value(3).toString());
+           painter.drawText(400,400,query.value(4).toString());
+           painter.drawText(500,500,query.value(5).toString());
+        }
+    }*/
+
+    //painter.drawPixmap(QRect(1000,200,300,400),QPixmap("C:/Users/PMS-BLA-5-Chloe/Desktop/resources/valider"));
     painter.end();
 
     QMessageBox::information(nullptr, QObject::tr("PDF"),
              QObject::tr("PDF Créer/Modifier avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
+
+}
+
+void Dialog_Employes::on_comboBox_currentIndexChanged(int index)
+{
+    QString valeur="cin";
+    switch(index)
+    {
+    case 1:
+        valeur="nom";
+        break;
+    case 2:
+        valeur="prenom";
+        break;
+    case 3:
+        valeur="salaire";
+        break;
+    }
+
+    ui->tableView->setModel(Empl.trier(valeur));
+}
+
+void Dialog_Employes::on_pushButton_clicked()
+{
+    array<int,8> tab={0,0,0,0,0,0,0,0};
+
+    if(ui->checkBox_prenom->isChecked()){tab.at(0)=1;}
+    if(ui->checkBox_fonction->isChecked()){tab.at(1)=1;}
+    if(ui->checkBox_adresse->isChecked()){tab.at(2)=1;}
+    if(ui->checkBox_tel->isChecked()){tab.at(3)=1;}
+    if(ui->checkBox_mail->isChecked()){tab.at(4)=1;}
+    if(ui->checkBox_salaire->isChecked()){tab.at(5)=1;}
+    if(ui->checkBox_age->isChecked()){tab.at(6)=1;}
+    if(ui->checkBox_sexe->isChecked()){tab.at(7)=1;}
+
+    ui->tableView->setModel(Empl.afficherFiltrer(tab));
 
 }
