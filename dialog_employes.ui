@@ -452,22 +452,22 @@ color: rgb(247, 65, 173);</string>
        </property>
        <item>
         <property name="text">
-         <string>coiffure</string>
+         <string>Coiffure</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>pedicure/manicure</string>
+         <string>Pédicure/Manicure</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>soins visage</string>
+         <string>Soins visage</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>massage</string>
+         <string>Massage</string>
         </property>
        </item>
       </widget>
@@ -1075,12 +1075,15 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>171</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 212, 243);</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLabel" name="label">
@@ -1127,7 +1130,7 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>283</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -1140,7 +1143,7 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>423</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -1166,7 +1169,7 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>199</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -1179,7 +1182,7 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>311</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -1244,7 +1247,7 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>227</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -1257,7 +1260,7 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>255</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -1296,20 +1299,30 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>141</x>
          <y>367</y>
-         <width>231</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 212, 243);</string>
        </property>
+       <item>
+        <property name="text">
+         <string>Homme</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Femme</string>
+        </property>
+       </item>
       </widget>
       <widget class="QLineEdit" name="lineEdit_mail_modif">
        <property name="geometry">
         <rect>
          <x>141</x>
          <y>339</y>
-         <width>331</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -1322,13 +1335,33 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <rect>
          <x>140</x>
          <y>396</y>
-         <width>231</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 212, 243);</string>
        </property>
+       <item>
+        <property name="text">
+         <string>Coiffure</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pedicure/Manicure</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Soins Visage</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Massage</string>
+        </property>
+       </item>
       </widget>
       <widget class="QComboBox" name="comboBox_cin_modif">
        <property name="geometry">
@@ -1371,6 +1404,70 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
         <string>SELECTIONNEZ PARMIS LES CINs</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_nom_modif_verif">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>200</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_prenom_modif_verif">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>230</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_adresse_modif_verif">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>280</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_mail_modif_verif">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>480</y>
+         <width>231</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
       <zorder>layoutWidget</zorder>
       <zorder>label_cadre_3</zorder>
       <zorder>label_menu_active_3</zorder>
@@ -1397,6 +1494,10 @@ font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
       <zorder>comboBox_fonction_modif</zorder>
       <zorder>label_30</zorder>
       <zorder>comboBox_cin_modif</zorder>
+      <zorder>label_nom_modif_verif</zorder>
+      <zorder>label_prenom_modif_verif</zorder>
+      <zorder>label_adresse_modif_verif</zorder>
+      <zorder>label_mail_modif_verif</zorder>
      </widget>
      <widget class="QWidget" name="stackedWidgetPage4">
       <widget class="QLabel" name="label_menu_active_4">

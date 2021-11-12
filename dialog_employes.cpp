@@ -11,6 +11,7 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui(new Ui::Dialog_Employes)
 {
     ui->setupUi(this);
+    //les Validators pour les types entiers ou numbers
     ui->lineEdit_cin->setValidator(new QIntValidator(0,999999,this));
     ui->lineEdit_cin_modif->setValidator(new QIntValidator(0,999999,this));
     ui->lineEdit_age->setValidator(new QIntValidator(0,99,this));
@@ -46,21 +47,51 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
     int salaire=ui->lineEdit_salaire->text().toInt();
     QString fonction=ui->comboBox_fonction->currentText();
 
-
-
-
-
+    //Appel du constructeur parametré
     Employe E(cin,nom,prenom,mail,tel,fonction,sexe,adresse,salaire,age);
+
     //controle de saisirs
     bool test_nom = E.ChaineValide(nom);
     bool test_prenom = E.ChaineValide(prenom);
     bool test_adresse = E.ChaineValide(adresse);
 
 
-
     if(test_nom && test_prenom && test_adresse)
     {
         test=E.ajouter();
+        if(test)//si requete executer ==>QMessageBox::information
+        {
+            ui->label_nom_verif->setText("");
+            ui->label_prenom_verif->setText("");
+            ui->label_adresse_verif->setText("");
+            ui->label_mail_verif->setText("");
+            ui->lineEdit_rechercher->setText("");
+            ui->lineEdit_nom_modif->setText("");
+            ui->lineEdit_prenom_modif->setText("");
+            ui->lineEdit_mail_modif->setText("");
+            ui->lineEdit_adresse_modif->setText("");
+            ui->lineEdit_tel_modif->setText("");
+            ui->lineEdit_age_modif->setText("");
+            //ui->comboBox_sex_modif->setText("");
+            ui->lineEdit_salaire_modif->setText("");
+            //ui->comboBox_fonction_modif->currentText();
+            ui->tableView->setModel(Empl.afficher());
+            ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
+            ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+            ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
+            QMessageBox::information(nullptr, QObject::tr("OK"),
+                     QObject::tr("Ajout effectué\n""Click Cancel to exit."),QMessageBox::Cancel);
+
+        }
+        else//si la requete non executer ==>QMessageBox::critical
+        {
+            ui->label_mail_verif->setText("CIN déjà existant/Mail incorrecte!");
+            ui->label_nom_verif->setText("");
+            ui->label_prenom_verif->setText("");
+            ui->label_adresse_verif->setText("");
+            QMessageBox::critical(nullptr,QObject::tr("Not OK"),
+                                   QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+        }
     }
     else
     {
@@ -71,25 +102,6 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
 
     }
 
-    if(test)//si requete executer ==>QMessageBox::information
-    {
-        ui->label_nom_verif->setText("");
-        ui->label_prenom_verif->setText("");
-        ui->label_adresse_verif->setText("");
-        ui->tableView->setModel(Empl.afficher());
-        ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
-        ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
-        ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
-        QMessageBox::information(nullptr, QObject::tr("OK"),
-                 QObject::tr("Ajout effectué\n""Click Cancel to exit."),QMessageBox::Cancel);
-
-    }
-    else//si la requete non executer ==>QMessageBox::critical
-    {
-        QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-                               QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
-        ui->label_mail_verif->setText("CIN déjà existant/Mail incorrecte!");
-    }
 
 }
 
@@ -138,36 +150,62 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
     QString fonction=ui->comboBox_fonction_modif->currentText();
 
     Employe E(cin,nom,prenom,mail,tel,fonction,sexe,adresse,salaire,age);
-    bool test=E.modifier();
 
-    if(test)//si requete executer ==>QMessageBox::information
+    bool test_nom = E.ChaineValide(nom);
+    bool test_prenom = E.ChaineValide(prenom);
+    bool test_adresse = E.ChaineValide(adresse);
+
+    if(test_nom && test_prenom && test_adresse)
     {
-        ui->tableView->setModel(Empl.afficher());
-        ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
-        ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
-        ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
+        bool test=E.modifier();
+        if(test)//si requete executer ==>QMessageBox::information
+        {
+            ui->tableView->setModel(Empl.afficher());
+            ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
+            ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+            ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
 
-        ui->lineEdit_rechercher->setText("");
-        ui->lineEdit_nom_modif->setText("");
-        ui->lineEdit_prenom_modif->setText("");
-        ui->lineEdit_mail_modif->setText("");
-        ui->lineEdit_adresse_modif->setText("");
-        ui->lineEdit_tel_modif->setText("");
-        ui->lineEdit_age_modif->setText("");
-        //ui->comboBox_sex_modif->setText("");
-        ui->lineEdit_salaire_modif->setText("");
-        //ui->comboBox_fonction_modif->currentText();
+            ui->label_nom_modif_verif->setText("");
+            ui->label_prenom_modif_verif->setText("");
+            ui->label_adresse_modif_verif->setText("");
+            ui->label_mail_modif_verif->setText("");
+            ui->lineEdit_rechercher->setText("");
+            ui->lineEdit_nom_modif->setText("");
+            ui->lineEdit_prenom_modif->setText("");
+            ui->lineEdit_mail_modif->setText("");
+            ui->lineEdit_adresse_modif->setText("");
+            ui->lineEdit_tel_modif->setText("");
+            ui->lineEdit_age_modif->setText("");
+            //ui->comboBox_sex_modif->setText("");
+            ui->lineEdit_salaire_modif->setText("");
+            //ui->comboBox_fonction_modif->currentText();
 
-        QMessageBox::information(nullptr, QObject::tr("OK"),
-                 QObject::tr("Modification effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
+            QMessageBox::information(nullptr, QObject::tr("OK"),
+                     QObject::tr("Modification effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
 
+
+        }
+        else//si la requete non executer ==>QMessageBox::critical
+        {
+            ui->label_mail_modif_verif->setText("CIN déjà existant/Mail incorrecte!");
+            ui->label_nom_modif_verif->setText("");
+            ui->label_prenom_modif_verif->setText("");
+            ui->label_adresse_modif_verif->setText("");
+            QMessageBox::critical(nullptr,QObject::tr("Not OK"),
+                                   QObject::tr("Modification non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+        }
 
     }
-    else//si la requete non executer ==>QMessageBox::critical
+    else
     {
-        QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-                               QObject::tr("Modification non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+        //Signalisation des controles
+        if(!test_nom){ui->label_nom_modif_verif->setText("Nom invalid");}else{ui->label_nom_verif->setText("");}
+        if(!test_prenom){ui->label_prenom_modif_verif->setText("Prenom invalid");}else{ui->label_prenom_verif->setText("");}
+        if(!test_adresse){ui->label_adresse_modif_verif->setText("Adresse invalid");}else{ui->label_adresse_verif->setText("");}
+
     }
+
+
 
 
 }
@@ -236,13 +274,13 @@ void Dialog_Employes::on_comboBox_cin_modif_currentIndexChanged(int index)
             ui->lineEdit_nom_modif->setText(query.value(3).toString());
             ui->lineEdit_prenom_modif->setText(query.value(4).toString());
             ui->lineEdit_mail_modif->setText(query.value(2).toString());
-            //ui->comboBox_fonction_modif->setText(query.value(5).toString());
-            ui->lineEdit_salaire_modif->setText(query.value(8).toString());
-            ui->lineEdit_adresse_modif->setText(query.value(7).toString());
+            ui->comboBox_fonction_modif->setCurrentText(query.value(10).toString());
+            ui->lineEdit_salaire_modif->setText(query.value(7).toString());
+            ui->lineEdit_adresse_modif->setText(query.value(5).toString());
             ui->lineEdit_cin_modif->setText(query.value(0).toString());
-            ui->lineEdit_age_modif->setText(query.value(9).toString());
+            ui->lineEdit_age_modif->setText(query.value(8).toString());
             ui->lineEdit_tel_modif->setText(query.value(1).toString());
-            //ui->lineEdit_sexe_modif->setText(query.value(6).toString());
+            ui->comboBox_sex_modif->setCurrentText(query.value(6).toString());
         }
     }
     else
