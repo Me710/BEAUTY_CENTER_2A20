@@ -56,11 +56,11 @@ border-color: rgb(107, 35, 131);</string>
        <normaloff>resources/mail.png</normaloff>resources/mail.png</iconset>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEdit_login_connecter">
      <property name="geometry">
       <rect>
-       <x>830</x>
-       <y>50</y>
+       <x>840</x>
+       <y>20</y>
        <width>113</width>
        <height>20</height>
       </rect>
@@ -72,8 +72,8 @@ border-color: rgb(107, 35, 131);</string>
     <widget class="QPushButton" name="pushButton_deconnection">
      <property name="geometry">
       <rect>
-       <x>830</x>
-       <y>90</y>
+       <x>840</x>
+       <y>70</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -106,7 +106,7 @@ color: rgb(255, 255, 255);</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="stackedWidgetPage1">
       <widget class="QPushButton" name="pushButton_valider_ajout">
@@ -867,7 +867,7 @@ background-color: rgb(255, 230, 252);</string>
       <widget class="QPushButton" name="pushButton_pdf">
        <property name="geometry">
         <rect>
-         <x>400</x>
+         <x>420</x>
          <y>500</y>
          <width>121</width>
          <height>21</height>
@@ -1843,7 +1843,7 @@ border-color: rgb(107, 35, 131);</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-10</y>
+       <y>0</y>
        <width>1024</width>
        <height>768</height>
       </rect>
@@ -1859,7 +1859,7 @@ border-color: rgb(107, 35, 131);</string>
      </property>
     </widget>
     <zorder>label_fond</zorder>
-    <zorder>lineEdit</zorder>
+    <zorder>lineEdit_login_connecter</zorder>
     <zorder>pushButton_deconnection</zorder>
     <zorder>stackedWidget</zorder>
     <zorder>splitter</zorder>

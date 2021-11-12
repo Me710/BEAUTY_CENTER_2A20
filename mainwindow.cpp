@@ -45,6 +45,7 @@ void MainWindow::on_pushButton_seConnecter_clicked()
             {
                 ui->label_statuts->setText("Statuts: Mot de passe/Login correctes");
                 hide();
+                E.setModal(true);
                 E.exec();
             }
             if(count<1)

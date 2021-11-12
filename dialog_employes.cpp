@@ -89,8 +89,8 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
             ui->label_nom_verif->setText("");
             ui->label_prenom_verif->setText("");
             ui->label_adresse_verif->setText("");
-            QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-                                   QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+            //QMessageBox::critical(nullptr,QObject::tr("Not OK"),
+              //                     QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
         }
     }
     else
@@ -165,20 +165,22 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
             ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
             ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
 
+
             ui->label_nom_modif_verif->setText("");
             ui->label_prenom_modif_verif->setText("");
             ui->label_adresse_modif_verif->setText("");
             ui->label_mail_modif_verif->setText("");
             ui->lineEdit_rechercher->setText("");
+            ui->lineEdit_cin_modif->setText("");
             ui->lineEdit_nom_modif->setText("");
             ui->lineEdit_prenom_modif->setText("");
             ui->lineEdit_mail_modif->setText("");
             ui->lineEdit_adresse_modif->setText("");
             ui->lineEdit_tel_modif->setText("");
             ui->lineEdit_age_modif->setText("");
-            //ui->comboBox_sex_modif->setText("");
+            ui->comboBox_sex_modif->setCurrentText(0);
             ui->lineEdit_salaire_modif->setText("");
-            //ui->comboBox_fonction_modif->currentText();
+            ui->comboBox_fonction_modif->setCurrentText(0);
 
             QMessageBox::information(nullptr, QObject::tr("OK"),
                      QObject::tr("Modification effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
@@ -191,8 +193,8 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
             ui->label_nom_modif_verif->setText("");
             ui->label_prenom_modif_verif->setText("");
             ui->label_adresse_modif_verif->setText("");
-            QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-                                   QObject::tr("Modification non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+           // QMessageBox::critical(nullptr,QObject::tr("Not OK"),
+             //                      QObject::tr("Modification non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
         }
 
     }
