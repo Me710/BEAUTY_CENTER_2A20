@@ -106,7 +106,7 @@ color: rgb(255, 255, 255);</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="stackedWidgetPage1">
       <widget class="QPushButton" name="pushButton_valider_ajout">
@@ -493,6 +493,9 @@ color: rgb(247, 65, 173);</string>
          <height>21</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -505,6 +508,9 @@ color: rgb(247, 65, 173);</string>
          <width>141</width>
          <height>21</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
        </property>
        <property name="text">
         <string/>
@@ -519,6 +525,9 @@ color: rgb(247, 65, 173);</string>
          <height>21</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -526,11 +535,14 @@ color: rgb(247, 65, 173);</string>
       <widget class="QLabel" name="label_mail_verif">
        <property name="geometry">
         <rect>
-         <x>410</x>
-         <y>320</y>
-         <width>141</width>
+         <x>100</x>
+         <y>430</y>
+         <width>331</width>
          <height>21</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
        </property>
        <property name="text">
         <string/>
@@ -891,7 +903,7 @@ background-color: rgb(255, 230, 252);</string>
         <string>TRIER</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_filtre">
        <property name="geometry">
         <rect>
          <x>230</x>
@@ -921,7 +933,7 @@ background-color: rgb(255, 230, 252);</string>
       <zorder>label_3</zorder>
       <zorder>pushButton_pdf</zorder>
       <zorder>label_4</zorder>
-      <zorder>pushButton</zorder>
+      <zorder>pushButton_filtre</zorder>
      </widget>
      <widget class="QWidget" name="stackedWidgetPage3">
       <widget class="QLabel" name="label_menu_active_3">

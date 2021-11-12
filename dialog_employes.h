@@ -46,7 +46,7 @@ private slots:
 
     void on_comboBox_currentIndexChanged(int index);
 
-    void on_pushButton_clicked();
+    void on_pushButton_filtre_clicked();
 
 private:
     Ui::Dialog_Employes *ui;

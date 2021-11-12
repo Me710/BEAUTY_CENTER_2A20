@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include "dialog_employes.h"
 #include <array>
+#include <cstddef>
 
 using namespace std;
 
@@ -179,4 +180,24 @@ QSqlQueryModel * Employe::afficherFiltrer(array<int,8> tab)
     model->setQuery(query);
 
     return model;
+}
+
+bool Employe::ChaineValide(QString chaine)
+{
+    int i=0;
+    while(i<chaine.size())
+    {
+        if(chaine[i]=='&' || chaine[i]=='~' || chaine[i]=='"' || chaine[i]=='#' || chaine[i]=='r'||chaine[i]=='='||chaine[i]==':' ||
+                chaine[i]=='-' || chaine[i]=='[' || chaine[i]=='|' ||chaine[i]=='_'||chaine[i]=='/'||chaine[i]=='!'||chaine[i]=='+'||
+                chaine[i]=='1' ||chaine[i]=='2' ||chaine[i]=='3' ||chaine[i]=='4' ||chaine[i]=='5' ||chaine[i]=='6' ||chaine[i]==']'||
+                chaine[i]=='7' ||chaine[i]=='8' ||chaine[i]=='9' ||chaine[i]=='0' ||chaine[i]=='@' ||chaine[i]==')' ||chaine[i]=='}'||
+                chaine[i]=='%' ||chaine[i]=='*' ||chaine[i]=='?' ||chaine[i]==',' ||chaine[i]==';' ||chaine[i]=='.')
+        {
+            return false;
+            break;
+        }
+        i++;
+    }
+
+    return true;
 }

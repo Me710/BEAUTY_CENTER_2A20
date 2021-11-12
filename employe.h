@@ -55,12 +55,13 @@ public:
     //CRUDs
     bool ajouter();
     QSqlQueryModel * afficher();
-    QSqlQueryModel * afficherValeur(QString valeur);
+    QSqlQueryModel * afficherValeur(QString);
     QSqlQueryModel * trier(QString valeur);
     bool supprimer(int);
     bool modifier();
     QSqlQueryModel * rechercher(int);
     QSqlQueryModel * afficherFiltrer(array<int,8> tab);
+    bool ChaineValide(QString);
 };
 
 

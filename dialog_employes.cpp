@@ -33,6 +33,7 @@ Dialog_Employes::~Dialog_Employes()
 
 void Dialog_Employes::on_pushButton_valider_ajout_clicked()
 {
+    bool test=false;
     //Recuperation des informations saisies dans les 3 champs
     int cin=ui->lineEdit_cin->text().toInt();
     QString nom=ui->lineEdit_nom->text();
@@ -45,11 +46,36 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
     int salaire=ui->lineEdit_salaire->text().toInt();
     QString fonction=ui->comboBox_fonction->currentText();
 
+
+
+
+
     Employe E(cin,nom,prenom,mail,tel,fonction,sexe,adresse,salaire,age);
-    bool test=E.ajouter();
+    //controle de saisirs
+    bool test_nom = E.ChaineValide(nom);
+    bool test_prenom = E.ChaineValide(prenom);
+    bool test_adresse = E.ChaineValide(adresse);
+
+
+
+    if(test_nom && test_prenom && test_adresse)
+    {
+        test=E.ajouter();
+    }
+    else
+    {
+        //Signalisation des controles
+        if(!test_nom){ui->label_nom_verif->setText("Nom invalid");}else{ui->label_nom_verif->setText("");}
+        if(!test_prenom){ui->label_prenom_verif->setText("Prenom invalid");}else{ui->label_prenom_verif->setText("");}
+        if(!test_adresse){ui->label_adresse_verif->setText("Adresse invalid");}else{ui->label_adresse_verif->setText("");}
+
+    }
 
     if(test)//si requete executer ==>QMessageBox::information
     {
+        ui->label_nom_verif->setText("");
+        ui->label_prenom_verif->setText("");
+        ui->label_adresse_verif->setText("");
         ui->tableView->setModel(Empl.afficher());
         ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
         ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
@@ -62,6 +88,7 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
     {
         QMessageBox::critical(nullptr,QObject::tr("Not OK"),
                                QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+        ui->label_mail_verif->setText("CIN déjà existant/Mail incorrecte!");
     }
 
 }
@@ -69,7 +96,6 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
 void Dialog_Employes::on_pushButton_afficher_clicked()
 {
     ui->tableView->setModel(Empl.afficher());
-    ui->listView->setModel(Empl.afficherValeur("prenom"));
     ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
     ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
     ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
@@ -117,7 +143,6 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
     if(test)//si requete executer ==>QMessageBox::information
     {
         ui->tableView->setModel(Empl.afficher());
-        ui->listView->setModel(Empl.afficherValeur("prenom"));
         ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
         ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
         ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
@@ -279,7 +304,7 @@ void Dialog_Employes::on_comboBox_currentIndexChanged(int index)
     ui->tableView->setModel(Empl.trier(valeur));
 }
 
-void Dialog_Employes::on_pushButton_clicked()
+void Dialog_Employes::on_pushButton_filtre_clicked()
 {
     array<int,8> tab={0,0,0,0,0,0,0,0};
 
