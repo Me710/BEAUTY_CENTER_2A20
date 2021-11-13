@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QPdfWriter>
 #include <QPainter>
+#include <QDesktopServices>
 
 Dialog_Employes::Dialog_Employes(QWidget *parent) :
     QDialog(parent),
@@ -295,15 +296,58 @@ void Dialog_Employes::on_comboBox_cin_modif_currentIndexChanged(int index)
 
 void Dialog_Employes::on_pushButton_pdf_clicked()
 {
-    QPdfWriter pdf("C:/Users/PMS-BLA-5-Chloe/Desktop/SMART_BEAUTY_CENTER/liste.pdf");
+    QPdfWriter pdf("C:/Users/PMS-BLA-5-Chloe/Desktop/SMART_BEAUTY_CENTER/PDFEmploye.pdf");
 
     QPainter painter(&pdf);
 
+    int i = 4000;
+    painter.setPen(Qt::red);
+    painter.setFont(QFont("Arial", 30));
+    painter.drawPixmap(QRect(200,200,2000,2000),QPixmap("C:/Users/PMS-BLA-5-Chloe/Desktop/resources/logo.png"));
+    painter.drawText(3000,1500,"LISTE DES EMPLOYES");
     painter.setPen(Qt::black);
+    painter.setFont(QFont("Arial", 50));
+    // painter.drawText(1100,2000,afficheDC);
+    painter.drawRect(2700,200,7300,2600);
+    //painter.drawRect(1500,200,7300,2600);
+    //painter.drawPixmap(QRect(7600,70,2000,2600),QPixmap("C:/Users/RH/Desktop/projecpp/image/logopdf.png"));
+    painter.drawRect(0,3000,9600,500);
+    painter.setFont(QFont("Arial", 9));
+    painter.drawText(300,3300,"CIN");
+    painter.drawText(2300,3300,"TEL");
+    painter.drawText(4300,3300,"MAIL");
+    painter.drawText(6300,3300,"NOM");
+    painter.drawText(8000,3300,"PRENOM");
+    QSqlQuery query;
+    query.prepare("select * from EMPLOYE");
+    query.exec();
+    while (query.next())
+    {
+        painter.drawText(300,i,query.value(0).toString());
+        painter.drawText(2300,i,query.value(1).toString());
+        painter.drawText(4300,i,query.value(2).toString());
+        painter.drawText(6300,i,query.value(3).toString());
+        painter.drawText(8000,i,query.value(4).toString());
+        i = i +500;
+    }
+
+    int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+    if (reponse == QMessageBox::Yes)
+    {
+        QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/PMS-BLA-5-Chloe/Desktop/SMART_BEAUTY_CENTER/PDFEmploye.pdf"));
+
+        painter.end();
+    }
+    if (reponse == QMessageBox::No)
+    {
+        painter.end();
+    }
+
+    /*painter.setPen(Qt::black);
     QSqlQuery query;
     query.prepare("select *from employe");
 
-   /* if(query.exec())
+    if(query.exec())
     {
 
         while(query.next())
@@ -315,13 +359,13 @@ void Dialog_Employes::on_pushButton_pdf_clicked()
            painter.drawText(400,400,query.value(4).toString());
            painter.drawText(500,500,query.value(5).toString());
         }
-    }*/
+    }
 
-    //painter.drawPixmap(QRect(1000,200,300,400),QPixmap("C:/Users/PMS-BLA-5-Chloe/Desktop/resources/valider"));
+
     painter.end();
 
     QMessageBox::information(nullptr, QObject::tr("PDF"),
-             QObject::tr("PDF Créer/Modifier avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
+             QObject::tr("PDF Créer/Modifier avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);*/
 
 }
 
