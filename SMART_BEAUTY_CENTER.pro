@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,12 +21,37 @@ SOURCES += \
     employe.cpp \
     main.cpp \
     mainwindow.cpp \
+    mail/emailaddress.cpp \
+    mail/mimeattachment.cpp \
+    mail/mimecontentformatter.cpp \
+    mail/mimefile.cpp \
+    mail/mimehtml.cpp \
+    mail/mimeinlinefile.cpp \
+    mail/mimemessage.cpp \
+    mail/mimemultipart.cpp \
+    mail/mimepart.cpp \
+    mail/mimetext.cpp \
+    mail/quotedprintable.cpp \
+    mail/smtpclient.cpp
 
 HEADERS += \
     connection.h \
     dialog_employes.h \
     employe.h \
     mainwindow.h \
+        mail/SmtpMime \
+        mail/emailaddress.h \
+        mail/mimeattachment.h \
+    mail/mimecontentformatter.h \
+    mail/mimefile.h \
+    mail/mimehtml.h \
+    mail/mimeinlinefile.h \
+    mail/mimemessage.h \
+    mail/mimemultipart.h \
+    mail/mimepart.h \
+    mail/mimetext.h \
+    mail/quotedprintable.h \
+    mail/smtpclient.h
 
 FORMS += \
     dialog_employes.ui \

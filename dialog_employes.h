@@ -48,9 +48,21 @@ private slots:
 
     void on_pushButton_filtre_clicked();
 
+    void on_tb_getAttach1_clicked();
+
+    void on_tb_getAttach2_clicked();
+
+    void on_tb_getAttach3_clicked();
+
+    void on_tb_getAttach4_clicked();
+
+    void on_envoyer_mail_clicked();
+
+
 private:
     Ui::Dialog_Employes *ui;
     Employe Empl;
+    QStringList getRecipientsAddress(QString str);
 };
 
 #endif // DIALOG_EMPLOYES_H
