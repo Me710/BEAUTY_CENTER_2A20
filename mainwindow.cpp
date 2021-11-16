@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "employe.h"
+#include "connection.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -11,6 +12,18 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+    bool test;
+    test = C.createconnection("system","system","system");
+    if(test)
+    {
+        QMessageBox::information(nullptr, QObject::tr("database is open"),
+                QObject::tr("conncetion sucessful (login).""Click Cancel to exit."),QMessageBox::Cancel);
+    }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("database is not open"),
+                QObject::tr("conncetion failed(login).\n""Click Cancel to exit."),QMessageBox::Cancel);
+    }
 
 }
 
@@ -23,59 +36,55 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_seConnecter_clicked()
 {
     Dialog_Employes E;
-    QSqlQuery query;
-    /*QString username = ui->lineEdit_login->text();
-    QString password = ui->lineEdit_motdepasse->text();*/
+    QString username = ui->lineEdit_login->text();
+    QString password = ui->lineEdit_motdepasse->text();
 
-    query.prepare("select *from login where username=? and password=?");
-    /*query.addBindValue(":username",username);
-    query.addBindValue(":password",password);*/
 
-    query.addBindValue(ui->lineEdit_login->text());
-    query.addBindValue(ui->lineEdit_motdepasse->text());
-
-    if(query.exec())
+        if(C.Authentification(username,password))
         {
-            int count=0;
-            while(query.next())
+            ui->label_statuts->setText("Statuts: Mot de passe/Login correctes");
+            C.closeconnection();
+            hide();
+
+            bool test=C.createconnection("test-bd","Christian","Christian");
+
+            if(test)
             {
-                count++;
-            }
-            if(count==1)
-            {
-                ui->label_statuts->setText("Statuts: Mot de passe/Login correctes");
-                hide();
+                QMessageBox::information(nullptr, QObject::tr("database is open"),
+                        QObject::tr("conncetion sucessful.""Click Cancel to exit."),QMessageBox::Cancel);
                 E.setModal(true);
                 E.exec();
             }
-            if(count<1)
+            else
             {
-                QMessageBox::warning(this,"Authentification échoué","Mot de passe/Login incorrectes");
-                ui->label_statuts->setText("Statuts: Mot de passe/Login incorrectes");
+                QMessageBox::critical(nullptr, QObject::tr("database is not open"),
+                        QObject::tr("conncetion failed.\n""Click Cancel to exit."),QMessageBox::Cancel);
             }
-
         }
         else
         {
-             QMessageBox::warning(this,"Probleme d'envoie de la requete!","Une erreur s'est produit lors du traitement de la requete!");
+            QMessageBox::warning(this,"AUTHENTIFICATION ECHOUE","MOT DE PASSE/LOGIN INCORRECTES!");
+
         }
+
+
 }
 
 void MainWindow::on_pushButton_outils_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
-    ui->stackedWidget_2->setCurrentIndex(1);
+    ui->stackedWidget_2->setCurrentIndex(2);
 }
 
 void MainWindow::on_pushButton_reinitialiser_mdp_clicked()
 {
-    ui->stackedWidget_2->setCurrentIndex(2);
+    ui->stackedWidget_2->setCurrentIndex(3);
 }
 
 void MainWindow::on_pushButton_inscription_clicked()
 {
     ui->stackedWidget_2->setCurrentIndex(0);
-    ui->comboBox_mail_inscris->setModel(Empl.afficherValeur("mail"));
+    //ui->comboBox_mail_inscris->setModel(Empl.afficherValeur("mail"));
 }
 
 void MainWindow::on_pushButton_valider_inscription_clicked()
@@ -84,7 +93,7 @@ void MainWindow::on_pushButton_valider_inscription_clicked()
     QString username=ui->lineEdit_username->text();
     QString password=ui->lineEdit_mdp->text();
     QString password2=ui->lineEdit_mdp2->text();
-    QString mail=ui->comboBox_mail_inscris->currentText();
+    //QString mail=ui->comboBox_mail_inscris->currentText();
 
      query.prepare("insert into login (username, password)" "values(:username, :password)");
 
@@ -114,3 +123,13 @@ void MainWindow::on_pushButton_valider_inscription_clicked()
 }
 
 void MainWindow::on_pushButton_accueil_clicked(){ui->stackedWidget->setCurrentIndex(0);}
+
+void MainWindow::on_pushButton_changer_mdp_clicked(){ui->stackedWidget_2->setCurrentIndex(1);}
+
+void MainWindow::on_pb_se_connecter_admin_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
+
+void MainWindow::on_retour_3_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
+
+void MainWindow::on_retour_1_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
+
+void MainWindow::on_retour_2_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}

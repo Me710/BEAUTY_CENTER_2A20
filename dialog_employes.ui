@@ -1648,8 +1648,8 @@ color: rgb(247, 65, 173);</string>
       <widget class="QPushButton" name="envoyer_mail">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>480</y>
+         <x>360</x>
+         <y>490</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -1704,7 +1704,7 @@ color: rgb(247, 65, 173);</string>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2';&quot;&gt;test&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2';&quot;&gt;Bonjour&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="placeholderText">
            <string>content</string>
@@ -1807,7 +1807,7 @@ p, li { white-space: pre-wrap; }
         <item row="1" column="0">
          <widget class="QLineEdit" name="le_emailSubject">
           <property name="text">
-           <string>test</string>
+           <string/>
           </property>
           <property name="placeholderText">
            <string>subject</string>
@@ -1825,6 +1825,12 @@ p, li { white-space: pre-wrap; }
              <property name="text">
               <string>nebotchristian6@gmail.com</string>
              </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Normal</enum>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="placeholderText">
               <string>username</string>
              </property>
@@ -1832,8 +1838,17 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QLineEdit" name="le_emailPass">
+             <property name="locale">
+              <locale language="French" country="France"/>
+             </property>
              <property name="text">
               <string>comment-craquer-Mon-Mot-de-passe-2079</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
              <property name="placeholderText">
               <string>password</string>
@@ -1848,6 +1863,9 @@ p, li { white-space: pre-wrap; }
              <property name="text">
               <string>465</string>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="placeholderText">
               <string>port</string>
              </property>
@@ -1857,6 +1875,12 @@ p, li { white-space: pre-wrap; }
             <widget class="QLineEdit" name="le_emailSmtp">
              <property name="text">
               <string>smtp.gmail.com</string>
+             </property>
+             <property name="dragEnabled">
+              <bool>false</bool>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
              <property name="placeholderText">
               <string>smtp</string>
@@ -1872,13 +1896,33 @@ p, li { white-space: pre-wrap; }
            <string>Receivers</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QLineEdit" name="le_sendersAdd">
+           <item row="3" column="0" colspan="2">
+            <widget class="QLineEdit" name="le_bccAdd">
              <property name="text">
-              <string>nebotchristian6@gmail.com</string>
+              <string/>
              </property>
              <property name="placeholderText">
-              <string>sender addres</string>
+              <string>BCC</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QLineEdit" name="le_ccAdd">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>CC</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QLineEdit" name="le_toAdd">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>To</string>
              </property>
             </widget>
            </item>
@@ -1892,33 +1936,16 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="3" column="0" colspan="2">
-            <widget class="QLineEdit" name="le_bccAdd">
+           <item row="0" column="0">
+            <widget class="QLineEdit" name="le_sendersAdd">
              <property name="text">
-              <string>ballamou39@gmail.com</string>
+              <string>nebotchristian6@gmail.com</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
              <property name="placeholderText">
-              <string>BCC</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0" colspan="2">
-            <widget class="QLineEdit" name="le_ccAdd">
-             <property name="text">
-              <string>ghada.eladeb@esprit.tn</string>
-             </property>
-             <property name="placeholderText">
-              <string>CC</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="2">
-            <widget class="QLineEdit" name="le_toAdd">
-             <property name="text">
-              <string>nebotchristian7@gmail.com</string>
-             </property>
-             <property name="placeholderText">
-              <string>To</string>
+              <string>sender addres</string>
              </property>
             </widget>
            </item>

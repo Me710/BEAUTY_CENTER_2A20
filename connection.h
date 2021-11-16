@@ -10,8 +10,10 @@ class connection
     QSqlDatabase db;
 public:
     connection();
-    bool createconnection();
+    bool createconnection(QString,QString,QString);
     void closeconnection();
+
+    bool Authentification(QString,QString);
 };
 
 #endif // CONNECTION_H
