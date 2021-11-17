@@ -39,6 +39,8 @@ private slots:
 
     void on_retour_2_clicked();
 
+    void on_pb_accueil_clicked();
+
 private:
     Ui::MainWindow *ui;
     Employe Empl;

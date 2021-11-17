@@ -108,16 +108,14 @@ void MainWindow::on_pushButton_valider_inscription_clicked()
 
         if(query.exec())
         {
-            QMessageBox::information(nullptr, QObject::tr("OK"),
-                     QObject::tr("Inscription effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
+            QMessageBox::information(this,"OK","Login Créé avec succes\n");
             ui->lineEdit_username->setText("");
             ui->lineEdit_mdp->setText("");
             ui->lineEdit_mdp2->setText("");
         }
         else
         {
-            QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-                     QObject::tr("Inscription non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+            QMessageBox::critical(this,"NOT OK","Echec de création du Login");
         }
     }
 }
@@ -133,3 +131,5 @@ void MainWindow::on_retour_3_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
 void MainWindow::on_retour_1_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
 
 void MainWindow::on_retour_2_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
+
+void MainWindow::on_pb_accueil_clicked(){ui->stackedWidget->setCurrentIndex(0);}

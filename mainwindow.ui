@@ -30,7 +30,7 @@
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_11">
@@ -91,59 +91,31 @@ border-color: rgb(107, 35, 131);
       <property name="title">
        <string>CONNEXION</string>
       </property>
-      <widget class="QLabel" name="label_3">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>110</y>
-         <width>81</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;
-font: 25 14pt &quot;Noto Sans Light&quot;;</string>
-       </property>
-       <property name="text">
-        <string>LOGIN :</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_4">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>200</y>
-         <width>151</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;
-font: 25 14pt &quot;Noto Sans Light&quot;;</string>
-       </property>
-       <property name="text">
-        <string>MOT DE PASSE  :</string>
-       </property>
-      </widget>
       <widget class="QLineEdit" name="lineEdit_login">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>120</y>
-         <width>191</width>
+         <x>60</x>
+         <y>234</y>
+         <width>371</width>
          <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>username</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_motdepasse">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>190</y>
-         <width>191</width>
+         <x>60</x>
+         <y>270</y>
+         <width>371</width>
          <height>31</height>
         </rect>
        </property>
@@ -159,12 +131,18 @@ font: 25 14pt &quot;Noto Sans Light&quot;;</string>
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>password</string>
+       </property>
       </widget>
       <widget class="QPushButton" name="pushButton_seConnecter">
        <property name="geometry">
         <rect>
-         <x>340</x>
-         <y>270</y>
+         <x>310</x>
+         <y>320</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -187,10 +165,10 @@ color: rgb(107, 35, 131);</string>
       <widget class="QLabel" name="label_statuts">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>310</y>
-         <width>291</width>
-         <height>16</height>
+         <x>30</x>
+         <y>330</y>
+         <width>231</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -199,6 +177,25 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
         <string>-----------------------</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>60</y>
+         <width>141</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../resources/user.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -293,8 +290,8 @@ color: rgb(0, 0, 255);</string>
        <rect>
         <x>30</x>
         <y>80</y>
-        <width>781</width>
-        <height>461</height>
+        <width>841</width>
+        <height>531</height>
        </rect>
       </property>
       <property name="cursor">
@@ -304,25 +301,9 @@ color: rgb(0, 0, 255);</string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_3">
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>110</y>
-          <width>47</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(107, 35, 131);</string>
-        </property>
-        <property name="text">
-         <string>LOGIN</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_6">
         <property name="geometry">
          <rect>
@@ -353,65 +334,6 @@ color: rgb(0, 0, 255);</string>
         </property>
         <property name="text">
          <string>CONFIRMER MOT DE PASSE</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_username">
-        <property name="geometry">
-         <rect>
-          <x>380</x>
-          <y>100</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 85, 255);
-color: rgb(0, 0, 0);</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_mdp">
-        <property name="geometry">
-         <rect>
-          <x>380</x>
-          <y>140</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 85, 255);
-color: rgb(0, 0, 0);
-</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_mdp2">
-        <property name="geometry">
-         <rect>
-          <x>380</x>
-          <y>190</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 85, 255);
-color: rgb(0, 0, 0);</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_valider_inscription">
-        <property name="geometry">
-         <rect>
-          <x>490</x>
-          <y>260</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 0, 255);</string>
-        </property>
-        <property name="text">
-         <string>VALIDER</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_13">
@@ -466,55 +388,6 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
          <string/>
         </property>
        </widget>
-       <widget class="QLabel" name="label_33">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>20</y>
-          <width>471</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 0, 255);
-font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
-        </property>
-        <property name="text">
-         <string>AJOUTER UN COMPTE EMPLOYE</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_35">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>150</y>
-          <width>81</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color:rgb(107, 35, 131);</string>
-        </property>
-        <property name="text">
-         <string>MOT DE PASSE</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_36">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>190</y>
-          <width>151</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(107, 35, 131);</string>
-        </property>
-        <property name="text">
-         <string>CONFIRMER MOT DE PASSE</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_verification_infos_3">
         <property name="geometry">
          <rect>
@@ -547,21 +420,133 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
          <string>RETOUR</string>
         </property>
        </widget>
-       <zorder>label_6</zorder>
-       <zorder>label_7</zorder>
-       <zorder>label_13</zorder>
-       <zorder>label_14</zorder>
-       <zorder>lineEdit_username</zorder>
-       <zorder>lineEdit_mdp</zorder>
-       <zorder>lineEdit_mdp2</zorder>
-       <zorder>label_5</zorder>
-       <zorder>label_verification_infos</zorder>
-       <zorder>label_33</zorder>
-       <zorder>label_35</zorder>
-       <zorder>label_36</zorder>
-       <zorder>pushButton_valider_inscription</zorder>
-       <zorder>label_verification_infos_3</zorder>
-       <zorder>retour_1</zorder>
+       <widget class="QGroupBox" name="groupBox_6">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>20</y>
+          <width>471</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 24pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 0, 255);</string>
+        </property>
+        <property name="title">
+         <string>AJOUTER UN LOGIN EMPLOYE</string>
+        </property>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>80</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+font: 10pt &quot;MV Boli&quot;;</string>
+         </property>
+         <property name="text">
+          <string>LOGIN</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_username">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>80</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);
+color: rgb(0, 0, 0);</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_35">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>130</y>
+           <width>111</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+font: 10pt &quot;MV Boli&quot;;</string>
+         </property>
+         <property name="text">
+          <string>MOT DE PASSE</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_mdp">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>120</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);
+color: rgb(0, 0, 0);
+</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_36">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>170</y>
+           <width>191</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+font: 10pt &quot;MV Boli&quot;;</string>
+         </property>
+         <property name="text">
+          <string>CONFIRMER MOT DE PASSE</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_mdp2">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>160</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);
+color: rgb(0, 0, 0);</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_valider_inscription">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>280</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 0, 255);</string>
+        </property>
+        <property name="text">
+         <string>VALIDER</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_6">
        <widget class="QLabel" name="label_23">
@@ -583,108 +568,10 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QLabel" name="label_39">
-        <property name="geometry">
-         <rect>
-          <x>150</x>
-          <y>30</y>
-          <width>471</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 0, 255);
-font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
-        </property>
-        <property name="text">
-         <string>CHANGER DE MOT DE PASSE</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_24">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>150</y>
-          <width>131</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(107, 35, 131);
-</string>
-        </property>
-        <property name="text">
-         <string>ANCIEN MOT DE PASSE</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_25">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>190</y>
-          <width>131</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(107, 35, 131);
-</string>
-        </property>
-        <property name="text">
-         <string>NOUVEAU MOT DE PASSE</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="geometry">
-         <rect>
-          <x>330</x>
-          <y>150</y>
-          <width>113</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_2">
-        <property name="geometry">
-         <rect>
-          <x>330</x>
-          <y>190</y>
-          <width>113</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_26">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>110</y>
-          <width>131</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(107, 35, 131);
-</string>
-        </property>
-        <property name="text">
-         <string>LOGIN</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox">
-        <property name="geometry">
-         <rect>
-          <x>330</x>
-          <y>110</y>
-          <width>111</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
-          <x>420</x>
+          <x>590</x>
           <y>250</y>
           <width>80</width>
           <height>22</height>
@@ -713,6 +600,110 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
          <string>RETOUR</string>
         </property>
        </widget>
+       <widget class="QGroupBox" name="groupBox_7">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>20</y>
+          <width>491</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 0, 255);
+font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
+        </property>
+        <property name="title">
+         <string>CHANGER DE MOT DE PASSE</string>
+        </property>
+        <widget class="QComboBox" name="comboBox_login">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>80</y>
+           <width>231</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>120</y>
+           <width>231</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_2">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>160</y>
+           <width>231</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_26">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>131</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+font: 10pt &quot;MV Boli&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>LOGIN</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_24">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>120</y>
+           <width>161</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+font: 10pt &quot;MV Boli&quot;;
+
+
+</string>
+         </property>
+         <property name="text">
+          <string>ANCIEN MOT DE PASSE</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>160</y>
+           <width>181</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+font: 10pt &quot;MV Boli&quot;;
+
+</string>
+         </property>
+         <property name="text">
+          <string>NOUVEAU MOT DE PASSE</string>
+         </property>
+        </widget>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_4">
        <widget class="QLabel" name="label_15">
@@ -739,8 +730,8 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
          <rect>
           <x>190</x>
           <y>70</y>
-          <width>421</width>
-          <height>281</height>
+          <width>521</width>
+          <height>331</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -752,10 +743,10 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
         <widget class="QLabel" name="label_12">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>210</x>
            <y>40</y>
-           <width>91</width>
-           <height>101</height>
+           <width>131</width>
+           <height>121</height>
           </rect>
          </property>
          <property name="text">
@@ -771,8 +762,8 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
         <widget class="QPushButton" name="pb_se_connecter_admin">
          <property name="geometry">
           <rect>
-           <x>250</x>
-           <y>230</y>
+           <x>330</x>
+           <y>280</y>
            <width>91</width>
            <height>22</height>
           </rect>
@@ -781,37 +772,50 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
           <string>SE CONNECTER</string>
          </property>
         </widget>
-        <widget class="QWidget" name="">
+        <widget class="QPushButton" name="pb_accueil">
          <property name="geometry">
           <rect>
-           <x>30</x>
-           <y>150</y>
-           <width>311</width>
-           <height>61</height>
+           <x>110</x>
+           <y>280</y>
+           <width>91</width>
+           <height>22</height>
           </rect>
          </property>
-         <layout class="QFormLayout" name="formLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_21">
-            <property name="text">
-             <string>LOGIN</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="login_admin"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_22">
-            <property name="text">
-             <string>MOT DE PASSE</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="mot_de_passe_admin"/>
-          </item>
-         </layout>
+         <property name="text">
+          <string>ACCUEIL</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="login_admin">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>190</y>
+           <width>221</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string>username</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="mot_de_passe_admin">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>220</y>
+           <width>221</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string>password</string>
+         </property>
         </widget>
        </widget>
       </widget>
@@ -872,8 +876,8 @@ color: rgb(107, 35, 131);</string>
          <rect>
           <x>10</x>
           <y>-190</y>
-          <width>751</width>
-          <height>631</height>
+          <width>811</width>
+          <height>691</height>
          </rect>
         </property>
         <property name="text">
@@ -903,32 +907,13 @@ color: rgb(255, 0, 255);</string>
          <string>REINITIALISATION DE MOT DE PASSE</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="reinitialiser">
-        <property name="geometry">
-         <rect>
-          <x>480</x>
-          <y>320</y>
-          <width>141</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>Reinitialisez le mot de passe</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 0, 255);</string>
-        </property>
-        <property name="text">
-         <string>REINITIALISER</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>300</y>
-          <width>261</width>
-          <height>51</height>
+          <x>270</x>
+          <y>240</y>
+          <width>391</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -954,7 +939,7 @@ color: rgb(255, 0, 255);</string>
          <string>RETOUR</string>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -1002,18 +987,137 @@ color: rgb(107, 35, 131);</string>
          </item>
         </layout>
        </widget>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>110</y>
+          <width>411</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <widget class="QLabel" name="label_30">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>40</y>
+           <width>131</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+</string>
+         </property>
+         <property name="text">
+          <string>LOGIN</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_login_2">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>40</y>
+           <width>231</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="reinitialiser_2">
+         <property name="geometry">
+          <rect>
+           <x>240</x>
+           <y>90</y>
+           <width>141</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Reinitialisez le mot de passe</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 255);</string>
+         </property>
+         <property name="text">
+          <string>ENVOYER UN CODE</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_4">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>280</y>
+          <width>411</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <widget class="QLabel" name="label_29">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>141</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+</string>
+         </property>
+         <property name="text">
+          <string>CODE DE REINITIALISATION</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_3">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>40</y>
+           <width>231</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>CODE DE REINITIALISATION</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="reinitialiser">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>90</y>
+           <width>141</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Reinitialisez le mot de passe</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 255);</string>
+         </property>
+         <property name="text">
+          <string>REINITIALISER</string>
+         </property>
+        </widget>
+       </widget>
+       <zorder>layoutWidget</zorder>
        <zorder>label_16</zorder>
        <zorder>label_17</zorder>
        <zorder>label_18</zorder>
        <zorder>label_19</zorder>
-       <zorder>lineEdit_5</zorder>
-       <zorder>lineEdit_6</zorder>
        <zorder>label_20</zorder>
-       <zorder>label_37</zorder>
-       <zorder>label_38</zorder>
-       <zorder>reinitialiser</zorder>
        <zorder>label</zorder>
        <zorder>retour_3</zorder>
+       <zorder>groupBox_3</zorder>
+       <zorder>groupBox_4</zorder>
       </widget>
       <widget class="QWidget" name="page_7">
        <widget class="QLabel" name="label_27">
@@ -1035,58 +1139,74 @@ color: rgb(107, 35, 131);</string>
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QSplitter" name="splitter">
+       <widget class="QGroupBox" name="groupBox_5">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>50</y>
-          <width>181</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <widget class="QPushButton" name="pushButton_reinitialiser_mdp">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(107, 35, 131);</string>
-         </property>
-         <property name="text">
-          <string>REINITIALISER MOT DE PASSE</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_inscription">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(107, 35, 131);</string>
-         </property>
-         <property name="text">
-          <string>AJOUTER UN COMPTE</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_changer_mdp">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(107, 35, 131);</string>
-         </property>
-         <property name="text">
-          <string>CHANGER DE MOT DE PASSE</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QPushButton" name="pushButton_accueil">
-        <property name="geometry">
-         <rect>
-          <x>350</x>
-          <y>280</y>
-          <width>181</width>
-          <height>71</height>
+          <x>340</x>
+          <y>40</y>
+          <width>221</width>
+          <height>371</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(107, 35, 131);</string>
+         <string notr="true">color: rgb(255, 0, 255);</string>
         </property>
-        <property name="text">
-         <string>RETOUR A L'ACCUEIL</string>
+        <property name="title">
+         <string>MENU</string>
         </property>
+        <widget class="QSplitter" name="splitter">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>181</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <widget class="QPushButton" name="pushButton_reinitialiser_mdp">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(107, 35, 131);</string>
+          </property>
+          <property name="text">
+           <string>REINITIALISER MOT DE PASSE</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_inscription">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(107, 35, 131);</string>
+          </property>
+          <property name="text">
+           <string>AJOUTER UN COMPTE</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_changer_mdp">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(107, 35, 131);</string>
+          </property>
+          <property name="text">
+           <string>CHANGER DE MOT DE PASSE</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QPushButton" name="pushButton_accueil">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>280</y>
+           <width>181</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);</string>
+         </property>
+         <property name="text">
+          <string>RETOUR A L'ACCUEIL</string>
+         </property>
+        </widget>
        </widget>
       </widget>
      </widget>
