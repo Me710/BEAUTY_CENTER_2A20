@@ -1,8 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "employe.h"
+
 #include <QMainWindow>
 #include "connection.h"
+#include "login.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -41,9 +42,14 @@ private slots:
 
     void on_pb_accueil_clicked();
 
+    void on_envoyer_code_clicked();
+
+    void on_pb_reinitialiser_clicked();
+
 private:
     Ui::MainWindow *ui;
-    Employe Empl;
+    Login L;
     connection C;
+    QStringList getRecipientsAddress(QString str);
 };
 #endif // MAINWINDOW_H

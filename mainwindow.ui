@@ -301,7 +301,7 @@ color: rgb(0, 0, 255);</string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QLabel" name="label_6">
@@ -530,22 +530,110 @@ font: 10pt &quot;MV Boli&quot;;</string>
 color: rgb(0, 0, 0);</string>
          </property>
         </widget>
+        <widget class="QPushButton" name="pushButton_valider_inscription">
+         <property name="geometry">
+          <rect>
+           <x>290</x>
+           <y>200</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+         </property>
+         <property name="text">
+          <string>ENVOYER UN CODE</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="mdp_mdp2_verif">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>210</y>
+           <width>191</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 9pt &quot;MV Boli&quot;;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </widget>
-       <widget class="QPushButton" name="pushButton_valider_inscription">
+       <widget class="QGroupBox" name="groupBox_8">
         <property name="geometry">
          <rect>
-          <x>550</x>
-          <y>280</y>
-          <width>91</width>
-          <height>31</height>
+          <x>210</x>
+          <y>270</y>
+          <width>471</width>
+          <height>131</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 0, 255);</string>
+        <property name="title">
+         <string>GroupBox</string>
         </property>
-        <property name="text">
-         <string>VALIDER</string>
-        </property>
+        <widget class="QLabel" name="label_31">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>141</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(107, 35, 131);
+</string>
+         </property>
+         <property name="text">
+          <string>CODE DE VALIDATION</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="code_valid">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>40</y>
+           <width>231</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string>CODE</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pb_reinitialiser_2">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>90</y>
+           <width>111</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Reinitialisez le mot de passe</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 255);</string>
+         </property>
+         <property name="text">
+          <string>VALIDER</string>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="page_6">
@@ -907,17 +995,18 @@ color: rgb(255, 0, 255);</string>
          <string>REINITIALISATION DE MOT DE PASSE</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="message_code">
         <property name="geometry">
          <rect>
-          <x>270</x>
-          <y>240</y>
-          <width>391</width>
-          <height>41</height>
+          <x>240</x>
+          <y>220</y>
+          <width>451</width>
+          <height>81</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(252, 240, 255);</string>
+         <string notr="true">color: rgb(255, 0, 0);
+font: 10pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="text">
          <string/>
@@ -1016,7 +1105,7 @@ color: rgb(107, 35, 131);</string>
           <string>LOGIN</string>
          </property>
         </widget>
-        <widget class="QComboBox" name="comboBox_login_2">
+        <widget class="QComboBox" name="comboBox_login_rein">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -1026,7 +1115,7 @@ color: rgb(107, 35, 131);</string>
           </rect>
          </property>
         </widget>
-        <widget class="QPushButton" name="reinitialiser_2">
+        <widget class="QPushButton" name="envoyer_code">
          <property name="geometry">
           <rect>
            <x>240</x>
@@ -1036,7 +1125,7 @@ color: rgb(107, 35, 131);</string>
           </rect>
          </property>
          <property name="toolTip">
-          <string>Reinitialisez le mot de passe</string>
+          <string>pour recevoir un code par mail</string>
          </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(255, 0, 255);</string>
@@ -1075,7 +1164,7 @@ color: rgb(107, 35, 131);</string>
           <string>CODE DE REINITIALISATION</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QLineEdit" name="code_rein">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -1084,11 +1173,20 @@ color: rgb(107, 35, 131);</string>
            <height>21</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 255);</string>
+         </property>
          <property name="text">
-          <string>CODE DE REINITIALISATION</string>
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string>CODE</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="reinitialiser">
+        <widget class="QPushButton" name="pb_reinitialiser">
          <property name="geometry">
           <rect>
            <x>250</x>
@@ -1114,7 +1212,7 @@ color: rgb(107, 35, 131);</string>
        <zorder>label_18</zorder>
        <zorder>label_19</zorder>
        <zorder>label_20</zorder>
-       <zorder>label</zorder>
+       <zorder>message_code</zorder>
        <zorder>retour_3</zorder>
        <zorder>groupBox_3</zorder>
        <zorder>groupBox_4</zorder>
@@ -1194,7 +1292,7 @@ color: rgb(107, 35, 131);</string>
         <widget class="QPushButton" name="pushButton_accueil">
          <property name="geometry">
           <rect>
-           <x>30</x>
+           <x>20</x>
            <y>280</y>
            <width>181</width>
            <height>71</height>

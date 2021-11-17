@@ -19,6 +19,7 @@ SOURCES += \
     connection.cpp \
     dialog_employes.cpp \
     employe.cpp \
+    login.cpp \
     main.cpp \
     mainwindow.cpp \
     mail/emailaddress.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     connection.h \
     dialog_employes.h \
     employe.h \
+    login.h \
     mainwindow.h \
         mail/SmtpMime \
         mail/emailaddress.h \

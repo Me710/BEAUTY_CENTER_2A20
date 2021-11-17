@@ -5,6 +5,12 @@
 #include <QDebug>
 #include "employe.h"
 #include "connection.h"
+#include "mail/SmtpMime"
+#include <QDebug>
+#include <random>
+#include <ctime>
+
+constexpr int MAX = 1000000;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -30,6 +36,17 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+QStringList MainWindow::getRecipientsAddress(QString str)
+{
+
+    QStringList recipients;
+
+    recipients = str.split(QRegExp(";"));
+
+    return recipients;
 }
 
 //Authentification
@@ -79,23 +96,20 @@ void MainWindow::on_pushButton_outils_clicked()
 void MainWindow::on_pushButton_reinitialiser_mdp_clicked()
 {
     ui->stackedWidget_2->setCurrentIndex(3);
+    ui->comboBox_login->setModel(L.afficherUsername());
+    ui->comboBox_login_rein->setModel(L.afficherUsername());
 }
 
 void MainWindow::on_pushButton_inscription_clicked()
 {
     ui->stackedWidget_2->setCurrentIndex(0);
-    //ui->comboBox_mail_inscris->setModel(Empl.afficherValeur("mail"));
 }
 
 void MainWindow::on_pushButton_valider_inscription_clicked()
 {
-    QSqlQuery query;
     QString username=ui->lineEdit_username->text();
     QString password=ui->lineEdit_mdp->text();
     QString password2=ui->lineEdit_mdp2->text();
-    //QString mail=ui->comboBox_mail_inscris->currentText();
-
-     query.prepare("insert into login (username, password)" "values(:username, :password)");
 
     if(password != password2)
     {
@@ -103,15 +117,14 @@ void MainWindow::on_pushButton_valider_inscription_clicked()
     }
     else
     {
-        query.bindValue(":password",password);
-        query.bindValue(":username",username);
+        Login Log(username,password);
 
-        if(query.exec())
+        if(Log.ajouterLogin())
         {
             QMessageBox::information(this,"OK","Login Créé avec succes\n");
-            ui->lineEdit_username->setText("");
-            ui->lineEdit_mdp->setText("");
-            ui->lineEdit_mdp2->setText("");
+            ui->lineEdit_username->clear();
+            ui->lineEdit_mdp->clear();
+            ui->lineEdit_mdp2->clear();
         }
         else
         {
@@ -124,7 +137,23 @@ void MainWindow::on_pushButton_accueil_clicked(){ui->stackedWidget->setCurrentIn
 
 void MainWindow::on_pushButton_changer_mdp_clicked(){ui->stackedWidget_2->setCurrentIndex(1);}
 
-void MainWindow::on_pb_se_connecter_admin_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
+void MainWindow::on_pb_se_connecter_admin_clicked()
+{
+    QString username=ui->login_admin->text();
+    QString password=ui->mot_de_passe_admin->text();
+
+    if(username=="admin" && password=="admin")
+    {
+        ui->stackedWidget_2->setCurrentIndex(4);
+        ui->login_admin->clear();
+        ui->mot_de_passe_admin->clear();
+    }
+    else
+    {
+        QMessageBox::critical(this,"MOT DE PASSE/LOGIN INCORRECTES","VERIFIER LE MOT DE PASSE/ LOGIN");
+    }
+
+}
 
 void MainWindow::on_retour_3_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
 
@@ -133,3 +162,85 @@ void MainWindow::on_retour_1_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
 void MainWindow::on_retour_2_clicked(){ui->stackedWidget_2->setCurrentIndex(4);}
 
 void MainWindow::on_pb_accueil_clicked(){ui->stackedWidget->setCurrentIndex(0);}
+
+void MainWindow::on_envoyer_code_clicked()
+{
+    QString username=ui->comboBox_login_rein->currentText();
+    SmtpClient smtp("smtp.gmail.com",465, SmtpClient::SslConnection);
+    smtp.setUser("nebotchristian7@gmail.com");
+    smtp.setPassword("nebotfonkou");
+
+    std::srand(std::time(nullptr));
+
+    long rand_code;
+    rand_code = rand() % MAX;
+    L.set_code(QString::number(rand_code));
+
+    MimeMessage message;
+
+    EmailAddress sender("nebotchristian7@gmail.com","SHINE ON BEAUTY CENTER");
+    message.setSender(&sender);
+
+    QStringList to = getRecipientsAddress("nebotchristian6@gmail.com");
+
+    for (QStringList::iterator it = to.begin();it != to.end(); ++it) {
+         message.addRecipient(new EmailAddress(*it),MimeMessage::To);
+    }
+
+    //set message subject
+    message.setSubject("CODE DE REINITIALISATION MOT DE PASSE");
+
+    MimeText text;
+    QString messagetext = "Le Code de reinitialisation du login avec USERNAME: " ;
+    messagetext=messagetext+username+" est: "+L.get_code();
+    text.setText(messagetext);
+    message.addPart(&text);
+
+     if (!smtp.connectToHost()) {
+         QMessageBox::critical(this,"Failed to connect","Cannot connect to host");
+     }
+
+     if (!smtp.login()) {
+         QMessageBox::critical(this,"Failed to connect","Failed to login");
+     }
+
+     if(smtp.sendMail(message))
+     {
+          ui->message_code->setText("Un code de validation à été envoyer par mail à l'administrateur du system\nVeuillez remplir ce code dans l'espace pour reinitialiser le mot de passe!");
+     }
+     else
+     {
+          ui->message_code->setText("Erreurs\nVeuillez contacter le developpeur de l'application");
+     }
+
+     smtp.quit();
+
+
+}
+
+void MainWindow::on_pb_reinitialiser_clicked()
+{
+    QString code=ui->code_rein->text();
+    QString username=ui->comboBox_login_rein->currentText();
+    QString motdepasse=username+QString::number(rand() % 3000);
+    QString message="Le nouveau mot de passe du compte est: "+motdepasse;
+
+    L.set_username(username);
+    L.set_password(motdepasse);
+
+    if(code==L.get_code())
+    {
+        ui->code_rein->clear();
+        ui->message_code->clear();
+        if(L.modifierLogin())
+        {
+            QMessageBox::information(this,"REINITIALISATION REUSSIE",message);
+        }
+
+    }
+    else
+    {
+        ui->message_code->setText("Code Erronné, Verifier le code à nouveau ou cliquer sur 'ENVOYER CODE' pour recevoir un nouveau code!");
+        ui->code_rein->clear();
+    }
+}

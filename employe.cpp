@@ -9,7 +9,22 @@
 
 using namespace std;
 
-Employe::Employe(){}
+//CONSTRUCTEUR PAR DEFAUT
+Employe::Employe()
+{
+    cin_e=000001;
+    nom="admin";
+    prenom="admin";
+    mail="nebotchristian6@gmail.com";
+    tel=50892332;
+    fonction="Gerant";
+    sexe ="Homme";
+    adresse = "Ariana";
+    salaire = 30000;
+    age=30;
+}
+
+//CONSTRUCTEUR PARAMETRE
 Employe::Employe(int cin,QString nom,QString prenom,QString mail,int tel,QString fonction,QString sexe,QString adresse,int salaire,int age)
 {
     this->cin_e=cin;
@@ -17,7 +32,6 @@ Employe::Employe(int cin,QString nom,QString prenom,QString mail,int tel,QString
     this->prenom=prenom;
     this->mail=mail;
     this->tel=tel;
-    this->fonction=fonction;
     this->sexe=sexe;
     this->adresse=adresse;
     this->salaire=salaire;
@@ -25,9 +39,13 @@ Employe::Employe(int cin,QString nom,QString prenom,QString mail,int tel,QString
     this->fonction=fonction;
 }
 
-Employe::~Employe(){}
+Employe::~Employe()
+{
+    /*DEST*/
+}
 
-//implementation des mutateurs
+//LES MUTATEURS------------------------------------------------------------------------------------
+
 void Employe::set_cin(int cin_e){this->cin_e=cin_e;}
 void Employe::set_prenom(QString prenom){this->prenom=prenom;}
 void Employe::set_nom(QString nom){this->nom=nom;}
@@ -38,7 +56,8 @@ void Employe::set_sexe(QString sexe){this->sexe=sexe;}
 void Employe::set_adresse(QString adresse){this->adresse=adresse;}
 void Employe::set_salaire(int salaire){this->salaire=salaire;}
 
-//implementation des acesseurs
+//LES ACESSEURS--------------------------------------------------------------------------------------
+
 int Employe::get_cin(){return cin_e;}
 QString Employe::get_prenom(){return prenom;}
 QString Employe::get_nom(){return nom;}
@@ -49,7 +68,10 @@ QString Employe::get_sexe(){return sexe;}
 QString Employe::get_adresse(){return adresse;}
 int Employe::get_salaire(){return salaire;}
 
-//implementation des CRUDs
+//--------------------------LES CRUDs-------------------------------------------------------------------
+
+//AJOUTER-----------------------------------------------------------------------------------------------
+
 bool Employe::ajouter()
 {
     QSqlQuery query;
@@ -69,11 +91,12 @@ bool Employe::ajouter()
     query.bindValue(":age",age);
     query.bindValue(":fonction",fonction);
 
-    /*query.bindValue(":fonction",fonction);*/
 
     return query.exec();//exec() envoie la requete pour l'exécuter
 
 }
+
+//AFFICHER--------------------------------------------------------------------------------------
 
 QSqlQueryModel * Employe::afficher()
 {
@@ -86,6 +109,8 @@ QSqlQueryModel * Employe::afficher()
     return model;
 }
 
+//SUPPRIMER--------------------------------------------------------------------------------------
+
 bool Employe::supprimer(int cin_e)
 {
     QSqlQuery query;
@@ -96,6 +121,8 @@ bool Employe::supprimer(int cin_e)
     return query.exec();
 
 }
+
+//RECHERCHER--------------------------------------------------------------------------------------
 
 QSqlQueryModel * Employe::rechercher(int cin_e)
 {
@@ -112,6 +139,8 @@ QSqlQueryModel * Employe::rechercher(int cin_e)
 
     return model;
 }
+
+//MODIFIER--------------------------------------------------------------------------------------
 
 bool Employe::modifier()
 {
@@ -132,6 +161,8 @@ bool Employe::modifier()
     return query.exec();
 }
 
+//AFFICHER_VALEUR----------------------------------------------------------------------------------
+
 QSqlQueryModel * Employe::afficherValeur(QString valeur)
 {
     QSqlQueryModel * model =new QSqlQueryModel();
@@ -145,6 +176,8 @@ QSqlQueryModel * Employe::afficherValeur(QString valeur)
     return model;
 }
 
+//TRIER---------------------------------------------------------------------------------------------
+
 QSqlQueryModel * Employe::trier(QString valeur)
 {
     QSqlQueryModel * model =new QSqlQueryModel();
@@ -155,6 +188,8 @@ QSqlQueryModel * Employe::trier(QString valeur)
 
     return model;
 }
+
+//FILTRER--------------------------------------------------------------------------------------
 
 QSqlQueryModel * Employe::afficherFiltrer(array<int,8> tab)
 {
@@ -181,6 +216,8 @@ QSqlQueryModel * Employe::afficherFiltrer(array<int,8> tab)
 
     return model;
 }
+
+//CHAINE VALIDE--------------------------------------------------------------------------------------
 
 bool Employe::ChaineValide(QString chaine)
 {

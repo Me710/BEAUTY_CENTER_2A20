@@ -64,19 +64,19 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
         test=E.ajouter();
         if(test)//si requete executer ==>QMessageBox::information
         {
-            ui->label_nom_verif->setText("");
-            ui->label_prenom_verif->setText("");
-            ui->label_adresse_verif->setText("");
-            ui->label_mail_verif->setText("");
-            ui->lineEdit_rechercher->setText("");
-            ui->lineEdit_nom_modif->setText("");
-            ui->lineEdit_prenom_modif->setText("");
-            ui->lineEdit_mail_modif->setText("");
-            ui->lineEdit_adresse_modif->setText("");
-            ui->lineEdit_tel_modif->setText("");
-            ui->lineEdit_age_modif->setText("");
+            ui->label_nom_verif->clear();
+            ui->label_prenom_verif->clear();
+            ui->label_adresse_verif->clear();
+            ui->label_mail_verif->clear();
+            ui->lineEdit_rechercher->clear();
+            ui->lineEdit_nom_modif->clear();
+            ui->lineEdit_prenom_modif->clear();
+            ui->lineEdit_mail_modif->clear();
+            ui->lineEdit_adresse_modif->clear();
+            ui->lineEdit_tel_modif->clear();
+            ui->lineEdit_age_modif->clear();
             //ui->comboBox_sex_modif->setText("");
-            ui->lineEdit_salaire_modif->setText("");
+            ui->lineEdit_salaire_modif->clear();
             //ui->comboBox_fonction_modif->currentText();
             ui->tableView->setModel(Empl.afficher());
             ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
@@ -89,9 +89,9 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
         else//si la requete non executer ==>QMessageBox::critical
         {
             ui->label_mail_verif->setText("CIN déjà existant/Mail incorrecte!");
-            ui->label_nom_verif->setText("");
-            ui->label_prenom_verif->setText("");
-            ui->label_adresse_verif->setText("");
+            ui->label_nom_verif->clear();
+            ui->label_prenom_verif->clear();
+            ui->label_adresse_verif->clear();
             //QMessageBox::critical(nullptr,QObject::tr("Not OK"),
               //                     QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
         }
@@ -99,9 +99,9 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
     else
     {
         //Signalisation des controles
-        if(!test_nom){ui->label_nom_verif->setText("Nom invalid");}else{ui->label_nom_verif->setText("");}
-        if(!test_prenom){ui->label_prenom_verif->setText("Prenom invalid");}else{ui->label_prenom_verif->setText("");}
-        if(!test_adresse){ui->label_adresse_verif->setText("Adresse invalid");}else{ui->label_adresse_verif->setText("");}
+        if(!test_nom){ui->label_nom_verif->setText("Nom invalid");}else{ui->label_nom_verif->clear();}
+        if(!test_prenom){ui->label_prenom_verif->setText("Prenom invalid");}else{ui->label_prenom_verif->clear();}
+        if(!test_adresse){ui->label_adresse_verif->setText("Adresse invalid");}else{ui->label_adresse_verif->clear();}
 
     }
 
