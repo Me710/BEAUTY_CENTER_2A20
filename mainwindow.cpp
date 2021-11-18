@@ -24,6 +24,8 @@ MainWindow::MainWindow(QWidget *parent)
     {
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                 QObject::tr("conncetion sucessful (login).""Click Cancel to exit."),QMessageBox::Cancel);
+        ui->comboBox_login->setModel(L.afficherUsername());
+        ui->comboBox_login_rein->setModel(L.afficherUsername());
     }
     else
     {
@@ -96,41 +98,11 @@ void MainWindow::on_pushButton_outils_clicked()
 void MainWindow::on_pushButton_reinitialiser_mdp_clicked()
 {
     ui->stackedWidget_2->setCurrentIndex(3);
-    ui->comboBox_login->setModel(L.afficherUsername());
-    ui->comboBox_login_rein->setModel(L.afficherUsername());
 }
 
 void MainWindow::on_pushButton_inscription_clicked()
 {
     ui->stackedWidget_2->setCurrentIndex(0);
-}
-
-void MainWindow::on_pushButton_valider_inscription_clicked()
-{
-    QString username=ui->lineEdit_username->text();
-    QString password=ui->lineEdit_mdp->text();
-    QString password2=ui->lineEdit_mdp2->text();
-
-    if(password != password2)
-    {
-        ui->label_verification_infos->setText("Mot de passe de confirmation different");
-    }
-    else
-    {
-        Login Log(username,password);
-
-        if(Log.ajouterLogin())
-        {
-            QMessageBox::information(this,"OK","Login Créé avec succes\n");
-            ui->lineEdit_username->clear();
-            ui->lineEdit_mdp->clear();
-            ui->lineEdit_mdp2->clear();
-        }
-        else
-        {
-            QMessageBox::critical(this,"NOT OK","Echec de création du Login");
-        }
-    }
 }
 
 void MainWindow::on_pushButton_accueil_clicked(){ui->stackedWidget->setCurrentIndex(0);}
@@ -243,4 +215,116 @@ void MainWindow::on_pb_reinitialiser_clicked()
         ui->message_code->setText("Code Erronné, Verifier le code à nouveau ou cliquer sur 'ENVOYER CODE' pour recevoir un nouveau code!");
         ui->code_rein->clear();
     }
+}
+
+void MainWindow::on_envoyer_un_code_clicked()
+{
+    QString username=ui->lineEdit_username->text();
+    QString password=ui->lineEdit_mdp->text();
+    QString password2=ui->lineEdit_mdp2->text();
+
+    if(password==password2)
+    {
+        ui->label_verification_infos->clear();
+        SmtpClient smtp("smtp.gmail.com",465, SmtpClient::SslConnection);
+        smtp.setUser("nebotchristian7@gmail.com");
+        smtp.setPassword("nebotfonkou");
+
+        std::srand(std::time(nullptr));
+
+        L.set_code(QString::number(rand() % MAX));
+
+        MimeMessage message;
+
+        EmailAddress sender("nebotchristian7@gmail.com","SHINE ON BEAUTY CENTER");
+        message.setSender(&sender);
+
+        QStringList to = getRecipientsAddress("nebotchristian6@gmail.com");
+
+        for (QStringList::iterator it = to.begin();it != to.end(); ++it) {
+             message.addRecipient(new EmailAddress(*it),MimeMessage::To);
+        }
+
+        //set message subject
+        message.setSubject("CODE DE VALIDATION D'AJOUT DE LOGIN");
+
+        MimeText text;
+        QString messagetext = "Le Code de validation du login avec USERNAME: " ;
+        messagetext=messagetext+username+" est: "+L.get_code();
+        text.setText(messagetext);
+        message.addPart(&text);
+
+         if(!smtp.connectToHost()) {
+             QMessageBox::critical(this,"Failed to connect","Cannot connect to host");
+         }
+
+         if(!smtp.login()) {
+             QMessageBox::critical(this,"Failed to connect","Failed to login");
+         }
+
+         if(smtp.sendMail(message))
+         {
+              ui->code_notif->setText("Veuillez renseigner le champs code avec le code envoyer par mail!");
+         }
+         else
+         {
+              ui->code_notif->setText("Erreurs\nVeuillez contacter le developpeur de l'application");
+         }
+
+         smtp.quit();
+
+    }
+    else
+    {
+        ui->label_verification_infos->setText("Mot de passe de confirmation different");
+    }
+
+
+}
+
+void MainWindow::on_valider_ajout_login_clicked()
+{
+    QString username=ui->lineEdit_username->text();
+    QString password=ui->lineEdit_mdp->text();
+    QString code=ui->code_valid->text();
+
+
+        L.set_username(username);
+        L.set_password(password);
+
+        if(code==L.get_code())
+        {
+            ui->code_valid->clear();
+            ui->label_verification_infos->clear();
+            ui->code_notif->clear();
+
+            if(L.ajouterLogin())
+            {
+                QMessageBox::information(this,"OK","Login Créé avec succes\n");
+                ui->comboBox_login->setModel(L.afficherUsername());
+                ui->comboBox_login_rein->setModel(L.afficherUsername());
+                ui->lineEdit_username->clear();
+                ui->lineEdit_mdp->clear();
+                ui->lineEdit_mdp2->clear();
+            }
+            else
+            {
+                QMessageBox::critical(this,"NOT OK","Echec de création du Login");
+            }
+
+        }
+        else
+        {
+            ui->code_verif->setText("Code Erronné, Verifier le code à nouveau ou cliquer sur 'ENVOYER CODE' pour recevoir un nouveau code!");
+            ui->code_valid->clear();
+
+        }
+
+}
+
+void MainWindow::on_pb_changer_mdp_clicked()
+{
+    /*QString username=ui->comboBox_login->currentText();
+    QString oldpassword=ui->anc_mdp->text();
+    QString password=ui->*/
 }

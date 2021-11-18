@@ -301,7 +301,7 @@ color: rgb(0, 0, 255);</string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QLabel" name="label_6">
@@ -375,30 +375,32 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        <widget class="QLabel" name="label_verification_infos">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>259</y>
-          <width>231</width>
-          <height>41</height>
+          <x>220</x>
+          <y>220</y>
+          <width>251</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(170, 0, 0);</string>
+         <string notr="true">color: rgb(255, 0, 0);
+font: 8pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="text">
          <string/>
         </property>
        </widget>
-       <widget class="QLabel" name="label_verification_infos_3">
+       <widget class="QLabel" name="code_verif">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>300</y>
-          <width>201</width>
-          <height>20</height>
+          <x>230</x>
+          <y>350</y>
+          <width>241</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(170, 0, 0);</string>
+         <string notr="true">color: rgb(255, 0, 0);
+font: 9pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="text">
          <string/>
@@ -530,7 +532,7 @@ font: 10pt &quot;MV Boli&quot;;</string>
 color: rgb(0, 0, 0);</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_valider_inscription">
+        <widget class="QPushButton" name="envoyer_un_code">
          <property name="geometry">
           <rect>
            <x>290</x>
@@ -615,7 +617,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
           <string>CODE</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pb_reinitialiser_2">
+        <widget class="QPushButton" name="valider_ajout_login">
          <property name="geometry">
           <rect>
            <x>280</x>
@@ -634,7 +636,33 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
           <string>VALIDER</string>
          </property>
         </widget>
+        <widget class="QLabel" name="code_notif">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>-5</y>
+           <width>471</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);
+font: 9pt &quot;MV Boli&quot;;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </widget>
+       <zorder>label_6</zorder>
+       <zorder>label_7</zorder>
+       <zorder>label_13</zorder>
+       <zorder>label_14</zorder>
+       <zorder>retour_1</zorder>
+       <zorder>groupBox_6</zorder>
+       <zorder>groupBox_8</zorder>
+       <zorder>label_verification_infos</zorder>
+       <zorder>code_verif</zorder>
       </widget>
       <widget class="QWidget" name="page_6">
        <widget class="QLabel" name="label_23">
@@ -654,22 +682,6 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton">
-        <property name="geometry">
-         <rect>
-          <x>590</x>
-          <y>250</y>
-          <width>80</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color:rgb(255, 0, 255)</string>
-        </property>
-        <property name="text">
-         <string>VALIDER</string>
         </property>
        </widget>
        <widget class="QPushButton" name="retour_2">
@@ -694,7 +706,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
           <x>230</x>
           <y>20</y>
           <width>491</width>
-          <height>221</height>
+          <height>301</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -714,7 +726,7 @@ font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="anc_mdp">
          <property name="geometry">
           <rect>
            <x>210</x>
@@ -789,6 +801,23 @@ font: 10pt &quot;MV Boli&quot;;
          </property>
          <property name="text">
           <string>NOUVEAU MOT DE PASSE</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pb_changer_mdp">
+         <property name="geometry">
+          <rect>
+           <x>360</x>
+           <y>220</y>
+           <width>80</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+         </property>
+         <property name="text">
+          <string>VALIDER</string>
          </property>
         </widget>
        </widget>

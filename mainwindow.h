@@ -26,8 +26,6 @@ private slots:
 
     void on_pushButton_inscription_clicked();
 
-    void on_pushButton_valider_inscription_clicked();
-
     void on_pushButton_accueil_clicked();
 
     void on_pushButton_changer_mdp_clicked();
@@ -45,6 +43,12 @@ private slots:
     void on_envoyer_code_clicked();
 
     void on_pb_reinitialiser_clicked();
+
+    void on_envoyer_un_code_clicked();
+
+    void on_valider_ajout_login_clicked();
+
+    void on_pb_changer_mdp_clicked();
 
 private:
     Ui::MainWindow *ui;
