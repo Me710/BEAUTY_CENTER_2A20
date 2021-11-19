@@ -22,13 +22,15 @@ SOURCES += \
     dialog.cpp \
     main.cpp \
     mainwindow.cpp \
-    produit.cpp
+    produit.cpp \
+    qrcode.cpp
 
 HEADERS += \
     connection.h \
     dialog.h \
     mainwindow.h \
-    produit.h
+    produit.h \
+    qrcode.h
 
 FORMS += \
     dialog.ui \

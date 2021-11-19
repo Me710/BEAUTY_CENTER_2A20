@@ -5,6 +5,8 @@
 #include<QSqlQueryModel>
 #include<QtDebug>
 #include<QObject>
+#include<QTableView>
+#include<QPainter>
 using namespace std;
 
 //class
@@ -24,12 +26,16 @@ public:
     QSqlQueryModel* afficher();
     bool update();  //authentification
     bool supprmier(int);   //authentification
-    void trier_produit();
-    Produit recherche_produit();
     Produit PDF();
+    QSqlQueryModel * recherche(int CODE);
     int gerer_code_barre(); //authentification
     Produit upload();   //authentification
-//getters
+   // void clearTable(QTableView * table);
+    //void rechercher(QTableView *table, int x);
+    QSqlQueryModel *tri_code();
+     QSqlQueryModel *tri_prix();
+      QSqlQueryModel *tri_stock();
+    //getters
     int getcode(){return code;}
     QString getnom(){return nom ;}
     int getqualite(){return qualite;}
