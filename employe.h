@@ -21,6 +21,7 @@ private:
     QString adresse;
     int salaire;
     int age;
+    int index;
 
     //double revenue;
 
@@ -39,6 +40,7 @@ public:
     void set_sexe(QString);
     void set_adresse(QString);
     void set_salaire(int);
+    void set_index(int index){this->index=index;}
 
 
     //Acesseurs
@@ -51,6 +53,7 @@ public:
     QString get_sexe();
     QString get_adresse();
     int get_salaire();
+    int get_index(){return index;}
 
     //CRUDs
     bool ajouter();
@@ -60,6 +63,7 @@ public:
     bool supprimer(int);
     bool modifier();
     QSqlQueryModel * rechercher(int);
+    QSqlQueryModel * rechercher(QString);
     QSqlQueryModel * afficherFiltrer(array<int,8> tab);
     bool ChaineValide(QString);
 };

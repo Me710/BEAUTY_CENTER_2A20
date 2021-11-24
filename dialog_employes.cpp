@@ -7,7 +7,10 @@
 #include <QPainter>
 #include <QDesktopServices>
 #include <QFileDialog>
+#include <QPixmap>
 #include "mail/SmtpMime"
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
 
 Dialog_Employes::Dialog_Employes(QWidget *parent) :
     QDialog(parent),
@@ -26,6 +29,16 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui->tableView->setModel(Empl.afficher());
     ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
     ui->comboBox_cin_suppr->setModel(Empl.afficherValeur("cin_e"));
+    int ret=A.connect_arduino();
+    switch (ret) {
+    case (0):qDebug()<<"arduino is available and connected to: "<<A.getarduino_port_name();
+        break;
+    case(1):qDebug()<<"arduino is available but not connected to: "<<A.getarduino_port_name();
+        break;
+    case(-1):qDebug()<<"arduino is not available";
+        break;
+    }
+    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
    // ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
 }
 
@@ -34,10 +47,16 @@ Dialog_Employes::~Dialog_Employes()
     delete ui;
 }
 
-
 void Dialog_Employes::on_pushButton_valider_ajout_clicked()
 {
     bool test=false;
+
+
+    //ui->label_pic->setPixmap(pix);
+    //QString fileName = QFileDialog::getOpenFileName(this,
+      //  tr("Open File"), "", tr("All Files (*.*)"));
+    //QPixmap pix(fileName);
+
     //Recuperation des informations saisies dans les 3 champs
     int cin=ui->lineEdit_cin->text().toInt();
     QString nom=ui->lineEdit_nom->text();
@@ -69,14 +88,15 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
             ui->label_adresse_verif->clear();
             ui->label_mail_verif->clear();
             ui->lineEdit_rechercher->clear();
-            ui->lineEdit_nom_modif->clear();
-            ui->lineEdit_prenom_modif->clear();
-            ui->lineEdit_mail_modif->clear();
-            ui->lineEdit_adresse_modif->clear();
-            ui->lineEdit_tel_modif->clear();
-            ui->lineEdit_age_modif->clear();
+            ui->lineEdit_cin->clear();
+            ui->lineEdit_nom->clear();
+            ui->lineEdit_prenom->clear();
+            ui->lineEdit_mail->clear();
+            ui->lineEdit_adresse->clear();
+            ui->lineEdit_tel->clear();
+            ui->lineEdit_age->clear();
             //ui->comboBox_sex_modif->setText("");
-            ui->lineEdit_salaire_modif->clear();
+            ui->lineEdit_salaire->clear();
             //ui->comboBox_fonction_modif->currentText();
             ui->tableView->setModel(Empl.afficher());
             ui->comboBox_cin_modif->setModel(Empl.afficherValeur("cin_e"));
@@ -92,8 +112,6 @@ void Dialog_Employes::on_pushButton_valider_ajout_clicked()
             ui->label_nom_verif->clear();
             ui->label_prenom_verif->clear();
             ui->label_adresse_verif->clear();
-            //QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-              //                     QObject::tr("Ajout non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
         }
     }
     else
@@ -158,7 +176,7 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
     bool test_prenom = E.ChaineValide(prenom);
     bool test_adresse = E.ChaineValide(adresse);
 
-    if(test_nom && test_prenom && test_adresse)
+    if(test_nom && test_prenom && test_adresse && salaire>=0)
     {
         bool test=E.modifier();
         if(test)//si requete executer ==>QMessageBox::information
@@ -169,21 +187,21 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
            // ui->comboBox_mails->setModel(Empl.afficherValeur("mail"));
 
 
-            ui->label_nom_modif_verif->setText("");
-            ui->label_prenom_modif_verif->setText("");
-            ui->label_adresse_modif_verif->setText("");
-            ui->label_mail_modif_verif->setText("");
-            ui->lineEdit_rechercher->setText("");
-            ui->lineEdit_cin_modif->setText("");
-            ui->lineEdit_nom_modif->setText("");
-            ui->lineEdit_prenom_modif->setText("");
-            ui->lineEdit_mail_modif->setText("");
-            ui->lineEdit_adresse_modif->setText("");
-            ui->lineEdit_tel_modif->setText("");
-            ui->lineEdit_age_modif->setText("");
-            ui->comboBox_sex_modif->setCurrentText(0);
-            ui->lineEdit_salaire_modif->setText("");
-            ui->comboBox_fonction_modif->setCurrentText(0);
+            ui->label_nom_modif_verif->clear();
+            ui->label_prenom_modif_verif->clear();
+            ui->label_adresse_modif_verif->clear();
+            ui->label_mail_modif_verif->clear();
+            ui->lineEdit_rechercher->clear();
+            ui->lineEdit_cin_modif->clear();
+            ui->lineEdit_nom_modif->clear();
+            ui->lineEdit_prenom_modif->clear();
+            ui->lineEdit_mail_modif->clear();
+            ui->lineEdit_adresse_modif->clear();
+            ui->lineEdit_tel_modif->clear();
+            ui->lineEdit_age_modif->clear();
+            ui->comboBox_sex_modif->clear();
+            ui->lineEdit_salaire_modif->clear();
+            ui->comboBox_fonction_modif->clear();
 
             QMessageBox::information(nullptr, QObject::tr("OK"),
                      QObject::tr("Modification effectué avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);
@@ -193,11 +211,9 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
         else//si la requete non executer ==>QMessageBox::critical
         {
             ui->label_mail_modif_verif->setText("CIN déjà existant/Mail incorrecte!");
-            ui->label_nom_modif_verif->setText("");
-            ui->label_prenom_modif_verif->setText("");
-            ui->label_adresse_modif_verif->setText("");
-           // QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-             //                      QObject::tr("Modification non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+            ui->label_nom_modif_verif->clear();
+            ui->label_prenom_modif_verif->clear();
+            ui->label_adresse_modif_verif->clear();
         }
 
     }
@@ -207,6 +223,7 @@ void Dialog_Employes::on_pushButton_valider_modification_clicked()
         if(!test_nom){ui->label_nom_modif_verif->setText("Nom invalid");}else{ui->label_nom_verif->setText("");}
         if(!test_prenom){ui->label_prenom_modif_verif->setText("Prenom invalid");}else{ui->label_prenom_verif->setText("");}
         if(!test_adresse){ui->label_adresse_modif_verif->setText("Adresse invalid");}else{ui->label_adresse_verif->setText("");}
+        if(salaire<0){ui->label_salaire_modif_verif->setText("Salaire invalid");}else{ui->label_salaire_modif_verif->clear();}
 
     }
 
@@ -257,9 +274,18 @@ void Dialog_Employes::on_pushButton_verifier_supprimer_clicked()
 
 void Dialog_Employes::on_pushButton_rechercher_empl_clicked()
 {
-    int cin=ui->lineEdit_rechercher->text().toInt();
-    ui->tableView->setModel(Empl.rechercher(cin));
-    ui->lineEdit_rechercher->setText("");
+    //QString cin=ui->lineEdit_rechercher->text();
+    //ui->tableView->setModel(Empl.rechercher(cin));
+    //ui->lineEdit_rechercher->clear();
+    switch(Empl.get_index())
+    {
+      case 1:case 4 :case 8:
+        ui->tableView->setModel(Empl.rechercher(ui->lineEdit_rechercher->text().toInt()));
+        break;
+    case 2: case 3: case 5: case 6:case 7:
+        ui->tableView->setModel(Empl.rechercher(ui->lineEdit_rechercher->text()));
+        break;
+    }
 }
 
 void Dialog_Employes::on_comboBox_cin_modif_currentIndexChanged(int index)
@@ -296,6 +322,8 @@ void Dialog_Employes::on_comboBox_cin_modif_currentIndexChanged(int index)
 
 }
 
+//-------GENERER UN PDF----------------------------------------------------------------------------------------/
+
 void Dialog_Employes::on_pushButton_pdf_clicked()
 {
     QPdfWriter pdf("C:/Users/PMS-BLA-5-Chloe/Desktop/SMART_BEAUTY_CENTER/PDFEmploye.pdf");
@@ -309,10 +337,7 @@ void Dialog_Employes::on_pushButton_pdf_clicked()
     painter.drawText(3000,1500,"LISTE DES EMPLOYES");
     painter.setPen(Qt::black);
     painter.setFont(QFont("Arial", 50));
-    // painter.drawText(1100,2000,afficheDC);
     painter.drawRect(2700,200,7300,2600);
-    //painter.drawRect(1500,200,7300,2600);
-    //painter.drawPixmap(QRect(7600,70,2000,2600),QPixmap("C:/Users/RH/Desktop/projecpp/image/logopdf.png"));
     painter.drawRect(0,3000,9600,500);
     painter.setFont(QFont("Arial", 9));
     painter.drawText(300,3300,"CIN");
@@ -347,6 +372,8 @@ void Dialog_Employes::on_pushButton_pdf_clicked()
 
 }
 
+//-------TRIER LA LISTE----------------------------------------------------------------------------------------/
+
 void Dialog_Employes::on_comboBox_currentIndexChanged(int index)
 {
     QString valeur="cin";
@@ -366,6 +393,9 @@ void Dialog_Employes::on_comboBox_currentIndexChanged(int index)
     ui->tableView->setModel(Empl.trier(valeur));
 }
 
+//-------PSEUDO FILTRE----------------------------------------------------------------------------------------/
+
+
 void Dialog_Employes::on_pushButton_filtre_clicked()
 {
     array<int,8> tab={0,0,0,0,0,0,0,0};
@@ -383,7 +413,7 @@ void Dialog_Employes::on_pushButton_filtre_clicked()
 
 }
 
-//--------------------------------MAILING-------------------------------------------------
+//-----------------MAILING--------------------------------------------------------------------------------/
 
 QStringList Dialog_Employes::getRecipientsAddress(QString str)
 {
@@ -431,7 +461,7 @@ void Dialog_Employes::on_tb_getAttach4_clicked()
 void Dialog_Employes::on_envoyer_mail_clicked()
 {
     if(ui->le_emailUser->text() != NULL && ui->le_emailPass->text() !=NULL){
-        if(ui->le_emailPort->text().toInt() != 0 && ui->le_emailSmtp->text()!= ""){
+        if(ui->le_emailPort->text().toInt() != 0 && ui->le_emailSmtp->text()!= NULL){
             if(ui->le_sendersAdd->text() != NULL && ui->le_toAdd->text() != NULL){
 
                 SmtpClient smtp(ui->le_emailSmtp->text(), ui->le_emailPort->text().toInt(), SmtpClient::SslConnection);
@@ -508,4 +538,23 @@ void Dialog_Employes::on_envoyer_mail_clicked()
             }else QMessageBox::information(this,"Fill info", "please input senders addres and reciever addres");
         }else QMessageBox::information(this,"Fill info", "please input port and smtp");
     }else QMessageBox::information(this,"Fill info", "please input username and password");
+}
+
+void Dialog_Employes::on_comboBox_2_currentIndexChanged(int index)
+{
+    Empl.set_index(index);
+}
+
+void Dialog_Employes::update_label()
+{
+    data=A.read_from_arduino();
+
+    if(data=="1")
+    {
+        QMessageBox::information(this,"LECTURE","Donnees recu!");data= "0";
+    }
+    /*else if(data=="0")
+    {
+        QMessageBox::information(this,"LECTURE","Donnees non recu!");
+    }*/
 }

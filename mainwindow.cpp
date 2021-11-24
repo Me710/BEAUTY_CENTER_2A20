@@ -69,10 +69,10 @@ void MainWindow::on_pushButton_seConnecter_clicked()
 
             if(test)
             {
-                QMessageBox::information(nullptr, QObject::tr("database is open"),
-                        QObject::tr("conncetion sucessful.""Click Cancel to exit."),QMessageBox::Cancel);
                 E.setModal(true);
                 E.exec();
+                QMessageBox::information(nullptr, QObject::tr("database is open"),
+                        QObject::tr("conncetion sucessful.""Click Cancel to exit."),QMessageBox::Cancel);
             }
             else
             {
@@ -324,7 +324,7 @@ void MainWindow::on_valider_ajout_login_clicked()
 
 void MainWindow::on_pb_changer_mdp_clicked()
 {
-    /*QString username=ui->comboBox_login->currentText();
+    QString username=ui->comboBox_login->currentText();
     QString oldpassword=ui->anc_mdp->text();
-    QString password=ui->*/
+    //QString password=ui->*/
 }

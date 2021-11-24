@@ -30,7 +30,7 @@
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_11">
@@ -151,8 +151,9 @@ border-color: rgb(107, 35, 131);
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(107, 35, 131);</string>
+        <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
        </property>
        <property name="text">
         <string>SE CONNECTER</string>
@@ -231,9 +232,10 @@ color: rgb(0, 0, 0);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
-text-decoration: underline;
-color: rgb(0, 0, 255);</string>
+       <string notr="true">text-decoration: underline;
+font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
       </property>
       <property name="text">
        <string>BESOIN AIDES?</string>
@@ -301,7 +303,7 @@ color: rgb(0, 0, 255);</string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QLabel" name="label_6">
@@ -466,6 +468,7 @@ font: 10pt &quot;MV Boli&quot;;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
 color: rgb(0, 0, 0);</string>
          </property>
         </widget>
@@ -497,8 +500,8 @@ font: 10pt &quot;MV Boli&quot;;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 85, 255);
-color: rgb(0, 0, 0);
-</string>
+font: 10pt &quot;MV Boli&quot;;
+color: rgb(0, 0, 0);</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_36">
@@ -529,6 +532,7 @@ font: 10pt &quot;MV Boli&quot;;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
 color: rgb(0, 0, 0);</string>
          </property>
         </widget>
@@ -542,8 +546,9 @@ color: rgb(0, 0, 0);</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
          </property>
          <property name="text">
           <string>ENVOYER UN CODE</string>
@@ -605,7 +610,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 255);</string>
+          <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
+color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string/>
@@ -620,7 +627,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         <widget class="QPushButton" name="valider_ajout_login">
          <property name="geometry">
           <rect>
-           <x>280</x>
+           <x>310</x>
            <y>90</y>
            <width>111</width>
            <height>22</height>
@@ -630,7 +637,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
           <string>Reinitialisez le mot de passe</string>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 255);</string>
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
          </property>
          <property name="text">
           <string>VALIDER</string>
@@ -725,6 +734,11 @@ font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
            <height>22</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
         </widget>
         <widget class="QLineEdit" name="anc_mdp">
          <property name="geometry">
@@ -735,6 +749,11 @@ font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
            <height>21</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_2">
          <property name="geometry">
@@ -744,6 +763,12 @@ font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
            <width>231</width>
            <height>21</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
+color: rgb(0, 0, 0);
+</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_26">
@@ -813,8 +838,9 @@ font: 10pt &quot;MV Boli&quot;;
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
          </property>
          <property name="text">
           <string>VALIDER</string>
@@ -885,11 +911,19 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
            <height>22</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
+         </property>
          <property name="text">
           <string>SE CONNECTER</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pb_accueil">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -898,8 +932,22 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
            <height>22</height>
           </rect>
          </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
+         </property>
          <property name="text">
           <string>ACCUEIL</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
          </property>
         </widget>
         <widget class="QLineEdit" name="login_admin">
@@ -926,6 +974,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
            <width>221</width>
            <height>22</height>
           </rect>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1143,6 +1194,11 @@ color: rgb(107, 35, 131);</string>
            <height>22</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
         </widget>
         <widget class="QPushButton" name="envoyer_code">
          <property name="geometry">
@@ -1157,7 +1213,9 @@ color: rgb(107, 35, 131);</string>
           <string>pour recevoir un code par mail</string>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 255);</string>
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
          </property>
          <property name="text">
           <string>ENVOYER UN CODE</string>
@@ -1203,7 +1261,9 @@ color: rgb(107, 35, 131);</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 255);</string>
+          <string notr="true">background-color: rgb(255, 85, 255);
+font: 10pt &quot;MV Boli&quot;;
+color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string/>
@@ -1228,7 +1288,9 @@ color: rgb(107, 35, 131);</string>
           <string>Reinitialisez le mot de passe</string>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 255);</string>
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
          </property>
          <property name="text">
           <string>REINITIALISER</string>
@@ -1295,7 +1357,9 @@ color: rgb(107, 35, 131);</string>
          </property>
          <widget class="QPushButton" name="pushButton_reinitialiser_mdp">
           <property name="styleSheet">
-           <string notr="true">color: rgb(107, 35, 131);</string>
+           <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
           </property>
           <property name="text">
            <string>REINITIALISER MOT DE PASSE</string>
@@ -1303,7 +1367,9 @@ color: rgb(107, 35, 131);</string>
          </widget>
          <widget class="QPushButton" name="pushButton_inscription">
           <property name="styleSheet">
-           <string notr="true">color: rgb(107, 35, 131);</string>
+           <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
           </property>
           <property name="text">
            <string>AJOUTER UN COMPTE</string>
@@ -1311,7 +1377,9 @@ color: rgb(107, 35, 131);</string>
          </widget>
          <widget class="QPushButton" name="pushButton_changer_mdp">
           <property name="styleSheet">
-           <string notr="true">color: rgb(107, 35, 131);</string>
+           <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
           </property>
           <property name="text">
            <string>CHANGER DE MOT DE PASSE</string>
@@ -1328,7 +1396,9 @@ color: rgb(107, 35, 131);</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(107, 35, 131);</string>
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
          </property>
          <property name="text">
           <string>RETOUR A L'ACCUEIL</string>

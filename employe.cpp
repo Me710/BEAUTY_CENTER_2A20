@@ -127,12 +127,72 @@ bool Employe::supprimer(int cin_e)
 QSqlQueryModel * Employe::rechercher(int cin_e)
 {
     QSqlQueryModel * model =new QSqlQueryModel();
-    //QString res=QString::number(cin);
     QSqlQuery query;
-    query.prepare("select *from employe where cin_e=:cin_e");
-    query.bindValue(":cin_e",cin_e);
-    query.exec();
+    int salaire=cin_e;
+    int tel=cin_e;
 
+    switch(index)
+    {
+      case 1:
+        query.prepare("select *from employe where cin_e=:cin_e");
+        query.bindValue(":cin_e",cin_e);
+        break;
+      case 4:
+        query.prepare("select *from employe where salaire=:salaire");
+        query.bindValue(":salaire",salaire);
+        break;
+      case 8:
+        query.prepare("select *from employe where tel=:tel");
+        query.bindValue(":tel",tel);
+
+        break;
+    }
+
+    //model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));
+    query.exec();
+    model->setQuery(query);
+    return model;
+
+}
+QSqlQueryModel * Employe::rechercher(QString valeur)
+{
+    QSqlQueryModel * model =new QSqlQueryModel();
+    QSqlQuery query;
+    QString nom=valeur;
+    QString prenom=valeur;
+    QString fonction=valeur;
+    QString adresse=valeur;
+    QString mail=valeur;
+
+    switch(index)
+    {
+    case 2:
+        query.prepare("select *from employe where nom=:nom");
+        query.bindValue(":nom",nom);
+        break;
+    case 3:
+        query.prepare("select *from employe where prenom=:prenom");
+        query.bindValue(":prenom",prenom);
+        break;
+    case 5:
+        query.prepare("select *from employe where fonction=:fonction");
+        query.bindValue(":fonction",fonction);
+
+        break;
+    case 6:
+        query.prepare("select *from employe where adresse=:adresse");
+        query.bindValue(":adresse",adresse);
+        break;
+    case 7:
+        query.prepare("select *from employe where mail=:mail");
+        query.bindValue(":mail",mail);
+
+        break;
+
+    }
+
+
+    query.exec();
     model->setQuery(query);
 
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("CIN"));

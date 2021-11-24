@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "employe.h"
+#include "arduino.h"
 
 namespace Ui {
 class Dialog_Employes;
@@ -59,10 +60,15 @@ private slots:
     void on_envoyer_mail_clicked();
 
 
+    void on_comboBox_2_currentIndexChanged(int index);
+    void update_label();
+
 private:
     Ui::Dialog_Employes *ui;
     Employe Empl;
     QStringList getRecipientsAddress(QString str);
+    Arduino A;
+    QByteArray data;
 };
 
 #endif // DIALOG_EMPLOYES_H
