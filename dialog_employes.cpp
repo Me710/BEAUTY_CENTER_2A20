@@ -552,6 +552,7 @@ void Dialog_Employes::update_label()
     if(data=="1")
     {
         QMessageBox::information(this,"LECTURE","Donnees recu!");data= "0";
+        A.write_to_arduino("VEUILLEZ ");
     }
     /*else if(data=="0")
     {

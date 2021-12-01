@@ -108,7 +108,7 @@ font: 8pt &quot;MV Boli&quot;;</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="stackedWidgetPage1">
       <widget class="QLabel" name="label_menu_active">
