@@ -50,6 +50,8 @@ private slots:
 
     void on_pb_changer_mdp_clicked();
 
+    void on_pushButton_changer_mdp_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Login L;

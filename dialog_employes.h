@@ -61,7 +61,14 @@ private slots:
 
 
     void on_comboBox_2_currentIndexChanged(int index);
+
     void update_label();
+
+    void on_ajouter_carte_clicked();
+
+    void on_comboBox_id_employe_currentIndexChanged(int index);
+
+    void on_valider_carte_rfid_clicked();
 
 private:
     Ui::Dialog_Employes *ui;

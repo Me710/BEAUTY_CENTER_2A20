@@ -30,7 +30,7 @@
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_11">
@@ -303,7 +303,7 @@ background-color: rgb(249, 156, 255);</string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QLabel" name="label_6">
@@ -1332,9 +1332,9 @@ background-color: rgb(249, 156, 255);</string>
         <property name="geometry">
          <rect>
           <x>340</x>
-          <y>40</y>
+          <y>0</y>
           <width>221</width>
-          <height>371</height>
+          <height>411</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1390,7 +1390,7 @@ background-color: rgb(249, 156, 255);</string>
          <property name="geometry">
           <rect>
            <x>20</x>
-           <y>280</y>
+           <y>330</y>
            <width>181</width>
            <height>71</height>
           </rect>
@@ -1402,6 +1402,24 @@ background-color: rgb(249, 156, 255);</string>
          </property>
          <property name="text">
           <string>RETOUR A L'ACCUEIL</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_changer_mdp_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>250</y>
+           <width>181</width>
+           <height>64</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;MV Boli&quot;;
+color: rgb(107, 35, 131);
+background-color: rgb(249, 156, 255);</string>
+         </property>
+         <property name="text">
+          <string>GESTION DES EMPLOYES</string>
          </property>
         </widget>
        </widget>

@@ -22,6 +22,7 @@ Employe::Employe()
     adresse = "Ariana";
     salaire = 30000;
     age=30;
+    card_num=0;
 }
 
 //CONSTRUCTEUR PARAMETRE
@@ -297,4 +298,19 @@ bool Employe::ChaineValide(QString chaine)
     }
 
     return true;
+}
+
+bool Employe::ajouterCarte()
+{
+    QSqlQuery query;
+    //QString res_ = QString::number(cin);
+
+    query.prepare("update employe set card_num=:card_num where cin_e=:cin_e");
+
+    //Création des variables liées
+    query.bindValue(":card_num",card_num);
+    query.bindValue(":cin_e",cin_e);
+
+
+    return query.exec();
 }

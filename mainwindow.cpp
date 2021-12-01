@@ -328,3 +328,11 @@ void MainWindow::on_pb_changer_mdp_clicked()
     QString oldpassword=ui->anc_mdp->text();
     //QString password=ui->*/
 }
+
+void MainWindow::on_pushButton_changer_mdp_2_clicked()
+{
+    Dialog_Employes E;
+    E.setModal(true);
+    E.exec();
+
+}

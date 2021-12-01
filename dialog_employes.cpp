@@ -559,3 +559,47 @@ void Dialog_Employes::update_label()
         QMessageBox::information(this,"LECTURE","Donnees non recu!");
     }*/
 }
+
+void Dialog_Employes::on_ajouter_carte_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+    ui->comboBox_id_employe->setModel(Empl.afficherValeur("cin_e"));
+}
+
+void Dialog_Employes::on_comboBox_id_employe_currentIndexChanged(int index)
+{
+    index=0;
+    int cin_e=ui->comboBox_id_employe->currentText().toInt();
+    QSqlQuery query;
+    query.prepare("select nom, prenom from employe where cin_e=:cin_e");
+    query.bindValue(":cin_e",cin_e);
+
+    index++;
+
+    if(query.exec())
+    {
+        while(query.next())
+        {
+            ui->lineEdit_nom_employe->setText(query.value(0).toString());
+            ui->lineEdit_prenom_employe->setText(query.value(1).toString());
+        }
+    }
+}
+
+void Dialog_Employes::on_valider_carte_rfid_clicked()
+{
+    Employe E;
+    E.set_cin(ui->comboBox_id_employe->currentText().toInt());
+    E.set_card_num(ui->lineEdit_num_card->text().toInt());
+
+    int test;
+    test=E.ajouterCarte();
+    if(test)
+    {
+        QMessageBox::information(this,"AJOUT DE LA CARTE RFID","Ajout effectuer avec success!");
+    }
+    else
+    {
+        QMessageBox::critical(this,"AJOUT DE LA CARTE RFID","Ajout non effectuer!");
+    }
+}

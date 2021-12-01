@@ -108,7 +108,7 @@ font: 8pt &quot;MV Boli&quot;;</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="stackedWidgetPage1">
       <widget class="QLabel" name="label_menu_active">
@@ -214,7 +214,7 @@ font: 16pt &quot;MV Boli&quot;;
         <rect>
          <x>100</x>
          <y>450</y>
-         <width>251</width>
+         <width>171</width>
          <height>21</height>
         </rect>
        </property>
@@ -602,6 +602,43 @@ color: rgb(107, 35, 131);</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ajouter_carte">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>340</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>Valider l'ajout de l'employe</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(107, 35, 131);
+font: 6pt &quot;MV Boli&quot;;
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>AJOUTER UNE CARTE</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../resources/valider.png</normaloff>../resources/valider.png</iconset>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
         </property>
        </widget>
       </widget>
@@ -2223,6 +2260,182 @@ border-color: rgb(107, 35, 131);</string>
       <zorder>label_menu_active_5</zorder>
       <zorder>layoutWidget_2</zorder>
       <zorder>envoyer_mail</zorder>
+     </widget>
+     <widget class="QWidget" name="page">
+      <widget class="QLabel" name="label_cadre_6">
+       <property name="geometry">
+        <rect>
+         <x>-130</x>
+         <y>0</y>
+         <width>801</width>
+         <height>541</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../Downloads/cadre.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_9">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>120</y>
+         <width>401</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 255);
+font: 14pt &quot;MV Boli&quot;;</string>
+       </property>
+       <property name="title">
+        <string>AJOUTER UNE CARTE RFID</string>
+       </property>
+       <widget class="QPushButton" name="valider_carte_rfid">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>220</y>
+          <width>80</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 10pt &quot;MV Boli&quot;;</string>
+        </property>
+        <property name="text">
+         <string>VALIDER</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_id_employe">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>70</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 7pt &quot;MV Boli&quot;;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>70</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
+        </property>
+        <property name="text">
+         <string>ID DE L'EMPLOYE:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
+        </property>
+        <property name="text">
+         <string>NOM DE L'EMPLOYE :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_nom_employe">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>110</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 7pt &quot;MV Boli&quot;;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_prenom_employe">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>140</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 7pt &quot;MV Boli&quot;;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_num_card">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>170</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 7pt &quot;MV Boli&quot;;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>140</y>
+          <width>151</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
+        </property>
+        <property name="text">
+         <string>PRENOM DE L'EMPLOYE :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>170</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
+        </property>
+        <property name="text">
+         <string>NUMERO DE LA CARTE :</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QSplitter" name="splitter">
