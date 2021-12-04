@@ -548,16 +548,20 @@ void Dialog_Employes::on_comboBox_2_currentIndexChanged(int index)
 void Dialog_Employes::update_label()
 {
     data=A.read_from_arduino();
+    qDebug()<<data;
 
-    if(data=="1")
+    if(data=="\xE3")
     {
-        QMessageBox::information(this,"LECTURE","Donnees recu!");data= "0";
-        A.write_to_arduino("VEUILLEZ ");
+        QMessageBox::information(this,"LECTURE","LIVREUR AUTORISE!");
+        A.write_to_arduino("CHRIS");
+        //data= "-1";
     }
-    /*else if(data=="0")
+    else
     {
-        QMessageBox::information(this,"LECTURE","Donnees non recu!");
-    }*/
+        QMessageBox::critical(this,"LECTURE","LIVREUR NON AUTRISER!");
+        A.write_to_arduino("REFUS");
+        //data= "-1";
+    }
 }
 
 void Dialog_Employes::on_ajouter_carte_clicked()
@@ -590,7 +594,7 @@ void Dialog_Employes::on_valider_carte_rfid_clicked()
 {
     Employe E;
     E.set_cin(ui->comboBox_id_employe->currentText().toInt());
-    E.set_card_num(ui->lineEdit_num_card->text().toInt());
+    E.set_card_num(ui->lineEdit_num_card->text());
 
     int test;
     test=E.ajouterCarte();

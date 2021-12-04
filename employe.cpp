@@ -22,7 +22,7 @@ Employe::Employe()
     adresse = "Ariana";
     salaire = 30000;
     age=30;
-    card_num=0;
+    card_num="";
 }
 
 //CONSTRUCTEUR PARAMETRE

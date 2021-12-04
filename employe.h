@@ -22,7 +22,7 @@ private:
     int salaire;
     int age;
     int index;
-    int card_num;
+    QString card_num;
 
     //double revenue;
 
@@ -42,7 +42,7 @@ public:
     void set_adresse(QString);
     void set_salaire(int);
     void set_index(int index){this->index=index;}
-    void set_card_num(int card_num){this->card_num=card_num;}
+    void set_card_num(QString card_num){this->card_num=card_num;}
 
 
     //Acesseurs
@@ -56,7 +56,7 @@ public:
     QString get_adresse();
     int get_salaire();
     int get_index(){return index;}
-    int get_card_num(){return card_num;}
+    QString get_card_num(){return card_num;}
 
     //CRUDs
     bool ajouter();
