@@ -20,6 +20,8 @@ SOURCES += \
     connection.cpp \
     dialog_employes.cpp \
     employe.cpp \
+    gestion_produit/produit.cpp \
+    gestion_produit/qrcode.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -41,6 +43,8 @@ HEADERS += \
     connection.h \
     dialog_employes.h \
     employe.h \
+    gestion_produit/produit.h \
+    gestion_produit/qrcode.h \
     login.h \
     mainwindow.h \
         mail/SmtpMime \
