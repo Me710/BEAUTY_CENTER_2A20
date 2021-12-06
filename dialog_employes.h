@@ -6,6 +6,8 @@
 #include "arduino.h"
 #include "gestion_produit/produit.h"
 #include "gestion_produit/qrcode.h"
+#include "gestion_pub/publicites.h"
+#include <QTranslator>
 
 namespace Ui {
 class Dialog_Employes;
@@ -20,7 +22,7 @@ public:
     ~Dialog_Employes();
 
 private slots:
-
+    //POUR LA GESTION DES EMPLOYES------------------------------------------------------------------------------------------
     void on_pushButton_ajouter_clicked();
 
     void on_pushButton_afficher_clicked();
@@ -73,7 +75,7 @@ private slots:
     void on_valider_carte_rfid_clicked();
 
 
-    //Pour la gestion des produits
+    //POUR LA GESTION DES PRODUITS---------------------------------------------------------------------------------------
     void on_ajouter_clicked();
 
     void on_bt_ajouter_clicked();
@@ -126,6 +128,30 @@ private slots:
 
     void on_inserer_photo_clicked();
 
+    //POUR LA GESTION DES PRODUITS------------------------------------------------------------------------------------------------------
+
+    void on_pb_ajouter_clicked();
+
+    void on_pb_supprimer_clicked();
+
+    void on_pb_modifier_clicked();
+
+    void on_pb_entrer_clicked();
+
+    void on_pb_trier_clicked();
+
+    void on_radio_fb_clicked();
+
+    void on_radio_insta_clicked();
+
+    void on_radio_whatsapp_clicked();
+
+    void on_pb_PDF_clicked();
+
+    void on_lineEdit_textChanged(const QString &arg1);
+
+    void on_pb_imprimer_clicked();
+
 
 private:
     Ui::Dialog_Employes *ui;
@@ -134,6 +160,8 @@ private:
     Arduino A;
     QByteArray data;
     Produit P;
+    Publicites Pu;
+    QTranslator *translator=new QTranslator;
 };
 
 #endif // DIALOG_EMPLOYES_H

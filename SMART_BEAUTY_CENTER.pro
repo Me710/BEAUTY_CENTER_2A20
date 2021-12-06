@@ -22,6 +22,7 @@ SOURCES += \
     employe.cpp \
     gestion_produit/produit.cpp \
     gestion_produit/qrcode.cpp \
+    gestion_pub/publicites.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     employe.h \
     gestion_produit/produit.h \
     gestion_produit/qrcode.h \
+    gestion_pub/publicites.h \
     login.h \
     mainwindow.h \
         mail/SmtpMime \
@@ -70,4 +72,13 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    gestion_pub/translations.qrc
+
+DISTFILES += \
+    gestion_pub/anglais.qm \
+    gestion_pub/anglais.ts \
+    gestion_pub/arabic.qm \
+    gestion_pub/arabic.ts \
+    gestion_pub/espagnol.qm \
+    gestion_pub/espagnol.ts

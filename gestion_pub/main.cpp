@@ -1,15 +1,13 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QMessageBox>
-#include <QDebug>
 #include "connection.h"
-#include "mainwindow.h"
 #include <QTranslator>
 #include <QInputDialog>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc,argv);
+    QApplication a(argc, argv);
     QTranslator t;
     QStringList languages;
     languages << "anglais" << "arabic" << "espagnol" << "french";
@@ -27,13 +25,20 @@ int main(int argc, char *argv[])
     {
         a.installTranslator(&t);
     }
-    /*connection c;
-    bool test;
-    test = c.createconnection("system","system","system");*/
-
+    Connection c;
+    bool test=c.createconnect();
     MainWindow w;
-     w.show();
+    if(test)
+    {w.show();
+        QMessageBox::information(nullptr, QObject::tr("database is open"),
+                    QObject::tr("connection successful.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+    else
+        QMessageBox::critical(nullptr, QObject::tr("database is not open"),
+                    QObject::tr("connection failed.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
 
     return a.exec();
-
 }

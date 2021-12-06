@@ -14,6 +14,26 @@
 #include "gestion_produit/produit.h"
 #include "gestion_produit/qrcode.h"
 
+
+#include "gestion_pub/publicites.h"
+#include <QDate>
+#include <QDateEdit>
+#include <QIntValidator>
+#include <QDebug>
+#include <QRegExpValidator>
+#include <QTranslator>
+#include <QSystemTrayIcon>
+#include <QUrl>
+#include <QDesktopServices>
+#include <QFileInfo>
+#include <QFileDialog>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QTextDocument>
+#include <QPainter>
+#include <QPdfWriter>
+#include <QPixmap>
+
 Dialog_Employes::Dialog_Employes(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog_Employes)
@@ -41,6 +61,20 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui->tab_recehreche->setModel(P.afficher());
     ui->comboBox->setModel(P.afficher_code());
     ui->comboBox_2->setModel(P.afficher_code());
+
+    //
+    QPixmap pix("‪C:/Users/ryhab/OneDrive/Bureau/Projet C++/Houba.png");
+    ui->label_pic->setPixmap(pix);
+    ui->le_id->setValidator(new QIntValidator(0, 99999999, this));
+    ui->le_prix->setValidator(new QIntValidator(0, 999, this));
+    ui->tab_publicites->setModel(Pu.afficher());
+    #define NOM_RX "^([a-z]+[,.]?[ ]?|[a-z]+['-]?)+$"
+    QRegExp rxNom(NOM_RX);
+    QRegExpValidator*valiNom= new QRegExpValidator(rxNom,this);
+    ui->le_nom->setValidator(valiNom);
+    ui->la_desc->setValidator(valiNom);
+    ui->la_date->setDateTime(QDateTime::currentDateTime());
+    ui->la_date_update->setDateTime(QDateTime::currentDateTime());
 
 
     int ret=A.connect_arduino();
@@ -622,7 +656,7 @@ void Dialog_Employes::on_valider_carte_rfid_clicked()
     }
 }
 
-//GEstion des produits
+//GEstion des produits-----------------------------------------------------------------------------------------------------
 void Dialog_Employes::on_valider_clicked()
 {   ui->tab_produit->setModel(P.afficher());
     int code=ui->le_code->text().toInt();
@@ -830,4 +864,233 @@ void Dialog_Employes::on_inserer_photo_clicked()
         }
 
      }
+}
+
+//GESTION DES PUBLICITES------------------------------------------------------------------------------------------------------------
+
+void Dialog_Employes::on_pb_ajouter_clicked()
+{
+   int ID_P=ui->le_id->text().toInt();
+   QString nom=ui->le_nom_3->text();
+   QDate datep=ui->la_date->date();
+   QString description=ui->la_desc->text();
+   int prix=ui->le_prix_3->text().toInt();
+   Publicites P(ID_P,nom,datep,description,prix);
+   bool test=P.ajouter();
+   QMessageBox msgbox;
+   if(test)
+       {msgbox.setText("Ajout avec succes.");
+           ui->tab_publicites->setModel(P.afficher());
+           ui->le_id->setText("");
+           ui->le_nom_3->setText("");
+           ui->la_date->setDate(datep);
+           ui->la_desc->setText("");
+           ui->le_prix_3->setText("");
+       }
+       else
+           msgbox.setText("Echec d'ajout");
+       msgbox.exec();
+
+}
+
+
+
+void Dialog_Employes::on_pb_supprimer_clicked()
+{
+            Publicites P1;
+            P1.setID_P(ui->lineEdit_id->text().toInt());
+            QSqlQuery query ;
+            query.prepare("Select * from publicites WHERE ID_P=:ID_P ");
+            query.bindValue(":ID_P",P1.getID_P()) ;
+            query.exec();
+            bool alreadyExist = false;
+                alreadyExist = query.next();
+                if(alreadyExist)
+                {
+            bool test=P1.supprimer(P1.getID_P());
+            QMessageBox msgbox;
+            if(test)
+                {msgbox.setText("Suppression avec succes.");
+                    ui->tab_publicites->setModel(P.afficher());
+                    ui->lineEdit_id->setText("");
+                }
+                else
+                    msgbox.setText("Echec de suppression");
+                msgbox.exec();
+                }
+              else
+                             {
+                                 QMessageBox::critical(nullptr, QObject::tr("ERROR"),
+                                 QObject::tr("ID INTROUVABLE .\n" "Click Cancel to exit."), QMessageBox::Cancel);
+                             }
+
+
+}
+
+
+void Dialog_Employes::on_pb_modifier_clicked()
+{
+
+    QSqlQuery query;
+    QString ID_P=ui->le_id_update->text() ;
+    query.prepare("Select * from publicites WHERE ID_P=:ID_P");
+    query.bindValue(":ID_P", ID_P) ;
+    query.exec() ;
+    query.next() ;
+    ui->le_nom_update->setText(query.value(1).toString());
+    ui->la_date_update->setDate(query.value(2).toDate());
+    ui->la_desc_update->setText(query.value(4).toString());
+    ui->le_prix_update->setText(query.value(3).toString());
+
+}
+
+void Dialog_Employes::on_pb_entrer_clicked()
+{
+    int ID_P=ui->le_id_update->text().toInt();
+    QString nom=ui->le_nom_update->text();
+    QDate datep=ui->la_date_update->date();
+    QString date_p=datep.toString("yyyy,dd,MM");
+    QString description=ui->la_desc_update->text();
+    int prix=ui->le_prix_update->text().toInt();
+    Publicites P(ID_P,nom,datep,description,prix);
+    QSqlQuery query ;
+            query.prepare("Select * from publicites WHERE ID_P=:ID_P ");
+            query.bindValue(":ID_P",ID_P) ;
+            query.exec();
+            bool alreadyExist = false;
+                alreadyExist = query.next();
+                if(alreadyExist)
+                {
+            bool test=P.modifier(P.getID_P());
+            QMessageBox msgbox;
+            if(test)
+                {
+                msgbox.setText("Modification avec succes.");
+                    ui->tab_publicites->setModel(P.afficher());
+                    ui->le_id_update->setText("");
+                    ui->le_nom_update->setText("");
+                    ui->la_date_update->setDate(datep);
+                    ui->la_desc_update->setText("");
+                    ui->le_prix_update->setText("");
+                }
+                else
+                    msgbox.setText("Echec de modification");
+                    msgbox.exec();
+                }
+              else
+                             {
+                                 QMessageBox::critical(nullptr, QObject::tr("ERROR"),
+                                 QObject::tr("ID INTROUVABLE .\n" "Click Cancel to exit."), QMessageBox::Cancel);
+                             }
+}
+
+
+void Dialog_Employes::on_pb_trier_clicked()
+{
+            Publicites P;
+            QString crit=ui->comboBoxTri->currentText();
+            if(crit=="ID_P")
+            {
+                ui->tab_publicites->setModel(P.tri_id());
+            }
+            else if(crit=="prix")
+            {
+                ui->tab_publicites->setModel(P.tri_prix());
+            }
+            else
+            {
+                ui->tab_publicites->setModel(P.tri_nom());
+            }
+}
+
+void Dialog_Employes::on_radio_fb_clicked()
+{
+    QString link="https://www.facebook.com/Shine-On-Smartbeautycenter-102819531688261";
+    QDesktopServices::openUrl(link);
+}
+
+void Dialog_Employes::on_radio_insta_clicked()
+{
+    QString link="https://www.instagram.com/?hl=fr";
+    QDesktopServices::openUrl(link);
+}
+
+void Dialog_Employes::on_radio_whatsapp_clicked()
+{
+    QString link="https://www.whatsapp.com/?lang=fr";
+    QDesktopServices::openUrl(link);
+
+}
+
+void Dialog_Employes::on_pb_PDF_clicked()
+{
+
+        QPdfWriter pdf("C:/Users/ryhab/OneDrive/Bureau/build-Atelier_Connexion-Desktop_Qt_5_9_9_MinGW_32bit-Debug/test1.pdf");
+
+        QPainter painter(&pdf);
+
+        int i = 4000;
+        painter.setPen(Qt::blue);
+        painter.setFont(QFont("Arial", 30));
+        painter.drawText(3000,1500,"LISTE DES PUBLICITES");
+        painter.setPen(Qt::black);
+        painter.setFont(QFont("Arial", 50));
+        // painter.drawText(1100,2000,afficheDC);
+        painter.drawRect(2700,200,7300,2600);
+
+        painter.drawRect(0,3000,9600,500);
+        painter.setFont(QFont("Arial", 9));
+        painter.drawText(300,3300,"ID_P");
+        painter.drawText(2300,3300,"NOM");
+        painter.drawText(4300,3300,"DATEP");
+        painter.drawText(6300,3300,"DESCRIPTION");
+        painter.drawText(8000,3300,"PRIX");
+        QSqlQuery query;
+        query.prepare("select * from publicites");
+        query.exec();
+        while (query.next())
+        {
+            painter.drawText(300,i,query.value(0).toString());
+            painter.drawText(2300,i,query.value(1).toString());
+            painter.drawText(4300,i,query.value(2).toString());
+            painter.drawText(6300,i,query.value(3).toString());
+            painter.drawText(8000,i,query.value(4).toString());
+            i = i +500;
+        }
+
+        int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+        if (reponse == QMessageBox::Yes)
+        {
+            QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/ryhab/OneDrive/Bureau/build-Atelier_Connexion-Desktop_Qt_5_9_9_MinGW_32bit-Debug/test1.pdf"));
+
+            painter.end();
+        }
+        if (reponse == QMessageBox::No)
+        {
+            painter.end();
+        }
+}
+
+
+void Dialog_Employes::on_lineEdit_textChanged(const QString &arg1)
+{
+    ui->tab_publicites->setModel(Pu.rechercher(arg1));
+}
+
+
+
+void Dialog_Employes::on_pb_imprimer_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(0,"Open File",QString(),"PDF File(*.pdf)");
+
+                    /*QPrinter printer;
+                    QPrintDialog *dlg = new QPrintDialog(&printer,0);
+                    if(dlg->exec() == QDialog::Accepted) {
+                    QImage pdf(fileName);
+                    QPainter painter(&printer);
+                    painter.drawImage(QPoint(0,0),pdf);
+                    painter.end();
+                    }
+
+                    delete dlg;*/
 }
