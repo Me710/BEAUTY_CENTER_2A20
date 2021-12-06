@@ -7,6 +7,7 @@
 #include "gestion_produit/produit.h"
 #include "gestion_produit/qrcode.h"
 #include "gestion_pub/publicites.h"
+#include "gestion_commande/commande.h"
 #include <QTranslator>
 
 namespace Ui {
@@ -152,6 +153,22 @@ private slots:
 
     void on_pb_imprimer_clicked();
 
+    //POUR LA GESTION DES COMMANDES------------------------------------------------------------------------------------------------------------
+    void on_pb_ajouterCommande_clicked();
+
+    void on_pb_ModifierCommande_clicked();
+
+    void on_pb_SupprimerCommande_clicked();
+
+    void on_genererPdf_Commande_clicked() ;
+
+    void on_lineEdit_textChangedCommande(const QString &arg1);
+
+    void on_checkBox_verifDate_clicked();
+
+    void on_pb_agenda_3_clicked();
+
+    void on_pb_trierCommande_clicked();
 
 private:
     Ui::Dialog_Employes *ui;
@@ -162,6 +179,7 @@ private:
     Produit P;
     Publicites Pu;
     QTranslator *translator=new QTranslator;
+    Commande C;
 };
 
 #endif // DIALOG_EMPLOYES_H
