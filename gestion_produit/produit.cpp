@@ -65,32 +65,9 @@ model->setHeaderData(0,Qt::Horizontal,QObject::tr("code"));
 return model;
 }
 
-/*void Produit::clearTable(QTableView *table)
-   {
-       QSqlQueryModel *model=new QSqlQueryModel();
-       model->clear();
-       table->setModel(model);
-   }
-
-   void Produit::rechercher(QTableView *table, int x)
-   {
-      QSqlQueryModel *model=new QSqlQueryModel();
-      QSqlQuery *query =new QSqlQuery;
-      query->prepare("select * from PRODUITS where regexp_like(code,:code);");
-      query->bindValue(":code",x);
-
-      if(x==0)
-      {
-          query->prepare("select * from PRODUITS;");
-      }
-      query->exec();
-      model->setQuery(*query);
-      table->setModel(model);
-      table->show();
-   }
-*/
 QSqlQueryModel * Produit::tri_code()
 {   QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("select * from PRODUITS order by code2545444444");
     return model;
 }
 QSqlQueryModel * Produit::tri_prix()

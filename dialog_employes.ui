@@ -26,7 +26,7 @@
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="widget">
     <attribute name="title">
@@ -2570,14 +2570,14 @@ background-color: rgb(250, 0, 0);</string>
     <widget class="QTabWidget" name="tabWidget">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>30</x>
        <y>60</y>
-       <width>711</width>
-       <height>381</height>
+       <width>811</width>
+       <height>491</height>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -2740,7 +2740,7 @@ background-color: rgb(250, 0, 0);</string>
         <enum>Qt::PlainText</enum>
        </property>
        <property name="pixmap">
-        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <widget class="QPushButton" name="wa">
@@ -2798,6 +2798,67 @@ background-color: rgb(250, 0, 0);</string>
       <zorder>wa</zorder>
       <zorder>img_label</zorder>
       <zorder>inserer_photo</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>QR CODE</string>
+      </attribute>
+      <widget class="QPushButton" name="qrcode">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>20</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>qrcode</string>
+       </property>
+      </widget>
+      <widget class="QTableView" name="tableview_2">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>90</y>
+         <width>371</width>
+         <height>241</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="qrcommande">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>105</y>
+         <width>261</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>-140</x>
+         <y>-5</y>
+         <width>811</width>
+         <height>431</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+       </property>
+      </widget>
+      <zorder>label_35</zorder>
+      <zorder>qrcode</zorder>
+      <zorder>tableview_2</zorder>
+      <zorder>qrcommande</zorder>
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -2865,7 +2926,7 @@ background-color: rgb(250, 0, 0);</string>
         <string>PDF</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_35">
+      <widget class="QLabel" name="label_36">
        <property name="geometry">
         <rect>
          <x>450</x>
@@ -2878,25 +2939,35 @@ background-color: rgb(250, 0, 0);</string>
         <string>trier :</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="Qr_code">
+      <widget class="QLabel" name="label_37">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>220</y>
-         <width>93</width>
-         <height>28</height>
+         <x>-20</x>
+         <y>-5</y>
+         <width>731</width>
+         <height>371</height>
         </rect>
        </property>
        <property name="text">
-        <string>QRcode</string>
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
+      <zorder>label_36</zorder>
+      <zorder>label_37</zorder>
+      <zorder>tab_produit</zorder>
+      <zorder>trier</zorder>
+      <zorder>tri_prix</zorder>
+      <zorder>tri_stock</zorder>
+      <zorder>PDF</zorder>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>supprimer</string>
       </attribute>
-      <widget class="QLabel" name="label_36">
+      <widget class="QLabel" name="label_38">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -2922,7 +2993,7 @@ background-color: rgb(250, 0, 0);</string>
         <string>supprimer</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_37">
+      <widget class="QLabel" name="label_39">
        <property name="geometry">
         <rect>
          <x>-40</x>
@@ -2935,7 +3006,7 @@ background-color: rgb(250, 0, 0);</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox_3">
@@ -2948,8 +3019,8 @@ background-color: rgb(250, 0, 0);</string>
         </rect>
        </property>
       </widget>
-      <zorder>label_36</zorder>
-      <zorder>label_37</zorder>
+      <zorder>label_38</zorder>
+      <zorder>label_39</zorder>
       <zorder>comboBox_3</zorder>
       <zorder>supprimer</zorder>
      </widget>
@@ -2970,7 +3041,7 @@ background-color: rgb(250, 0, 0);</string>
         <string>UPDATE</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_38">
+      <widget class="QLabel" name="label_40">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -2983,7 +3054,7 @@ background-color: rgb(250, 0, 0);</string>
         <string>CODE :</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_39">
+      <widget class="QLabel" name="label_41">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -2996,7 +3067,7 @@ background-color: rgb(250, 0, 0);</string>
         <string>NOM:</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_40">
+      <widget class="QLabel" name="label_42">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -3009,7 +3080,7 @@ background-color: rgb(250, 0, 0);</string>
         <string>PRIX :</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_41">
+      <widget class="QLabel" name="label_43">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -3022,7 +3093,7 @@ background-color: rgb(250, 0, 0);</string>
         <string>STOCK :</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_42">
+      <widget class="QLabel" name="label_44">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -3075,7 +3146,7 @@ background-color: rgb(250, 0, 0);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QLabel" name="label_43">
+      <widget class="QLabel" name="label_45">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -3088,7 +3159,7 @@ background-color: rgb(250, 0, 0);</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox_4">
@@ -3101,12 +3172,12 @@ background-color: rgb(250, 0, 0);</string>
         </rect>
        </property>
       </widget>
-      <zorder>label_38</zorder>
-      <zorder>label_39</zorder>
       <zorder>label_40</zorder>
       <zorder>label_41</zorder>
       <zorder>label_42</zorder>
       <zorder>label_43</zorder>
+      <zorder>label_44</zorder>
+      <zorder>label_45</zorder>
       <zorder>comboBox_4</zorder>
       <zorder>update</zorder>
       <zorder>le_prix_2</zorder>
@@ -3114,11 +3185,52 @@ background-color: rgb(250, 0, 0);</string>
       <zorder>le_stock_2</zorder>
       <zorder>le_nom_2</zorder>
      </widget>
-     <widget class="QWidget" name="tab_6">
+     <widget class="QWidget" name="tab_7">
       <attribute name="title">
        <string>Page</string>
       </attribute>
-      <widget class="QLabel" name="label_44">
+      <widget class="QPushButton" name="pb_upload">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>30</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser">
+       <property name="geometry">
+        <rect>
+         <x>85</x>
+         <y>91</y>
+         <width>461</width>
+         <height>231</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="file">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>30</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_8">
+      <attribute name="title">
+       <string>rechereche</string>
+      </attribute>
+      <widget class="QLabel" name="label_46">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -3166,6 +3278,11 @@ background-color: rgb(250, 0, 0);</string>
       </widget>
      </widget>
     </widget>
+   </widget>
+   <widget class="QWidget" name="tab_9">
+    <attribute name="title">
+     <string>GESTION DES PUBS</string>
+    </attribute>
    </widget>
   </widget>
  </widget>
