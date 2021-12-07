@@ -8,7 +8,9 @@
 #include "gestion_produit/qrcode.h"
 #include "gestion_pub/publicites.h"
 #include "gestion_commande/commande.h"
+#include "gestion_client/client.h"
 #include <QTranslator>
+#include <QtMultimedia/qsound.h>
 
 namespace Ui {
 class Dialog_Employes;
@@ -17,6 +19,7 @@ class Dialog_Employes;
 class Dialog_Employes : public QDialog
 {
     Q_OBJECT
+    QSound *sound= new QSound("C:/Users/Bellalouna Iheb/Desktop/Projet_QT_2021_2022/Smart_Beauty_Center/image/click.wav");
 
 public:
     explicit Dialog_Employes(QWidget *parent = nullptr);
@@ -170,6 +173,43 @@ private slots:
 
     void on_pb_trierCommande_clicked();
 
+    //POUR LA GESTION DES CLIENT
+    void on_PBajouter_clicked();
+
+    void on_PBmodifier_clicked();
+
+    void on_PBsupprimer_clicked();
+
+    void on_PBafficher_clicked();
+
+    void on_retour_1_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_PBsupprimer_2_clicked();
+
+    void on_PBmodifier_2_clicked();
+
+    void on_PBconfirmModif_clicked();
+
+    void on_PBexport_clicked();
+
+    void on_PBinsererPhoto_clicked();
+
+    void on_PBtrouver_clicked();
+
+    void on_PBclear_clicked();
+
+    void on_PBprint_clicked();
+
+    void on_pb_stats_clicked();
+
+    void on_PBstatBar_clicked();
+
+    void on_PBstatMontant_clicked();
+
+    void on_PBstatSexe_clicked();
+
 private:
     Ui::Dialog_Employes *ui;
     Employe Empl;
@@ -180,6 +220,7 @@ private:
     Publicites Pu;
     QTranslator *translator=new QTranslator;
     Commande C;
+    Client cl;
 };
 
 #endif // DIALOG_EMPLOYES_H
