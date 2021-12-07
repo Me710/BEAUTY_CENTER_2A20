@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>bouton.png</file>
+        <file>gmail.png</file>
+        <file>img.qrc</file>
+        <file>loginImg1.png</file>
+        <file>hk1.png</file>
+        <file>hk2.png</file>
+        <file>hk3.png</file>
+        <file>hk4.png</file>
+        <file>hk5.png</file>
+        <file>click.wav</file>
+    </qresource>
+</RCC>
