@@ -1,4 +1,6 @@
 QT       += core gui sql network serialport multimedia
+QT       += core gui sql printsupport multimedia
+QT       += core gui multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,6 +22,7 @@ SOURCES += \
     connection.cpp \
     dialog_employes.cpp \
     employe.cpp \
+    equipement.cpp \
     gestion_client/client.cpp \
     gestion_commande/commande.cpp \
     gestion_produit/produit.cpp \
@@ -46,6 +49,7 @@ HEADERS += \
     connection.h \
     dialog_employes.h \
     employe.h \
+    equipement.h \
     gestion_client/client.h \
     gestion_commande/commande.h \
     gestion_produit/produit.h \

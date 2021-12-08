@@ -6,6 +6,7 @@
 #include <QPdfWriter>
 #include <QPainter>
 #include <QDesktopServices>
+#include<QMenu>
 #include <QFileDialog>
 #include <QPixmap>
 #include "mail/SmtpMime"
@@ -13,7 +14,19 @@
 #include <QtSerialPort/QSerialPortInfo>
 #include "gestion_produit/produit.h"
 #include "gestion_produit/qrcode.h"
+#include <QValidator>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPrinter>
+#include <QFileDialog>
+#include <QFileInfo>
+#include <QDateTime>
+#include <QCamera>
+#include <QCameraViewfinder>
+#include <QCameraImageCapture>
+#include <QVBoxLayout>
+#include <QPainter>
 
+#include"equipement.h"
 
 #include "gestion_pub/publicites.h"
 #include <QDate>
@@ -51,6 +64,55 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui(new Ui::Dialog_Employes)
 {
     ui->setupUi(this);
+
+
+    mCamera = new QCamera(this);
+    mCameraViewfinder = new QCameraViewfinder(this);
+    mCameraImageCapture = new QCameraImageCapture(mCamera, this);
+    mLayout = new QVBoxLayout;
+    mOptionMenu = new QMenu("options", this);
+    mAllumerAction = new QAction("Allumer", this);
+    mEteindreAction = new QAction("Eteindre", this);
+    mCaptureAction = new QAction("Capturer", this);
+
+    mOptionMenu->addActions({mAllumerAction, mEteindreAction, mCaptureAction});
+    mCamera->setViewfinder(mCameraViewfinder);
+    ui->options->setMenu(mOptionMenu);
+    mLayout->addWidget(mCameraViewfinder);
+    mLayout->setMargin(0);
+    ui->scrollArea->setLayout(mLayout);
+    connect(mAllumerAction, &QAction::triggered, [&]()
+    {
+        mCamera->start();
+    });
+
+    connect(mEteindreAction, &QAction::triggered, [&]()
+    {
+        mCamera->stop();
+    });
+    connect(mCaptureAction, &QAction::triggered, [&]()
+    {
+            auto filename = QFileDialog::getSaveFileName(this, "Capturer", "/", "Image (*.jpg;*.jpeg)");
+            if (filename.isEmpty())
+            {
+                return;
+            }
+            mCameraImageCapture->setCaptureDestination(QCameraImageCapture::CaptureToFile);
+            QImageEncoderSettings imageEcoderSettings;
+            imageEcoderSettings.setCodec("image/jpeg");
+            imageEcoderSettings.setResolution(1600, 1200);
+            mCameraImageCapture->setEncodingSettings(imageEcoderSettings);
+            mCamera->setCaptureMode(QCamera::CaptureStillImage);
+            mCamera->start();
+            mCamera->searchAndLock();
+            mCameraImageCapture->capture(filename);
+            mCamera->unlock();
+
+    });
+
+
+
+
     //les Validators pour les types entiers ou numbers
     ui->lineEdit_cin->setValidator(new QIntValidator(0,999999,this));
     ui->lineEdit_cin_modif->setValidator(new QIntValidator(0,999999,this));
@@ -88,6 +150,12 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     ui->la_date->setDateTime(QDateTime::currentDateTime());
     ui->la_date_update->setDateTime(QDateTime::currentDateTime());
 
+
+
+
+
+
+
     //
     ui->le_id->setValidator(new QIntValidator(0, 99999999, this));
     ui->le_prix->setValidator(new QIntValidator(0,9999, this));
@@ -101,7 +169,7 @@ Dialog_Employes::Dialog_Employes(QWidget *parent) :
     C.Signal();
 
     //
-    this->ui->stackedWidget->setCurrentIndex(0);
+    this->ui->stackedWidget_2->setCurrentIndex(0);
     ui->LEcin->setValidator(new QIntValidator(0, 999999999, this));
     ui->LEcinModif->setValidator(new QIntValidator(0, 999999999, this));
     ui->LEtel->setValidator(new QIntValidator(0, 99999999, this));
@@ -1392,38 +1460,38 @@ void Dialog_Employes::on_pb_trierCommande_clicked()
 void Dialog_Employes::on_PBajouter_clicked()
 {
     sound->play();
-    this->ui->stackedWidget->setCurrentIndex(1);
+    this->ui->stackedWidget_2->setCurrentIndex(1);
 }
 
 void Dialog_Employes::on_PBmodifier_clicked()
 {
     sound->play();
-    this->ui->stackedWidget->setCurrentIndex(2);
+    this->ui->stackedWidget_2->setCurrentIndex(2);
 }
 
 void Dialog_Employes::on_PBsupprimer_clicked()
 {
     sound->play();
-    this->ui->stackedWidget->setCurrentIndex(4);
+    this->ui->stackedWidget_2->setCurrentIndex(4);
 }
 
 void Dialog_Employes::on_PBafficher_clicked()
 {
     sound->play();
-    this->ui->stackedWidget->setCurrentIndex(5);
+    this->ui->stackedWidget_2->setCurrentIndex(5);
 }
 
 void Dialog_Employes::on_pb_stats_clicked()
 {
     sound->play();
-    this->ui->stackedWidget->setCurrentIndex(6);
+    this->ui->stackedWidget_2->setCurrentIndex(6);
 }
 
 
 void Dialog_Employes::on_retour_1_clicked()
 {
     sound->play();
-    this->ui->stackedWidget->setCurrentIndex(0);
+    this->ui->stackedWidget_2->setCurrentIndex(0);
 }
 
 
@@ -1513,7 +1581,7 @@ void Dialog_Employes::on_PBmodifier_2_clicked()
             ui->LEmontantModif->setText(query.value(6).toString());
         }
     }
-    this->ui->stackedWidget->setCurrentIndex(3);
+    this->ui->stackedWidget_2->setCurrentIndex(3);
 }
 
 void Dialog_Employes::on_PBconfirmModif_clicked()
@@ -1893,3 +1961,277 @@ void Dialog_Employes::on_PBstatSexe_clicked()
     chartView->show();
 }
 */
+
+void Dialog_Employes::on_ajouter_materiel_clicked()
+{
+    {
+        equipement tmp;
+
+        int id= ui->lineEdit_ajout_id->text().toInt();
+        QString nom=ui->lineEdit_ajout_nom->text();
+        QString marque=ui->lineEdit_ajout_marque->text();
+        int prix=ui->lineEdit_ajout_prix->text().toInt();
+        QString etat= ui->lineEdit_ajout_etat->text();
+
+        equipement e(id,nom,marque,prix,etat);
+
+    bool test=e.ajouter();
+        if( test)
+        {
+
+            ui->tab_materiel->setModel(tmp.afficher());//refresh
+           ui->lineEdit_ajout_id->clear();
+           ui->lineEdit_ajout_nom->clear();
+           ui->lineEdit_ajout_marque->clear();
+           ui->lineEdit_ajout_prix->clear();
+            ui->lineEdit_ajout_etat->clear();
+            QMessageBox ::information(nullptr,QObject::tr("ajouter un materiel"),
+                                              QObject::tr("materiel ajouté.\n"
+                                                  "click ok to exit"),QMessageBox::Ok);
+        }
+
+        else
+        {
+            QMessageBox ::critical(nullptr,QObject::tr("ajouter un materiel"),
+                                              QObject::tr("Erreur.\n"
+                                                  "click cancel to exit"),QMessageBox::Cancel);
+        }
+
+
+    }
+}
+
+void Dialog_Employes::on_modifier_materiel_clicked()
+{
+    equipement tmp;
+    QString nom = ui->lineEdit_modif_nom->text();
+         QString marque = ui->lineEdit_modif_marque->text();
+         int prix =ui->lineEdit_modif_prix->text().toInt();
+         QString etat=ui->lineEdit_modif_etat->text();
+         int id =ui->lineEdit_modif_id->text().toInt();
+
+         bool test=tmp.modifier_equipement(id,nom,marque,prix,etat);
+         if(test)
+         { ui->tab_materiel->setModel(tmp.afficher());
+                 ui->lineEdit_modif_id->clear();
+                 ui->lineEdit_modif_nom->clear();
+                 ui->lineEdit_modif_marque->clear();
+                 ui->lineEdit_modif_prix->clear();
+                 ui->lineEdit_modif_etat->clear();
+             QMessageBox ::information(nullptr,QObject::tr("modifier un materiel"),
+                                               QObject::tr("materiel modifié.\n"
+                                                   "click ok to exit"),QMessageBox::Ok);
+
+         }
+         else
+         {
+             QMessageBox ::critical(nullptr,QObject::tr("modifier un materiel"),
+                                               QObject::tr("Erreur.\n"
+                                                   "click cancel to exit"),QMessageBox::Cancel);
+         }
+}
+
+void Dialog_Employes::on_supp_materiel_clicked()
+{
+    equipement tmp;
+    int id =ui->lineEdit_supp_client->text().toInt();
+    QMessageBox msgbox;
+    msgbox.setWindowTitle("supprimer");
+    msgbox.setText("voulez_vous supprimer ce materiel?");
+    msgbox.setStandardButtons(QMessageBox ::Yes);
+    msgbox.addButton(QMessageBox::No);
+    if(msgbox.exec()==QMessageBox::Yes)
+
+    {
+        bool test=tmp.supprimer(id);
+
+    if(test)
+    {
+        ui->tab_materiel->setModel(tmp.afficher());
+        ui->lineEdit_supp_client->clear();
+        QMessageBox ::information(nullptr,QObject::tr("supprimer un materiel"),
+                                          QObject::tr("materiel supprimé.\n"
+                                              "click ok to exit"),QMessageBox::Ok);
+
+    }
+    else
+    {
+        QMessageBox ::critical(nullptr,QObject::tr("supprimer un materiel"),
+                                          QObject::tr("Erreur.\n"
+                                              "click cancel to exit"),QMessageBox::Cancel);
+    }
+    }
+    else
+        ui->tab_materiel->setModel(tmp.afficher());
+}
+
+void Dialog_Employes::on_pushButton_trier_salaire_clicked()
+{
+    equipement e;
+    /*QString critere=ui->cb_historique->currentText();*/
+        QString mode;
+         if (ui->rb_asc_historique->isChecked()==true)
+    {
+             ui->tab_materiel->setModel(e.trie());
+
+
+    }
+         else if(ui->rb_desc_historique->isChecked()==true)
+
+             ui->tab_materiel->setModel(e.trie2());
+}
+
+void Dialog_Employes::on_recherche_critere_emp_clicked()
+{
+    equipement e;
+    QString text;
+    if (ui->radioButton_ID->isChecked()==true)
+{
+text=ui->line_recherche_critere->text();
+     if(text == "")
+
+     {
+
+         ui->tab_materiel->setModel(e.afficher());
+
+     }
+
+     else
+
+     {
+
+
+
+         ui->tab_materiel->setModel(e.chercher_mat(text));
+
+     }
+    }
+     if(ui->radioButton_salaire->isChecked()==true)
+    {
+        text=ui->line_recherche_critere->text();
+             if(text == "")
+
+             {
+
+                 ui->tab_materiel->setModel(e.afficher());
+
+             }
+
+             else
+
+             {
+
+
+
+                 ui->tab_materiel->setModel(e.chercher_mat1(text));
+
+             }
+
+    }
+     else if     (ui->radioButton_nom->isChecked()==true)
+     {
+
+         text=ui->line_recherche_critere->text();
+              if(text == "")
+
+              {
+
+                  ui->tab_materiel->setModel(e.afficher());
+
+              }
+
+              else
+
+              {
+
+
+
+                  ui->tab_materiel->setModel(e.chercher_mat2(text));
+
+              }
+     }
+}
+
+void Dialog_Employes::on_pushButton_355_clicked()
+{
+    QString strStream;
+            QString currentDate = QDateTime().currentDateTime().toString();
+            QTextStream out(&strStream);
+            const int rowCount = ui->tab_materiel->model()->rowCount();
+            const int columnCount = ui->tab_materiel->model()->columnCount();
+            out <<
+             "<html>\n"
+            "<head>\n"
+            "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+            <<QString("<title>%1</title>\n").arg("strTitle")
+            <<"</head>\n"
+            "<body bgcolor=#ffffff link=#5000A0>\n"
+             <<QString(currentDate)
+            <<//"<align='right'> " << datefich << "</align>"
+            "<center> <img src="":/IMG/IMG/logo2.png"" width=""100"" height=""100"" > <br> <br><H1>LISTE DES EQUIPEMENTS</H1> <br> <br><table border=1 cellspacing=0 cellpadding=2>\n";
+            // headers
+            out << "<thead><tr bgcolor=#f0f0f0> <th>Numero</th>";
+            for (int column = 0; column < columnCount; column++)
+            if (!ui->tab_materiel->isColumnHidden(column))
+            out << QString("<th>%1</th>").arg(ui->tab_materiel->model()->headerData(column, Qt::Horizontal).toString());
+            out << "</tr></thead>\n";
+            // data table
+            for (int row = 0; row < rowCount; row++)
+            {
+            out << "<tr> <td bkcolor=0>" << row+1 <<"</td>";
+            for (int column = 0; column < columnCount; column++)
+            {
+            if (!ui->tab_materiel->isColumnHidden(column))
+            {
+            QString data = ui->tab_materiel->model()->data(ui->tab_materiel->model()->index(row, column)).toString().simplified();
+            out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+            }
+            }
+            out << "</tr>\n";
+            }
+            out <<  "</table> </center>\n"
+                 "<br> <br> <br> <br>"
+            "</body>\n"
+            "<footer>\n"
+                    "<div class = ""container"">"
+                        "<div class = ""row"">"
+                            "<div>"
+                                "<div><img src="":/IMG/IMG/icons8-facebook-30.png""> <span>ESEM L PROJET TN </div>\n"
+                                "<br>"
+                                "<div><img src="":/IMG/IMG/icons8-instagram-30.png""> <span>@ESEM L PROJET.tn </div>\n"
+                                "<p>Generated from : Control Patrol.exe "
+                            "</div>"
+                        "</div>"
+                    "</div>"
+            "</footer>\n"
+            "</html>\n";
+            QString filter = "pdf (*.pdf) ";
+            QString fileName = QFileDialog::getSaveFileName(this, "save in", QDir::homePath(),filter);
+
+
+            QPrinter printer (QPrinter::PrinterResolution);
+            printer.setOutputFormat(QPrinter::PdfFormat);
+            printer.setPaperSize(QPrinter::A4);
+            printer.setOutputFileName(fileName);
+            QTextDocument doc;
+            doc.setHtml(strStream);
+            doc.setPageSize(printer.pageRect().size()); // This is necessary if you want to hide the page number
+            doc.print(&printer);
+
+}
+
+void Dialog_Employes::on_pushButton_123_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(0,"Open File",QString(),"PDF File(*.pdf)");
+
+                        QPrinter printer;
+                        QPrintDialog *dlg = new QPrintDialog(&printer,0);
+                        if(dlg->exec() == QDialog::Accepted) {
+                        QImage pdf(fileName);
+                        QPainter painter(&printer);
+                        painter.drawImage(QPoint(0,0),pdf);
+                        painter.end();
+                        }
+
+                        delete dlg;
+}

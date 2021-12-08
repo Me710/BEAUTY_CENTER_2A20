@@ -1334,7 +1334,7 @@ background-color: rgb(249, 156, 255);</string>
           <x>340</x>
           <y>0</y>
           <width>221</width>
-          <height>411</height>
+          <height>461</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1390,7 +1390,7 @@ background-color: rgb(249, 156, 255);</string>
          <property name="geometry">
           <rect>
            <x>20</x>
-           <y>330</y>
+           <y>340</y>
            <width>181</width>
            <height>71</height>
           </rect>
@@ -1451,7 +1451,7 @@ color: rgb(107, 35, 131);</string>
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuACCUEIL">

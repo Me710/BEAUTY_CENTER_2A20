@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
+    <width>1244</width>
     <height>768</height>
    </rect>
   </property>
@@ -26,7 +26,7 @@
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="widget">
     <attribute name="title">
@@ -2458,9 +2458,13 @@ font: 14pt &quot;MV Boli&quot;;</string>
        <string>Afficher la liste des employes</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 8pt &quot;MV Boli&quot;;
-color: rgb(107, 35, 131);
-background-color: rgb(249, 156, 255);</string>
+       <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 8pt &quot;MV Boli&quot;;
+}</string>
       </property>
       <property name="text">
        <string>AFFICHER</string>
@@ -2577,7 +2581,7 @@ background-color: rgb(250, 0, 0);</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>6</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -2720,6 +2724,15 @@ background-color: rgb(250, 0, 0);</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>valider</string>
        </property>
@@ -2733,6 +2746,11 @@ background-color: rgb(250, 0, 0);</string>
          <height>411</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(106, 93, 127);
+border-color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -2740,7 +2758,7 @@ background-color: rgb(250, 0, 0);</string>
         <enum>Qt::PlainText</enum>
        </property>
        <property name="pixmap">
-        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <widget class="QPushButton" name="wa">
@@ -2751,6 +2769,15 @@ background-color: rgb(250, 0, 0);</string>
          <width>141</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>code a barres</string>
@@ -2772,11 +2799,20 @@ background-color: rgb(250, 0, 0);</string>
       <widget class="QPushButton" name="inserer_photo">
        <property name="geometry">
         <rect>
-         <x>470</x>
+         <x>460</x>
          <y>270</y>
-         <width>93</width>
+         <width>121</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>inserer_photo</string>
@@ -2812,6 +2848,15 @@ background-color: rgb(250, 0, 0);</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>qrcode</string>
        </property>
@@ -2824,6 +2869,11 @@ background-color: rgb(250, 0, 0);</string>
          <width>371</width>
          <height>241</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(106, 93, 127);
+border-color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);</string>
        </property>
       </widget>
       <widget class="QLabel" name="qrcommande">
@@ -2852,7 +2902,7 @@ background-color: rgb(250, 0, 0);</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <zorder>label_35</zorder>
@@ -2873,6 +2923,11 @@ background-color: rgb(250, 0, 0);</string>
          <height>181</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(106, 93, 127);
+border-color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);</string>
+       </property>
       </widget>
       <widget class="QPushButton" name="trier">
        <property name="geometry">
@@ -2882,6 +2937,15 @@ background-color: rgb(250, 0, 0);</string>
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>tri pa code</string>
@@ -2896,6 +2960,15 @@ background-color: rgb(250, 0, 0);</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>tri par prix</string>
        </property>
@@ -2903,11 +2976,20 @@ background-color: rgb(250, 0, 0);</string>
       <widget class="QPushButton" name="tri_stock">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>432</x>
          <y>250</y>
-         <width>93</width>
+         <width>111</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>tri par stock</string>
@@ -2921,6 +3003,15 @@ background-color: rgb(250, 0, 0);</string>
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>PDF</string>
@@ -2952,7 +3043,7 @@ background-color: rgb(250, 0, 0);</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <zorder>label_36</zorder>
@@ -2989,6 +3080,15 @@ background-color: rgb(250, 0, 0);</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>supprimer</string>
        </property>
@@ -3006,7 +3106,7 @@ background-color: rgb(250, 0, 0);</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox_3">
@@ -3036,6 +3136,15 @@ background-color: rgb(250, 0, 0);</string>
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>UPDATE</string>
@@ -3155,11 +3264,16 @@ background-color: rgb(250, 0, 0);</string>
          <height>411</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(106, 93, 127);
+border-color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
+        <pixmap>../../Downloads/246926994_587057979173736_3602103953791256294_n.png</pixmap>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox_4">
@@ -3198,6 +3312,15 @@ background-color: rgb(250, 0, 0);</string>
          <height>28</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -3211,6 +3334,11 @@ background-color: rgb(250, 0, 0);</string>
          <height>231</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(106, 93, 127);
+border-color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);</string>
+       </property>
       </widget>
       <widget class="QPushButton" name="file">
        <property name="geometry">
@@ -3220,6 +3348,15 @@ background-color: rgb(250, 0, 0);</string>
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>PushButton</string>
@@ -3258,9 +3395,18 @@ background-color: rgb(250, 0, 0);</string>
         <rect>
          <x>470</x>
          <y>30</y>
-         <width>93</width>
+         <width>111</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>RECHERCHE</string>
@@ -3274,6 +3420,11 @@ background-color: rgb(250, 0, 0);</string>
          <width>621</width>
          <height>192</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(106, 93, 127);
+border-color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);</string>
        </property>
       </widget>
      </widget>
@@ -3570,10 +3721,11 @@ border-radius: 20px;</string>
       </property>
       <property name="font">
        <font>
-        <family>MS Sans Serif</family>
-        <weight>75</weight>
-        <italic>true</italic>
-        <bold>true</bold>
+        <family>MV Boli</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -3582,6 +3734,7 @@ border-radius: 20px;</string>
 border-radius: 5px;
 	color: rgb(255, 255, 255);
 background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
 }</string>
       </property>
       <property name="text">
@@ -3945,10 +4098,11 @@ background-color: rgb(236, 138, 139);</string>
       </property>
       <property name="font">
        <font>
-        <family>MS Sans Serif</family>
-        <weight>75</weight>
-        <italic>true</italic>
-        <bold>true</bold>
+        <family>MV Boli</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -3957,6 +4111,7 @@ background-color: rgb(236, 138, 139);</string>
 border-radius: 5px;
 	color: rgb(255, 255, 255);
 background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
 }</string>
       </property>
       <property name="text">
@@ -4029,7 +4184,7 @@ background-color: rgb(231, 25, 89);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>resources/whatsapp_108042.png</pixmap>
+      <pixmap>C:/Users/PMS-BLA-5-Chloe/Desktop/resources/whatsapp_108042.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -4061,7 +4216,7 @@ background-color: rgb(231, 25, 89);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>resources/instagram_108043.png</pixmap>
+      <pixmap>C:/Users/PMS-BLA-5-Chloe/Desktop/resources/instagram_108043.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -4080,7 +4235,7 @@ background-color: rgb(231, 25, 89);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>resources/facebook_108044.png</pixmap>
+      <pixmap>C:/Users/PMS-BLA-5-Chloe/Desktop/resources/facebook_108044.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -4097,10 +4252,11 @@ background-color: rgb(231, 25, 89);
      </property>
      <property name="font">
       <font>
-       <family>MS Sans Serif</family>
-       <weight>75</weight>
-       <italic>true</italic>
-       <bold>true</bold>
+       <family>MV Boli</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -4109,6 +4265,7 @@ background-color: rgb(231, 25, 89);
 border-radius: 5px;
 	color: rgb(255, 255, 255);
 background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
 }</string>
      </property>
      <property name="text">
@@ -4135,7 +4292,7 @@ background-color: rgb(231, 25, 89);
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>../../../Downloads/facebook_108044.png</normaloff>../../../Downloads/facebook_108044.png</iconset>
+       <normaloff>../../Downloads/facebook_108044.png</normaloff>../../Downloads/facebook_108044.png</iconset>
      </property>
     </widget>
     <widget class="QTableView" name="tab_publicites">
@@ -4179,7 +4336,7 @@ background-color: rgb(236, 138, 139);</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>resources/logo.png</pixmap>
+      <pixmap>C:/Users/PMS-BLA-5-Chloe/Desktop/resources/Houba.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -4386,8 +4543,11 @@ border-radius: 20px;</string>
       </property>
       <property name="font">
        <font>
-        <weight>75</weight>
-        <bold>true</bold>
+        <family>MV Boli</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -4396,6 +4556,7 @@ border-radius: 20px;</string>
 border-radius: 5px;
 	color: rgb(255, 255, 255);
 background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
 }</string>
       </property>
       <property name="text">
@@ -4764,8 +4925,11 @@ border-radius: 20px;</string>
       </property>
       <property name="font">
        <font>
-        <weight>75</weight>
-        <bold>true</bold>
+        <family>MV Boli</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -4774,6 +4938,7 @@ border-radius: 20px;</string>
 border-radius: 5px;
 	color: rgb(255, 255, 255);
 background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
 }</string>
       </property>
       <property name="text">
@@ -4915,9 +5080,11 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>8</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <family>MV Boli</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -4926,6 +5093,7 @@ background-color: rgb(255, 255, 255);</string>
 border-radius: 5px;
 	color: rgb(255, 255, 255);
 background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
 }</string>
       </property>
       <property name="text">
@@ -4995,23 +5163,21 @@ background-color: rgb(231, 25, 89);
      </property>
      <property name="font">
       <font>
-       <family>Playfair Display ExtraBold</family>
+       <family>MV Boli</family>
        <pointsize>12</pointsize>
-       <weight>75</weight>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+      <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
      </property>
      <property name="text">
       <string>Supprimer Client</string>
@@ -5021,7 +5187,7 @@ background-color: rgb(231, 25, 89);
      <property name="geometry">
       <rect>
        <x>240</x>
-       <y>10</y>
+       <y>0</y>
        <width>761</width>
        <height>721</height>
       </rect>
@@ -5030,7 +5196,7 @@ background-color: rgb(231, 25, 89);
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page_2"/>
      <widget class="QWidget" name="page_ajout">
@@ -5307,23 +5473,21 @@ background-color: rgb(231, 25, 89);
        </property>
        <property name="font">
         <font>
-         <family>Playfair Display ExtraBold</family>
+         <family>MV Boli</family>
          <pointsize>12</pointsize>
-         <weight>75</weight>
+         <weight>50</weight>
          <italic>false</italic>
-         <bold>true</bold>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>Valider</string>
@@ -5340,23 +5504,21 @@ background-color: rgb(231, 25, 89);
        </property>
        <property name="font">
         <font>
-         <family>Playfair Display ExtraBold</family>
+         <family>MV Boli</family>
          <pointsize>12</pointsize>
-         <weight>75</weight>
+         <weight>50</weight>
          <italic>false</italic>
-         <bold>true</bold>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>&lt;-Retour</string>
@@ -5419,7 +5581,7 @@ background-color: rgb(231, 25, 89);
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="gestion_client/image/img.qrc">:/img/hk2.png</pixmap>
+        <pixmap>:/img/hk2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -5436,21 +5598,21 @@ background-color: rgb(231, 25, 89);
        </property>
        <property name="font">
         <font>
-         <family>Playfair Display ExtraBold</family>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>MV Boli</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
        </property>
        <property name="text">
         <string>Parcourir</string>
@@ -5524,15 +5686,13 @@ background-color: rgb(231, 25, 89);
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+}
+</string>
        </property>
        <property name="text">
         <string>modifier</string>
@@ -5541,8 +5701,8 @@ background-color: rgb(231, 25, 89);
       <widget class="QComboBox" name="CBmcin">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>200</y>
+         <x>210</x>
+         <y>150</y>
          <width>231</width>
          <height>41</height>
         </rect>
@@ -5569,7 +5729,7 @@ background-color: rgb(231, 25, 89);
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="gestion_client/image/img.qrc">:/img/hk3.png</pixmap>
+        <pixmap>:/img/hk3.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -5826,8 +5986,8 @@ background-color: rgb(231, 25, 89);
       <widget class="QPushButton" name="PBconfirmModif">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>530</y>
+         <x>430</x>
+         <y>400</y>
          <width>201</width>
          <height>51</height>
         </rect>
@@ -5836,22 +5996,18 @@ background-color: rgb(231, 25, 89);
         <font>
          <family>Playfair Display ExtraBold</family>
          <pointsize>10</pointsize>
-         <weight>10</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {
-	font: 81 10pt &quot;Playfair Display ExtraBold&quot;;
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+}</string>
        </property>
        <property name="text">
         <string>confirmer</string>
@@ -5929,7 +6085,7 @@ background-color: rgb(231, 25, 89);
        <property name="geometry">
         <rect>
          <x>400</x>
-         <y>200</y>
+         <y>170</y>
          <width>171</width>
          <height>41</height>
         </rect>
@@ -5943,15 +6099,12 @@ background-color: rgb(231, 25, 89);
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+}</string>
        </property>
        <property name="text">
         <string>supprimer</string>
@@ -5983,7 +6136,7 @@ background-color: rgb(231, 25, 89);
        <property name="geometry">
         <rect>
          <x>140</x>
-         <y>200</y>
+         <y>170</y>
          <width>231</width>
          <height>41</height>
         </rect>
@@ -6010,7 +6163,7 @@ background-color: rgb(231, 25, 89);
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="gestion_client/image/img.qrc">:/img/hk5.png</pixmap>
+        <pixmap>:/img/hk5.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -6325,7 +6478,7 @@ background-color: rgb(231, 25, 89);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="gestion_client/image/img.qrc">:/img/hk4.png</pixmap>
+      <pixmap>:/img/hk4.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -6342,1355 +6495,25 @@ background-color: rgb(231, 25, 89);
      </property>
      <property name="font">
       <font>
-       <family>Playfair Display ExtraBold</family>
+       <family>MV Boli</family>
        <pointsize>12</pointsize>
-       <weight>75</weight>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+      <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
      </property>
      <property name="text">
       <string>Ajouter Client</string>
      </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>620</y>
-       <width>230</width>
-       <height>50</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Playfair Display ExtraBold</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }
-</string>
-     </property>
-     <property name="text">
-      <string>Statistiques</string>
-     </property>
-    </widget>
-    <widget class="QStackedWidget" name="stackedWidget_3">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>200</y>
-       <width>761</width>
-       <height>721</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="currentIndex">
-      <number>5</number>
-     </property>
-     <widget class="QWidget" name="page_3"/>
-     <widget class="QWidget" name="page_ajout_2">
-      <widget class="QLabel" name="label_76">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>30</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Nom</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_78">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>80</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Prenom</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_79">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>130</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>CIN</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_80">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>180</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mail</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_81">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>230</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Tel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_95">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>270</y>
-         <width>240</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Montant Depenser</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_96">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>330</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Sexe</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEnom_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>20</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEprenom_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>70</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEcin_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>120</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEmail_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>170</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEtel_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>220</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEmontantd_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>270</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_4">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>670</y>
-         <width>191</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <italic>false</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>Valider</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="retour_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>670</y>
-         <width>191</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <italic>false</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>&lt;-Retour</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="RBfemme_2">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>330</y>
-         <width>150</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Femme</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="RBhomme_2">
-       <property name="geometry">
-        <rect>
-         <x>390</x>
-         <y>330</y>
-         <width>150</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Homme</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="bg1_2">
-       <property name="geometry">
-        <rect>
-         <x>490</x>
-         <y>620</y>
-         <width>171</width>
-         <height>101</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="gestion_client/image/img.qrc">:/img/hk2.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBinsererPhoto_2">
-       <property name="geometry">
-        <rect>
-         <x>490</x>
-         <y>447</y>
-         <width>131</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>Parcourir</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_photo_2">
-       <property name="geometry">
-        <rect>
-         <x>300</x>
-         <y>390</y>
-         <width>160</width>
-         <height>160</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::WinPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::PlainText</enum>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_modif1_2">
-      <widget class="QLabel" name="label_97">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>90</y>
-         <width>461</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Veuillez choisir le CIN du client à modifier</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBmodifier_3">
-       <property name="geometry">
-        <rect>
-         <x>400</x>
-         <y>200</y>
-         <width>171</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <italic>false</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>modifier</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="CBmcin_2">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>200</y>
-         <width>231</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLabel" name="bg2_2">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>290</y>
-         <width>161</width>
-         <height>181</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="gestion_client/image/img.qrc">:/img/hk3.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_modif2_2">
-      <widget class="QLabel" name="label_98">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>30</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Nom</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_99">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>80</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Prenom</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_100">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>130</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>CIN</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_101">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>180</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mail</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_102">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>230</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Tel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_103">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>270</y>
-         <width>240</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Montant Depenser</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEnomModif_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>20</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEprenomModif_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>70</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEcinModif_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>120</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEmailModif_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>170</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEmontantModif_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>270</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEtelModif_2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>220</y>
-         <width>200</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBconfirmModif_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>530</y>
-         <width>201</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>10</pointsize>
-         <weight>10</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	font: 81 10pt &quot;Playfair Display ExtraBold&quot;;
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>confirmer</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_104">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>330</y>
-         <width>240</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Sexe</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="RBmfemme_2">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>340</y>
-         <width>120</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Femme</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="RBmhomme_2">
-       <property name="geometry">
-        <rect>
-         <x>390</x>
-         <y>340</y>
-         <width>120</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Homme</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_supp_2">
-      <widget class="QPushButton" name="PBsupprimer_4">
-       <property name="geometry">
-        <rect>
-         <x>400</x>
-         <y>200</y>
-         <width>171</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Comic Sans MS</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>supprimer</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_105">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>90</y>
-         <width>481</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Playfair Display ExtraBold</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <italic>true</italic>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Veuillez choisir le CIN du client à supprimer</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="CBcin_2">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>200</y>
-         <width>231</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QLabel" name="bg3_2">
-       <property name="geometry">
-        <rect>
-         <x>270</x>
-         <y>290</y>
-         <width>161</width>
-         <height>181</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="gestion_client/image/img.qrc">:/img/hk5.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_affich_2">
-      <widget class="QTableView" name="tabClient_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>100</y>
-         <width>621</width>
-         <height>421</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBexport_2">
-       <property name="geometry">
-        <rect>
-         <x>382</x>
-         <y>550</y>
-         <width>101</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>Exporter PDF</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBprint_2">
-       <property name="geometry">
-        <rect>
-         <x>510</x>
-         <y>550</y>
-         <width>93</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>Imprimer</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEchercherCIN_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>60</y>
-         <width>131</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBtrouver_2">
-       <property name="geometry">
-        <rect>
-         <x>520</x>
-         <y>30</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>trouver</string>
-       </property>
-      </widget>
-      <widget class="QCheckBox" name="CBmontant_2">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>30</y>
-         <width>131</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Montant Depenser</string>
-       </property>
-      </widget>
-      <widget class="QCheckBox" name="CBtel_2">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>30</y>
-         <width>131</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>NUMERO MOBILE</string>
-       </property>
-      </widget>
-      <widget class="QCheckBox" name="CBcin2_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>30</y>
-         <width>83</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>CIN</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEchercherTel_2">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>60</y>
-         <width>141</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LEchercherMontant_2">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>60</y>
-         <width>141</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBclear_2">
-       <property name="geometry">
-        <rect>
-         <x>520</x>
-         <y>60</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>clear</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_stat_2">
-      <widget class="QFrame" name="frame_stat_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>721</width>
-         <height>601</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBstatMontant_2">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>630</y>
-         <width>131</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>ChartPie/Montant</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBstatSexe_2">
-       <property name="geometry">
-        <rect>
-         <x>490</x>
-         <y>630</y>
-         <width>111</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }
-</string>
-       </property>
-       <property name="text">
-        <string>ChartPie/Sexe</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="PBstatBar_2">
-       <property name="geometry">
-        <rect>
-         <x>250</x>
-         <y>630</y>
-         <width>93</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-       </property>
-       <property name="text">
-        <string>Bar/Montant</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_106">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>630</y>
-         <width>171</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Type charte selon critère</string>
-       </property>
-      </widget>
-     </widget>
     </widget>
     <widget class="QPushButton" name="PBmodifier_4">
      <property name="geometry">
@@ -7771,7 +6594,7 @@ background-color: rgb(231, 25, 89);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="gestion_client/image/img.qrc">:/img/hk4.png</pixmap>
+      <pixmap>:/img/hk4.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -7788,60 +6611,24 @@ background-color: rgb(231, 25, 89);
      </property>
      <property name="font">
       <font>
-       <family>Playfair Display ExtraBold</family>
+       <family>MV Boli</family>
        <pointsize>12</pointsize>
-       <weight>75</weight>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+      <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
      </property>
      <property name="text">
       <string>Modifier Client</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="PBafficher_2">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>520</y>
-       <width>230</width>
-       <height>50</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Playfair Display ExtraBold</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <italic>false</italic>
-       <bold>true</bold>
-       <kerning>true</kerning>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-     </property>
-     <property name="text">
-      <string>Afficher les Clients</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pb_stats">
@@ -7855,59 +6642,25 @@ background-color: rgb(231, 25, 89);
      </property>
      <property name="font">
       <font>
-       <family>Playfair Display ExtraBold</family>
+       <family>MV Boli</family>
        <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }
+      <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}
 </string>
      </property>
      <property name="text">
       <string>Statistiques</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="PBsupprimer_3">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>420</y>
-       <width>230</width>
-       <height>50</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Playfair Display ExtraBold</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <italic>false</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
-     </property>
-     <property name="text">
-      <string>Supprimer Client</string>
      </property>
     </widget>
     <widget class="QPushButton" name="PBafficher">
@@ -7921,28 +6674,837 @@ background-color: rgb(231, 25, 89);
      </property>
      <property name="font">
       <font>
-       <family>Playfair Display ExtraBold</family>
+       <family>MV Boli</family>
        <pointsize>12</pointsize>
-       <weight>75</weight>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
        <kerning>true</kerning>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+      <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 12pt &quot;MV Boli&quot;;
+}</string>
      </property>
      <property name="text">
       <string>Afficher les Clients</string>
      </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_12">
+    <attribute name="title">
+     <string>GESTION DES MAINTENANCES</string>
+    </attribute>
+    <widget class="QFrame" name="frame_1">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>231</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	background-color: rgb(60, 27, 78);
+	border-radius: 20px;
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_ajout_id">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>id</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_ajout_nom">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>nom</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_ajout_marque">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>marque</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_ajout_prix">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>prix</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_ajout_etat">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>etat</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ajouter_materiel">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 8pt &quot;MV Boli&quot;;
+}</string>
+        </property>
+        <property name="text">
+         <string>ajouter</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>60</y>
+       <width>241</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	background-color: rgb(60, 27, 78);
+	border-radius: 20px;
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_modif_id">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>id</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_modif_nom">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>nom</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_modif_marque">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>marque</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_modif_prix">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>prix</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_modif_etat">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>etat</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="modifier_materiel">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 8pt &quot;MV Boli&quot;;
+}</string>
+        </property>
+        <property name="text">
+         <string>modifier</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>90</y>
+       <width>321</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>319</width>
+        <height>199</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_19">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>310</y>
+       <width>1011</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(231, 25, 89);</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="pushButton_355">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>300</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);
+border-radius: 20px;</string>
+      </property>
+      <property name="text">
+       <string>PDF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_123">
+      <property name="geometry">
+       <rect>
+        <x>850</x>
+        <y>300</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);
+border-radius: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Imprimer</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>30</y>
+        <width>151</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	background-color: rgb(60, 27, 78);
+	border-radius: 20px;
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QRadioButton" name="rb_asc_historique">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>ascendant</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_desc_historique">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>descendant</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_trier_salaire">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 8pt &quot;MV Boli&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>trier</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tab_materiel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>621</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI Semibold</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(106, 93, 127);
+background-color: rgb(236, 138, 139);
+border-radius: 5px;</string>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+     </widget>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>160</y>
+        <width>271</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	background-color: rgb(60, 27, 78);
+	border-radius: 20px;
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QRadioButton" name="radioButton_salaire">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>30</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>etat</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_ID">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>60</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_nom">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>marque</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_recherche_critere">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>80</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 2px;
+background-color: rgb(255, 255, 255);
+border-style: solid;
+border-color: white;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="recherche_critere_emp">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>40</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 8pt &quot;MV Boli&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>recherche</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="options">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>50</y>
+       <width>331</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(236, 138, 139);
+border-radius: 20px;</string>
+     </property>
+     <property name="text">
+      <string>options</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>130</y>
+       <width>181</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	background-color: rgb(60, 27, 78);
+	border-radius: 20px;
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_supp_client">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+
+background-color: rgb(255, 255, 255);
+
+border-radius: 5px;
+
+border: 2px solid rgb(194, 194, 194);
+
+padding-left: 10px;
+
+}
+
+QLineEdit:hover {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+QLineEdit:focus {
+
+border: 2px solid rgb(172, 172, 172);
+
+}
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>id</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="supp_materiel">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+background-color: rgb(231, 25, 89);
+font: 8pt &quot;MV Boli&quot;;
+}</string>
+        </property>
+        <property name="text">
+         <string>supprimer</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>

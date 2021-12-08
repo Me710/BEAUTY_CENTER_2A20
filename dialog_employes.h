@@ -11,10 +11,29 @@
 #include "gestion_client/client.h"
 #include <QTranslator>
 #include <QtMultimedia/qsound.h>
+#include <QValidator>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPrinter>
+#include <QFileDialog>
+#include <QFileInfo>
+#include <QDateTime>
+#include <QCamera>
+#include<QCameraViewfinderSettings>
+#include <QCameraViewfinder>
+#include<QCameraViewfinderSettingsControl>
+#include <QCameraImageCapture>
+#include <QVBoxLayout>
+#include <QPainter>
 
 namespace Ui {
 class Dialog_Employes;
 }
+class QCamera;
+class QCameraViewfinder;
+class QCameraImageCapture;
+class QVBoxLayout;
+class QMenu;
+class QAction;
 
 class Dialog_Employes : public QDialog
 {
@@ -210,6 +229,20 @@ private slots:
 
     void on_PBstatSexe_clicked();
 
+    void on_ajouter_materiel_clicked();
+
+    void on_modifier_materiel_clicked();
+
+    void on_supp_materiel_clicked();
+
+    void on_pushButton_trier_salaire_clicked();
+
+    void on_recherche_critere_emp_clicked();
+
+    void on_pushButton_355_clicked();
+
+    void on_pushButton_123_clicked();
+
 private:
     Ui::Dialog_Employes *ui;
     Employe Empl;
@@ -221,6 +254,14 @@ private:
     QTranslator *translator=new QTranslator;
     Commande C;
     Client cl;
+    QCamera *mCamera;
+    QCameraViewfinder *mCameraViewfinder;
+    QCameraImageCapture *mCameraImageCapture;
+    QVBoxLayout *mLayout;
+    QMenu *mOptionMenu;
+    QAction *mAllumerAction;
+    QAction *mEteindreAction;
+    QAction *mCaptureAction;
 };
 
 #endif // DIALOG_EMPLOYES_H
